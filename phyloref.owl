@@ -68,7 +68,23 @@
 
     <!-- http://phyloinformatics.net/phyloref.owl#excludes_lineage_to -->
 
-    <owl:ObjectProperty rdf:about="&phyloref;excludes_lineage_to"/>
+    <owl:ObjectProperty rdf:about="&phyloref;excludes_lineage_to">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="&phyloref;has_Sibling"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="&phyloref;has_Sibling"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CDAO_0000174"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://phyloinformatics.net/phyloref.owl#has_Sibling -->
+
+    <owl:ObjectProperty rdf:about="&phyloref;has_Sibling">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+    </owl:ObjectProperty>
     
 
 
@@ -85,6 +101,17 @@
     <owl:ObjectProperty rdf:about="&phyloref;includes_group">
         <rdfs:label>includes group</rdfs:label>
     </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CDAO_0000149 -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CDAO_0000149">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CDAO_0000149"/>
+            <rdf:Description rdf:about="&phyloref;has_Sibling"/>
+        </owl:propertyChainAxiom>
+    </rdf:Description>
     
 
 
