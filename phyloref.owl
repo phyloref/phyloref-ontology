@@ -58,23 +58,15 @@
     
 
 
-    <!-- http://phyloinformatics.net/phyloref.owl#excludes_group -->
-
-    <owl:ObjectProperty rdf:about="&phyloref;excludes_group">
-        <rdfs:label>excludes group</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://phyloinformatics.net/phyloref.owl#excludes_lineage_to -->
 
     <owl:ObjectProperty rdf:about="&phyloref;excludes_lineage_to">
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="&phyloref;has_Sibling"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CDAO_0000174"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="&phyloref;has_Sibling"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CDAO_0000174"/>
         </owl:propertyChainAxiom>
     </owl:ObjectProperty>
     
@@ -128,22 +120,7 @@
 
     <!-- http://phyloinformatics.net/phyloref.owl#Phyloreference -->
 
-    <owl:Class rdf:about="&phyloref;Phyloreference">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&phyloref;excludes_group"/>
-                        <owl:someValuesFrom rdf:resource="&phyloref;SpecifiedGroup"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&phyloref;includes_group"/>
-                        <owl:someValuesFrom rdf:resource="&phyloref;SpecifiedGroup"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-    </owl:Class>
+    <owl:Class rdf:about="&phyloref;Phyloreference"/>
     
 
 
@@ -163,55 +140,6 @@
     <!-- http://www.w3.org/2002/07/owl#Thing -->
 
     <owl:Class rdf:about="&owl;Thing"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Individuals
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://phyloinformatics.net/phyloref.owl#Physcomitrella -->
-
-    <owl:Thing rdf:about="&phyloref;Physcomitrella">
-        <rdf:type rdf:resource="&phyloref;SpecifiedGroup"/>
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://phyloinformatics.net/phyloref.owl#angiosperms -->
-
-    <owl:Thing rdf:about="&phyloref;angiosperms">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-        <excludes_group rdf:resource="&phyloref;Physcomitrella"/>
-        <includes_group rdf:resource="&phyloref;rice"/>
-        <includes_group rdf:resource="&phyloref;tomato"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://phyloinformatics.net/phyloref.owl#rice -->
-
-    <owl:Thing rdf:about="&phyloref;rice">
-        <rdf:type rdf:resource="&phyloref;SpecifiedGroup"/>
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://phyloinformatics.net/phyloref.owl#tomato -->
-
-    <owl:Thing rdf:about="&phyloref;tomato">
-        <rdf:type rdf:resource="&phyloref;SpecifiedGroup"/>
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
 </rdf:RDF>
 
 
