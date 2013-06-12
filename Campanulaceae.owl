@@ -207,7 +207,7 @@
 
     <owl:Thing rdf:about="&Campanulaceae;Node_2">
         <rdf:type rdf:resource="&owl;NamedIndividual"/>
-        <rdfs:label>Campanulaceae (1900)</rdfs:label>
+        <rdfs:label>Campanulaceae (1889-1980)</rdfs:label>
         <phyloref:has_Sibling rdf:resource="&Campanulaceae;Crysanthemum"/>
         <obo:CDAO_0000149 rdf:resource="&Campanulaceae;Node_3"/>
     </owl:Thing>
@@ -228,7 +228,7 @@
 
     <owl:Thing rdf:about="&Campanulaceae;Node_4">
         <rdf:type rdf:resource="&owl;NamedIndividual"/>
-        <rdfs:label>Campanulaceae (current)</rdfs:label>
+        <rdfs:label>Campanulaceae (after 1995)</rdfs:label>
         <obo:CDAO_0000149 rdf:resource="&Campanulaceae;Node_9"/>
         <phyloref:has_Sibling rdf:resource="&Campanulaceae;Sphenoclea"/>
     </owl:Thing>
@@ -267,7 +267,7 @@
 
     <owl:Thing rdf:about="&Campanulaceae;Node_9">
         <rdf:type rdf:resource="&owl;NamedIndividual"/>
-        <rdfs:label>Campanulaceae (1950)</rdfs:label>
+        <rdfs:label>Campanulaceae (1980)</rdfs:label>
         <obo:CDAO_0000149 rdf:resource="&Campanulaceae;Node_10"/>
         <phyloref:has_Sibling rdf:resource="&Campanulaceae;Node_5"/>
     </owl:Thing>
