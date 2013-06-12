@@ -1,0 +1,349 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY obo "http://purl.obolibrary.org/obo/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY Campanulaceae "http://phyloinformatics.net/phylo/Campanulaceae#" >
+]>
+
+
+<rdf:RDF xmlns="http://phyloinformatics.net/phylo/Campanulaceae#"
+     xml:base="http://phyloinformatics.net/phylo/Campanulaceae"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:Campanulaceae="http://phyloinformatics.net/phylo/Campanulaceae#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://phyloinformatics.net/phylo/Campanulaceae">
+        <owl:imports rdf:resource="http://phyloinformatics.net/phyloref.owl"/>
+        <owl:imports rdf:resource="&obo;cdao.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://phyloinformatics.net/phylo/Campanulaceae#has_Sibling -->
+
+    <owl:ObjectProperty rdf:about="&Campanulaceae;has_Sibling">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;CDAO_0000178"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://phyloinformatics.net/phyloref.owl#excludes_lineage_to -->
+
+    <rdf:Description rdf:about="http://phyloinformatics.net/phyloref.owl#excludes_lineage_to">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="&Campanulaceae;has_Sibling"/>
+            <rdf:Description rdf:about="&obo;CDAO_0000174"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="&Campanulaceae;has_Sibling"/>
+        </owl:propertyChainAxiom>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CDAO_0000149 -->
+
+    <rdf:Description rdf:about="&obo;CDAO_0000149">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="&obo;CDAO_0000149"/>
+            <rdf:Description rdf:about="&Campanulaceae;has_Sibling"/>
+        </owl:propertyChainAxiom>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://phyloinformatics.net/phylo/Campanulaceae#Sphenoclea -->
+
+    <owl:Class rdf:about="&Campanulaceae;Sphenoclea">
+        <rdfs:subClassOf rdf:resource="&obo;CDAO_0000138"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://phyloinformatics.net/phylo/Campanulaceae#Campanula -->
+
+    <owl:Thing rdf:about="&Campanulaceae;Campanula">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <obo:CDAO_0000149 rdf:resource="&Campanulaceae;Campanula_latifolia"/>
+        <has_Sibling rdf:resource="&Campanulaceae;Wahlenbergia_linifolia"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://phyloinformatics.net/phylo/Campanulaceae#Campanula_latifolia -->
+
+    <owl:Thing rdf:about="&Campanulaceae;Campanula_latifolia">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <has_Sibling rdf:resource="&Campanulaceae;Campanula_rotundifolia"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://phyloinformatics.net/phylo/Campanulaceae#Campanula_rotundifolia -->
+
+    <owl:Thing rdf:about="&Campanulaceae;Campanula_rotundifolia">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://phyloinformatics.net/phylo/Campanulaceae#Crysanthemum -->
+
+    <owl:Thing rdf:about="&Campanulaceae;Crysanthemum">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://phyloinformatics.net/phylo/Campanulaceae#Cyphia -->
+
+    <owl:Thing rdf:about="&Campanulaceae;Cyphia">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <obo:CDAO_0000149 rdf:resource="&Campanulaceae;Cyphia_bulbosa"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://phyloinformatics.net/phylo/Campanulaceae#Cyphia_bulbosa -->
+
+    <owl:Thing rdf:about="&Campanulaceae;Cyphia_bulbosa">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <has_Sibling rdf:resource="&Campanulaceae;Cyphia_elata"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://phyloinformatics.net/phylo/Campanulaceae#Cyphia_elata -->
+
+    <owl:Thing rdf:about="&Campanulaceae;Cyphia_elata">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://phyloinformatics.net/phylo/Campanulaceae#Cyphocarpus_rigescens -->
+
+    <owl:Thing rdf:about="&Campanulaceae;Cyphocarpus_rigescens">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <has_Sibling rdf:resource="&Campanulaceae;Lobelia"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://phyloinformatics.net/phylo/Campanulaceae#Lobelia -->
+
+    <owl:Thing rdf:about="&Campanulaceae;Lobelia">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <obo:CDAO_0000149 rdf:resource="&Campanulaceae;Lobelia_coronopifolia"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://phyloinformatics.net/phylo/Campanulaceae#Lobelia_cardinalis -->
+
+    <owl:Thing rdf:about="&Campanulaceae;Lobelia_cardinalis">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://phyloinformatics.net/phylo/Campanulaceae#Lobelia_coronopifolia -->
+
+    <owl:Thing rdf:about="&Campanulaceae;Lobelia_coronopifolia">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <has_Sibling rdf:resource="&Campanulaceae;Lobelia_cardinalis"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://phyloinformatics.net/phylo/Campanulaceae#Nemacladus_ramosissmus -->
+
+    <owl:Thing rdf:about="&Campanulaceae;Nemacladus_ramosissmus">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://phyloinformatics.net/phylo/Campanulaceae#Node_1 -->
+
+    <owl:Thing rdf:about="&Campanulaceae;Node_1">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <obo:CDAO_0000149 rdf:resource="&Campanulaceae;Node_2"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://phyloinformatics.net/phylo/Campanulaceae#Node_10 -->
+
+    <owl:Thing rdf:about="&Campanulaceae;Node_10">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <obo:CDAO_0000149 rdf:resource="&Campanulaceae;Campanula"/>
+        <has_Sibling rdf:resource="&Campanulaceae;Platycodon_grandiflorus"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://phyloinformatics.net/phylo/Campanulaceae#Node_2 -->
+
+    <owl:Thing rdf:about="&Campanulaceae;Node_2">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <has_Sibling rdf:resource="&Campanulaceae;Crysanthemum"/>
+        <obo:CDAO_0000149 rdf:resource="&Campanulaceae;Node_3"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://phyloinformatics.net/phylo/Campanulaceae#Node_3 -->
+
+    <owl:Thing rdf:about="&Campanulaceae;Node_3">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <obo:CDAO_0000149 rdf:resource="&Campanulaceae;Node_4"/>
+        <has_Sibling rdf:resource="&Campanulaceae;Pentaphragma"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://phyloinformatics.net/phylo/Campanulaceae#Node_4 -->
+
+    <owl:Thing rdf:about="&Campanulaceae;Node_4">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <obo:CDAO_0000149 rdf:resource="&Campanulaceae;Node_9"/>
+        <has_Sibling rdf:resource="&Campanulaceae;Sphenoclea"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://phyloinformatics.net/phylo/Campanulaceae#Node_5 -->
+
+    <owl:Thing rdf:about="&Campanulaceae;Node_5">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <obo:CDAO_0000149 rdf:resource="&Campanulaceae;Node_6"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://phyloinformatics.net/phylo/Campanulaceae#Node_6 -->
+
+    <owl:Thing rdf:about="&Campanulaceae;Node_6">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <has_Sibling rdf:resource="&Campanulaceae;Cyphia"/>
+        <obo:CDAO_0000149 rdf:resource="&Campanulaceae;Node_8"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://phyloinformatics.net/phylo/Campanulaceae#Node_7 -->
+
+    <owl:Thing rdf:about="&Campanulaceae;Node_7">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <obo:CDAO_0000149 rdf:resource="&Campanulaceae;Cyphocarpus_rigescens"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://phyloinformatics.net/phylo/Campanulaceae#Node_8 -->
+
+    <owl:Thing rdf:about="&Campanulaceae;Node_8">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <has_Sibling rdf:resource="&Campanulaceae;Node_7"/>
+        <obo:CDAO_0000149 rdf:resource="&Campanulaceae;Pseudonemacladus_oppositifolius"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://phyloinformatics.net/phylo/Campanulaceae#Node_9 -->
+
+    <owl:Thing rdf:about="&Campanulaceae;Node_9">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <obo:CDAO_0000149 rdf:resource="&Campanulaceae;Node_10"/>
+        <has_Sibling rdf:resource="&Campanulaceae;Node_5"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://phyloinformatics.net/phylo/Campanulaceae#Pentaphragma -->
+
+    <owl:Thing rdf:about="&Campanulaceae;Pentaphragma">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://phyloinformatics.net/phylo/Campanulaceae#Platycodon_grandiflorus -->
+
+    <owl:Thing rdf:about="&Campanulaceae;Platycodon_grandiflorus">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://phyloinformatics.net/phylo/Campanulaceae#Pseudonemacladus_oppositifolius -->
+
+    <owl:Thing rdf:about="&Campanulaceae;Pseudonemacladus_oppositifolius">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <has_Sibling rdf:resource="&Campanulaceae;Nemacladus_ramosissmus"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://phyloinformatics.net/phylo/Campanulaceae#Sphenoclea -->
+
+    <owl:Thing rdf:about="&Campanulaceae;Sphenoclea">
+        <rdf:type rdf:resource="&Campanulaceae;Sphenoclea"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://phyloinformatics.net/phylo/Campanulaceae#Wahlenbergia_linifolia -->
+
+    <owl:Thing rdf:about="&Campanulaceae;Wahlenbergia_linifolia">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.3.1957) http://owlapi.sourceforge.net -->
+
