@@ -29,6 +29,28 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Object Properties
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -51,10 +73,10 @@
     <rdf:Description rdf:about="http://phyloinformatics.net/phyloref.owl#excludes_lineage_to">
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="&Campanulaceae;has_Sibling"/>
-            <rdf:Description rdf:about="&obo;CDAO_0000174"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="&Campanulaceae;has_Sibling"/>
+            <rdf:Description rdf:about="&obo;CDAO_0000174"/>
         </owl:propertyChainAxiom>
     </rdf:Description>
     
@@ -197,6 +219,16 @@
     
 
 
+    <!-- http://phyloinformatics.net/phylo/Campanulaceae#Nemacladaceae -->
+
+    <owl:Thing rdf:about="&Campanulaceae;Nemacladaceae">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <has_Sibling rdf:resource="&Campanulaceae;Node_7"/>
+        <obo:CDAO_0000149 rdf:resource="&Campanulaceae;Pseudonemacladus_oppositifolius"/>
+    </owl:Thing>
+    
+
+
     <!-- http://phyloinformatics.net/phylo/Campanulaceae#Nemacladus_ramosissmus -->
 
     <owl:Thing rdf:about="&Campanulaceae;Nemacladus_ramosissmus">
@@ -228,6 +260,7 @@
 
     <owl:Thing rdf:about="&Campanulaceae;Node_2">
         <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label>Campanulaceae (1900)</rdfs:label>
         <has_Sibling rdf:resource="&Campanulaceae;Crysanthemum"/>
         <obo:CDAO_0000149 rdf:resource="&Campanulaceae;Node_3"/>
     </owl:Thing>
@@ -248,6 +281,7 @@
 
     <owl:Thing rdf:about="&Campanulaceae;Node_4">
         <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label>Campanulaceae (current)</rdfs:label>
         <obo:CDAO_0000149 rdf:resource="&Campanulaceae;Node_9"/>
         <has_Sibling rdf:resource="&Campanulaceae;Sphenoclea"/>
     </owl:Thing>
@@ -268,7 +302,7 @@
     <owl:Thing rdf:about="&Campanulaceae;Node_6">
         <rdf:type rdf:resource="&owl;NamedIndividual"/>
         <has_Sibling rdf:resource="&Campanulaceae;Cyphia"/>
-        <obo:CDAO_0000149 rdf:resource="&Campanulaceae;Node_8"/>
+        <obo:CDAO_0000149 rdf:resource="&Campanulaceae;Nemacladaceae"/>
     </owl:Thing>
     
 
@@ -282,20 +316,11 @@
     
 
 
-    <!-- http://phyloinformatics.net/phylo/Campanulaceae#Node_8 -->
-
-    <owl:Thing rdf:about="&Campanulaceae;Node_8">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-        <has_Sibling rdf:resource="&Campanulaceae;Node_7"/>
-        <obo:CDAO_0000149 rdf:resource="&Campanulaceae;Pseudonemacladus_oppositifolius"/>
-    </owl:Thing>
-    
-
-
     <!-- http://phyloinformatics.net/phylo/Campanulaceae#Node_9 -->
 
     <owl:Thing rdf:about="&Campanulaceae;Node_9">
         <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label>Campanulaceae (1950)</rdfs:label>
         <obo:CDAO_0000149 rdf:resource="&Campanulaceae;Node_10"/>
         <has_Sibling rdf:resource="&Campanulaceae;Node_5"/>
     </owl:Thing>
