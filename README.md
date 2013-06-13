@@ -9,16 +9,18 @@ To try out the example, load Campanulaceae.owl into Protege. Then run the reason
 
 * The node in the phylogeny that instantiates a phyloreference:
 
-   has_Descendant value Campanula_latifolia and excludes_lineage_to value Lobelia
+  ```has_Descendant value Campanula_latifolia and excludes_lineage_to value Lobelia```
 
 * The clade defined by a phyloreference:
 
-   has_Ancestor some (has_Descendant value Campanula_latifolia and excludes_lineage_to value Lobelia)
+  ```has_Ancestor some (has_Descendant value Campanula_latifolia and excludes_lineage_to value Lobelia)```
 
 * The tip nodes included by a phyloreference:
 
-   TU and has_Ancestor some (has_Descendant value Campanula_latifolia and excludes_lineage_to value Lobelia)
+  ```TU and has_Ancestor some (has_Descendant value Campanula_latifolia and excludes_lineage_to value Lobelia)```
 
-The Tetrapoda.owl example defines phyloreferences for 3 different definitions of Tetrapoda. It also demonstrates use of an apomorphy-based phyloreferences
+The Tetrapoda.owl example (same procedure: load into Protege, run reasoner, switch to DL Query tab) defines phyloreferences for 3 different definitions of Tetrapoda.
 
-   TU and has_Ancestor some (has_Progenitor some ('has part' some 'manual digit'))
+* It also demonstrates use of an apomorphy-based phyloreferences:
+
+  ```TU and has_Ancestor some (has_Progenitor some ('has part' some 'manual digit'))```
