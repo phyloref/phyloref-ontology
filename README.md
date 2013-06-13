@@ -19,4 +19,6 @@ To try out the example, load Campanulaceae.owl into Protege. Then run the reason
 
    TU and has_Ancestor some (has_Descendant value Campanula_latifolia and excludes_lineage_to value Lobelia)
 
-The Tetrapoda.owl example defines phyloreferences for 3 different definitions of Tetrapoda, although the apomorphy-based definition doesn't yet use a formal phenotype assertion (in the works).
+The Tetrapoda.owl example defines phyloreferences for 3 different definitions of Tetrapoda. It also demonstrates use of an apomorphy-based phyloreferences
+
+   TU and has_Ancestor some (has_Progenitor some ('has part' some 'manual digit'))
