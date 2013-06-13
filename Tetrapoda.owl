@@ -28,6 +28,28 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Classes
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -98,6 +120,48 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="&phyloref;Phyloreference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0001466 -->
+
+    <owl:Class rdf:about="&obo;UBERON_0001466">
+        <rdfs:label>pedal digit</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;UBERON_0002544"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0002387 -->
+
+    <owl:Class rdf:about="&obo;UBERON_0002387">
+        <rdfs:label>pes</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0002389 -->
+
+    <owl:Class rdf:about="&obo;UBERON_0002389">
+        <rdfs:label>manual digit</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;UBERON_0002544"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0002398 -->
+
+    <owl:Class rdf:about="&obo;UBERON_0002398">
+        <rdfs:label>manus</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0002544 -->
+
+    <owl:Class rdf:about="&obo;UBERON_0002544">
+        <rdfs:label>digit</rdfs:label>
     </owl:Class>
     
 
@@ -231,6 +295,25 @@
 
     <owl:Thing rdf:about="http://phyloinformatics.net/phylo/Tetrapoda#Node_7">
         <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&phyloref;has_Progenitor"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
+                                <owl:someValuesFrom rdf:resource="&obo;UBERON_0001466"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
+                                <owl:someValuesFrom rdf:resource="&obo;UBERON_0002389"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdf:type>
         <obo:CDAO_0000149 rdf:resource="http://phyloinformatics.net/phylo/Tetrapoda#Acanthostega"/>
         <phyloref:has_Sibling rdf:resource="http://phyloinformatics.net/phylo/Tetrapoda#Tiktaalik"/>
     </owl:Thing>
