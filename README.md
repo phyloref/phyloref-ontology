@@ -23,8 +23,11 @@ This series of patterns in essence corresponds to branch-based [phylogenetic cla
 
 * For example, for the most recent common ancestor of the Campanula_latifolia and Lobelia, we define the parent of the two nodes has one as descendent and excludes the other:
 
-  ```has_Child some (has_Descendant value Campanula_latifolia and excludes_lineage_to value Lobelia) and
-has_Child some (has_Descendant value Lobelia and excludes_lineage_to value Campanula_latifolia)```
+  ```
+has_Child some (has_Descendant value Campanula_latifolia and excludes_lineage_to value Lobelia)
+and
+has_Child some (has_Descendant value Lobelia and excludes_lineage_to value Campanula_latifolia)
+  ```
 
 * We can make this shorter by defining a phyloreference for each of the two components, which we name here Campanula!Lobelia and Lobelia!Campanula:
 
