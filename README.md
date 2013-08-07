@@ -19,7 +19,7 @@ To try out the example, load Campanulaceae.owl into Protege. Then run the reason
 
   ```TU and has_Ancestor some (has_Descendant value Campanula_latifolia and excludes_lineage_to value Lobelia)```
 
-This series of patterns in essence corresponds to branch-based [phylogenetic clade definitions] [1] (i.e., definitions using exclusion). We can use these to build phyloreferences corresponding to node-based clade definitions (i.e., definitions using a most recent common ancestor), by using the parent of the nodes that include one but exclude the other lineage(s).
+This series of patterns in essence corresponds to branch-based [phylogenetic clade definitions] [1], i.e., definitions using exclusion. We can use these to build phyloreferences corresponding to node-based clade definitions (i.e., definitions using a most recent common ancestor), by using the parent of the nodes that include one but exclude the other lineage(s).
 
 * For example, for the most recent common ancestor of the Campanula_latifolia and Lobelia, we define the parent of the two nodes has one as descendent and excludes the other:
 
