@@ -53,6 +53,61 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://phyloinformatics.net/phylo/Campanulaceae#Campanula!Lobelia -->
+
+    <owl:Class rdf:about="&Campanulaceae;Campanula!Lobelia">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&phyloref;excludes_lineage_to"/>
+                        <owl:hasValue rdf:resource="&Campanulaceae;Lobelia"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;CDAO_0000174"/>
+                        <owl:hasValue rdf:resource="&Campanulaceae;Campanula_latifolia"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&phyloref;Phyloreference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://phyloinformatics.net/phylo/Campanulaceae#Lobelia!Campanula -->
+
+    <owl:Class rdf:about="&Campanulaceae;Lobelia!Campanula">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&phyloref;excludes_lineage_to"/>
+                        <owl:hasValue rdf:resource="&Campanulaceae;Campanula_latifolia"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;CDAO_0000174"/>
+                        <owl:hasValue rdf:resource="&Campanulaceae;Lobelia"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&phyloref;Phyloreference"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Individuals
     //
     ///////////////////////////////////////////////////////////////////////////////////////
