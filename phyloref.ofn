@@ -1,4 +1,5 @@
 Prefix(:=<http://phyloinformatics.net/phyloref.owl#>)
+Prefix(obo:=<http://purl.obolibrary.org/obo/>)
 Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
 Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
 Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
@@ -19,10 +20,10 @@ Declaration(ObjectProperty(phyloref:has_Progenitor))
 Declaration(ObjectProperty(phyloref:has_Sibling))
 Declaration(ObjectProperty(phyloref:has_specifier))
 Declaration(ObjectProperty(phyloref:includes_group))
-Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000050>))
-Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000051>))
-Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/CDAO_0000149>))
-Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/CDAO_0000174>))
+Declaration(ObjectProperty(obo:BFO_0000050))
+Declaration(ObjectProperty(obo:BFO_0000051))
+Declaration(ObjectProperty(obo:CDAO_0000149))
+Declaration(ObjectProperty(obo:CDAO_0000174))
 
 ############################
 #   Object Properties
@@ -41,15 +42,15 @@ AnnotationAssertion(rdfs:label phyloref:has_specifier "has specifier")
 
 AnnotationAssertion(rdfs:label phyloref:includes_group "includes group")
 
-# Object Property: <http://purl.obolibrary.org/obo/BFO_0000050> (part of)
+# Object Property: obo:BFO_0000050 (part of)
 
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/BFO_0000050> "part of")
-InverseObjectProperties(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/BFO_0000051>)
+AnnotationAssertion(rdfs:label obo:BFO_0000050 "part of")
+InverseObjectProperties(obo:BFO_0000050 obo:BFO_0000051)
 
-# Object Property: <http://purl.obolibrary.org/obo/BFO_0000051> (has part)
+# Object Property: obo:BFO_0000051 (has part)
 
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/BFO_0000051> "has part")
-TransitiveObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000051>)
+AnnotationAssertion(rdfs:label obo:BFO_0000051 "has part")
+TransitiveObjectProperty(obo:BFO_0000051)
 
 
 
@@ -62,6 +63,6 @@ TransitiveObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000051>)
 EquivalentClasses(phyloref:SpecifiedGroup ObjectSomeValuesFrom(phyloref:has_specifier owl:Thing))
 
 
-SubObjectPropertyOf(ObjectPropertyChain(phyloref:has_Sibling <http://purl.obolibrary.org/obo/CDAO_0000174>) phyloref:excludes_lineage_to)
-SubObjectPropertyOf(ObjectPropertyChain(<http://purl.obolibrary.org/obo/CDAO_0000149> phyloref:has_Sibling) <http://purl.obolibrary.org/obo/CDAO_0000149>)
+SubObjectPropertyOf(ObjectPropertyChain(phyloref:has_Sibling obo:CDAO_0000174) phyloref:excludes_lineage_to)
+SubObjectPropertyOf(ObjectPropertyChain(obo:CDAO_0000149 phyloref:has_Sibling) obo:CDAO_0000149)
 )
