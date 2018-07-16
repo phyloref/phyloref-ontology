@@ -6,21 +6,21 @@
     <!ENTITY obo "http://purl.obolibrary.org/obo/" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY phyloref "http://phyloinformatics.net/phyloref.owl#" >
+    <!ENTITY phyloref "http://ontology.phyloref.org/phyloref.owl#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
 ]>
 
 
-<rdf:RDF xmlns="http://phyloinformatics.net/phylo/Tetrapoda#"
-     xml:base="http://phyloinformatics.net/phylo/Tetrapoda"
+<rdf:RDF xmlns="http://ontology.phyloref.org/demo/Tetrapoda#"
+     xml:base="http://ontology.phyloref.org/demo/Tetrapoda"
      xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:phyloref="http://phyloinformatics.net/phyloref.owl#"
+     xmlns:phyloref="http://ontology.phyloref.org/phyloref.owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-    <owl:Ontology rdf:about="http://phyloinformatics.net/phylo/Tetrapoda">
-        <owl:imports rdf:resource="http://phyloinformatics.net/phyloref.owl"/>
+    <owl:Ontology rdf:about="http://ontology.phyloref.org/demo/Tetrapoda">
+        <owl:imports rdf:resource="http://ontology.phyloref.org/phyloref.owl"/>
     </owl:Ontology>
     
 
@@ -58,19 +58,19 @@
     
 
 
-    <!-- http://phyloinformatics.net/phylo/Tetrapoda#Tetrapoda_(Crown) -->
+    <!-- http://ontology.phyloref.org/demo/Tetrapoda#Tetrapoda_(Crown) -->
 
-    <owl:Class rdf:about="http://phyloinformatics.net/phylo/Tetrapoda#Tetrapoda_(Crown)">
+    <owl:Class rdf:about="http://ontology.phyloref.org/demo/Tetrapoda#Tetrapoda_(Crown)">
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="&phyloref;excludes_lineage_to"/>
-                        <owl:hasValue rdf:resource="http://phyloinformatics.net/phylo/Tetrapoda#Tulerpeton"/>
+                        <owl:hasValue rdf:resource="http://ontology.phyloref.org/demo/Tetrapoda#Tulerpeton"/>
                     </owl:Restriction>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="&obo;CDAO_0000174"/>
-                        <owl:hasValue rdf:resource="http://phyloinformatics.net/phylo/Tetrapoda#Amniota"/>
+                        <owl:hasValue rdf:resource="http://ontology.phyloref.org/demo/Tetrapoda#Amniota"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -80,9 +80,9 @@
     
 
 
-    <!-- http://phyloinformatics.net/phylo/Tetrapoda#Tetrapoda_(Digit_hand) -->
+    <!-- http://ontology.phyloref.org/demo/Tetrapoda#Tetrapoda_(Digit_hand) -->
 
-    <owl:Class rdf:about="http://phyloinformatics.net/phylo/Tetrapoda#Tetrapoda_(Digit_hand)">
+    <owl:Class rdf:about="http://ontology.phyloref.org/demo/Tetrapoda#Tetrapoda_(Digit_hand)">
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -97,7 +97,7 @@
                     </owl:Restriction>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="&obo;CDAO_0000174"/>
-                        <owl:hasValue rdf:resource="http://phyloinformatics.net/phylo/Tetrapoda#Amniota"/>
+                        <owl:hasValue rdf:resource="http://ontology.phyloref.org/demo/Tetrapoda#Amniota"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -107,19 +107,19 @@
     
 
 
-    <!-- http://phyloinformatics.net/phylo/Tetrapoda#Tetrapoda_(Total) -->
+    <!-- http://ontology.phyloref.org/demo/Tetrapoda#Tetrapoda_(Total) -->
 
-    <owl:Class rdf:about="http://phyloinformatics.net/phylo/Tetrapoda#Tetrapoda_(Total)">
+    <owl:Class rdf:about="http://ontology.phyloref.org/demo/Tetrapoda#Tetrapoda_(Total)">
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="&phyloref;excludes_lineage_to"/>
-                        <owl:hasValue rdf:resource="http://phyloinformatics.net/phylo/Tetrapoda#Coelacanthimorpha"/>
+                        <owl:hasValue rdf:resource="http://ontology.phyloref.org/demo/Tetrapoda#Coelacanthimorpha"/>
                     </owl:Restriction>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="&obo;CDAO_0000174"/>
-                        <owl:hasValue rdf:resource="http://phyloinformatics.net/phylo/Tetrapoda#Amniota"/>
+                        <owl:hasValue rdf:resource="http://ontology.phyloref.org/demo/Tetrapoda#Amniota"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -182,123 +182,123 @@
     
 
 
-    <!-- http://phyloinformatics.net/phylo/Tetrapoda#Acanthostega -->
+    <!-- http://ontology.phyloref.org/demo/Tetrapoda#Acanthostega -->
 
-    <owl:Thing rdf:about="http://phyloinformatics.net/phylo/Tetrapoda#Acanthostega">
+    <owl:Thing rdf:about="http://ontology.phyloref.org/demo/Tetrapoda#Acanthostega">
         <rdf:type rdf:resource="&obo;CDAO_0000138"/>
         <rdf:type rdf:resource="&owl;NamedIndividual"/>
     </owl:Thing>
     
 
 
-    <!-- http://phyloinformatics.net/phylo/Tetrapoda#Amniota -->
+    <!-- http://ontology.phyloref.org/demo/Tetrapoda#Amniota -->
 
-    <owl:Thing rdf:about="http://phyloinformatics.net/phylo/Tetrapoda#Amniota">
+    <owl:Thing rdf:about="http://ontology.phyloref.org/demo/Tetrapoda#Amniota">
         <rdf:type rdf:resource="&obo;CDAO_0000138"/>
         <rdf:type rdf:resource="&owl;NamedIndividual"/>
     </owl:Thing>
     
 
 
-    <!-- http://phyloinformatics.net/phylo/Tetrapoda#Coelacanthimorpha -->
+    <!-- http://ontology.phyloref.org/demo/Tetrapoda#Coelacanthimorpha -->
 
-    <owl:Thing rdf:about="http://phyloinformatics.net/phylo/Tetrapoda#Coelacanthimorpha">
+    <owl:Thing rdf:about="http://ontology.phyloref.org/demo/Tetrapoda#Coelacanthimorpha">
         <rdf:type rdf:resource="&obo;CDAO_0000138"/>
         <rdf:type rdf:resource="&owl;NamedIndividual"/>
     </owl:Thing>
     
 
 
-    <!-- http://phyloinformatics.net/phylo/Tetrapoda#Dipnoi -->
+    <!-- http://ontology.phyloref.org/demo/Tetrapoda#Dipnoi -->
 
-    <owl:Thing rdf:about="http://phyloinformatics.net/phylo/Tetrapoda#Dipnoi">
+    <owl:Thing rdf:about="http://ontology.phyloref.org/demo/Tetrapoda#Dipnoi">
         <rdf:type rdf:resource="&obo;CDAO_0000138"/>
         <rdf:type rdf:resource="&owl;NamedIndividual"/>
     </owl:Thing>
     
 
 
-    <!-- http://phyloinformatics.net/phylo/Tetrapoda#Eusthenopteron -->
+    <!-- http://ontology.phyloref.org/demo/Tetrapoda#Eusthenopteron -->
 
-    <owl:Thing rdf:about="http://phyloinformatics.net/phylo/Tetrapoda#Eusthenopteron">
+    <owl:Thing rdf:about="http://ontology.phyloref.org/demo/Tetrapoda#Eusthenopteron">
         <rdf:type rdf:resource="&obo;CDAO_0000138"/>
         <rdf:type rdf:resource="&owl;NamedIndividual"/>
     </owl:Thing>
     
 
 
-    <!-- http://phyloinformatics.net/phylo/Tetrapoda#Lissamphibia -->
+    <!-- http://ontology.phyloref.org/demo/Tetrapoda#Lissamphibia -->
 
-    <owl:Thing rdf:about="http://phyloinformatics.net/phylo/Tetrapoda#Lissamphibia">
+    <owl:Thing rdf:about="http://ontology.phyloref.org/demo/Tetrapoda#Lissamphibia">
         <rdf:type rdf:resource="&obo;CDAO_0000138"/>
         <rdf:type rdf:resource="&owl;NamedIndividual"/>
-        <phyloref:has_Sibling rdf:resource="http://phyloinformatics.net/phylo/Tetrapoda#Amniota"/>
+        <phyloref:has_Sibling rdf:resource="http://ontology.phyloref.org/demo/Tetrapoda#Amniota"/>
     </owl:Thing>
     
 
 
-    <!-- http://phyloinformatics.net/phylo/Tetrapoda#Node_1 -->
+    <!-- http://ontology.phyloref.org/demo/Tetrapoda#Node_1 -->
 
-    <owl:Thing rdf:about="http://phyloinformatics.net/phylo/Tetrapoda#Node_1">
+    <owl:Thing rdf:about="http://ontology.phyloref.org/demo/Tetrapoda#Node_1">
         <rdf:type rdf:resource="&owl;NamedIndividual"/>
-        <obo:CDAO_0000149 rdf:resource="http://phyloinformatics.net/phylo/Tetrapoda#Coelacanthimorpha"/>
+        <obo:CDAO_0000149 rdf:resource="http://ontology.phyloref.org/demo/Tetrapoda#Coelacanthimorpha"/>
     </owl:Thing>
     
 
 
-    <!-- http://phyloinformatics.net/phylo/Tetrapoda#Node_2 -->
+    <!-- http://ontology.phyloref.org/demo/Tetrapoda#Node_2 -->
 
-    <owl:Thing rdf:about="http://phyloinformatics.net/phylo/Tetrapoda#Node_2">
+    <owl:Thing rdf:about="http://ontology.phyloref.org/demo/Tetrapoda#Node_2">
         <rdf:type rdf:resource="&owl;NamedIndividual"/>
-        <phyloref:has_Sibling rdf:resource="http://phyloinformatics.net/phylo/Tetrapoda#Coelacanthimorpha"/>
-        <obo:CDAO_0000149 rdf:resource="http://phyloinformatics.net/phylo/Tetrapoda#Dipnoi"/>
+        <phyloref:has_Sibling rdf:resource="http://ontology.phyloref.org/demo/Tetrapoda#Coelacanthimorpha"/>
+        <obo:CDAO_0000149 rdf:resource="http://ontology.phyloref.org/demo/Tetrapoda#Dipnoi"/>
     </owl:Thing>
     
 
 
-    <!-- http://phyloinformatics.net/phylo/Tetrapoda#Node_3 -->
+    <!-- http://ontology.phyloref.org/demo/Tetrapoda#Node_3 -->
 
-    <owl:Thing rdf:about="http://phyloinformatics.net/phylo/Tetrapoda#Node_3">
+    <owl:Thing rdf:about="http://ontology.phyloref.org/demo/Tetrapoda#Node_3">
         <rdf:type rdf:resource="&owl;NamedIndividual"/>
-        <phyloref:has_Sibling rdf:resource="http://phyloinformatics.net/phylo/Tetrapoda#Dipnoi"/>
-        <obo:CDAO_0000149 rdf:resource="http://phyloinformatics.net/phylo/Tetrapoda#Rhizodontidea"/>
+        <phyloref:has_Sibling rdf:resource="http://ontology.phyloref.org/demo/Tetrapoda#Dipnoi"/>
+        <obo:CDAO_0000149 rdf:resource="http://ontology.phyloref.org/demo/Tetrapoda#Rhizodontidea"/>
     </owl:Thing>
     
 
 
-    <!-- http://phyloinformatics.net/phylo/Tetrapoda#Node_4 -->
+    <!-- http://ontology.phyloref.org/demo/Tetrapoda#Node_4 -->
 
-    <owl:Thing rdf:about="http://phyloinformatics.net/phylo/Tetrapoda#Node_4">
+    <owl:Thing rdf:about="http://ontology.phyloref.org/demo/Tetrapoda#Node_4">
         <rdf:type rdf:resource="&owl;NamedIndividual"/>
-        <obo:CDAO_0000149 rdf:resource="http://phyloinformatics.net/phylo/Tetrapoda#Eusthenopteron"/>
-        <phyloref:has_Sibling rdf:resource="http://phyloinformatics.net/phylo/Tetrapoda#Rhizodontidea"/>
+        <obo:CDAO_0000149 rdf:resource="http://ontology.phyloref.org/demo/Tetrapoda#Eusthenopteron"/>
+        <phyloref:has_Sibling rdf:resource="http://ontology.phyloref.org/demo/Tetrapoda#Rhizodontidea"/>
     </owl:Thing>
     
 
 
-    <!-- http://phyloinformatics.net/phylo/Tetrapoda#Node_5 -->
+    <!-- http://ontology.phyloref.org/demo/Tetrapoda#Node_5 -->
 
-    <owl:Thing rdf:about="http://phyloinformatics.net/phylo/Tetrapoda#Node_5">
+    <owl:Thing rdf:about="http://ontology.phyloref.org/demo/Tetrapoda#Node_5">
         <rdf:type rdf:resource="&owl;NamedIndividual"/>
-        <phyloref:has_Sibling rdf:resource="http://phyloinformatics.net/phylo/Tetrapoda#Eusthenopteron"/>
-        <obo:CDAO_0000149 rdf:resource="http://phyloinformatics.net/phylo/Tetrapoda#Panderichthys"/>
+        <phyloref:has_Sibling rdf:resource="http://ontology.phyloref.org/demo/Tetrapoda#Eusthenopteron"/>
+        <obo:CDAO_0000149 rdf:resource="http://ontology.phyloref.org/demo/Tetrapoda#Panderichthys"/>
     </owl:Thing>
     
 
 
-    <!-- http://phyloinformatics.net/phylo/Tetrapoda#Node_6 -->
+    <!-- http://ontology.phyloref.org/demo/Tetrapoda#Node_6 -->
 
-    <owl:Thing rdf:about="http://phyloinformatics.net/phylo/Tetrapoda#Node_6">
+    <owl:Thing rdf:about="http://ontology.phyloref.org/demo/Tetrapoda#Node_6">
         <rdf:type rdf:resource="&owl;NamedIndividual"/>
-        <phyloref:has_Sibling rdf:resource="http://phyloinformatics.net/phylo/Tetrapoda#Panderichthys"/>
-        <obo:CDAO_0000149 rdf:resource="http://phyloinformatics.net/phylo/Tetrapoda#Tiktaalik"/>
+        <phyloref:has_Sibling rdf:resource="http://ontology.phyloref.org/demo/Tetrapoda#Panderichthys"/>
+        <obo:CDAO_0000149 rdf:resource="http://ontology.phyloref.org/demo/Tetrapoda#Tiktaalik"/>
     </owl:Thing>
     
 
 
-    <!-- http://phyloinformatics.net/phylo/Tetrapoda#Node_7 -->
+    <!-- http://ontology.phyloref.org/demo/Tetrapoda#Node_7 -->
 
-    <owl:Thing rdf:about="http://phyloinformatics.net/phylo/Tetrapoda#Node_7">
+    <owl:Thing rdf:about="http://ontology.phyloref.org/demo/Tetrapoda#Node_7">
         <rdf:type rdf:resource="&owl;NamedIndividual"/>
         <rdf:type>
             <owl:Restriction>
@@ -319,62 +319,62 @@
                 </owl:someValuesFrom>
             </owl:Restriction>
         </rdf:type>
-        <obo:CDAO_0000149 rdf:resource="http://phyloinformatics.net/phylo/Tetrapoda#Acanthostega"/>
-        <phyloref:has_Sibling rdf:resource="http://phyloinformatics.net/phylo/Tetrapoda#Tiktaalik"/>
+        <obo:CDAO_0000149 rdf:resource="http://ontology.phyloref.org/demo/Tetrapoda#Acanthostega"/>
+        <phyloref:has_Sibling rdf:resource="http://ontology.phyloref.org/demo/Tetrapoda#Tiktaalik"/>
     </owl:Thing>
     
 
 
-    <!-- http://phyloinformatics.net/phylo/Tetrapoda#Node_8 -->
+    <!-- http://ontology.phyloref.org/demo/Tetrapoda#Node_8 -->
 
-    <owl:Thing rdf:about="http://phyloinformatics.net/phylo/Tetrapoda#Node_8">
+    <owl:Thing rdf:about="http://ontology.phyloref.org/demo/Tetrapoda#Node_8">
         <rdf:type rdf:resource="&owl;NamedIndividual"/>
-        <phyloref:has_Sibling rdf:resource="http://phyloinformatics.net/phylo/Tetrapoda#Acanthostega"/>
-        <obo:CDAO_0000149 rdf:resource="http://phyloinformatics.net/phylo/Tetrapoda#Tulerpeton"/>
+        <phyloref:has_Sibling rdf:resource="http://ontology.phyloref.org/demo/Tetrapoda#Acanthostega"/>
+        <obo:CDAO_0000149 rdf:resource="http://ontology.phyloref.org/demo/Tetrapoda#Tulerpeton"/>
     </owl:Thing>
     
 
 
-    <!-- http://phyloinformatics.net/phylo/Tetrapoda#Node_9 -->
+    <!-- http://ontology.phyloref.org/demo/Tetrapoda#Node_9 -->
 
-    <owl:Thing rdf:about="http://phyloinformatics.net/phylo/Tetrapoda#Node_9">
+    <owl:Thing rdf:about="http://ontology.phyloref.org/demo/Tetrapoda#Node_9">
         <rdf:type rdf:resource="&owl;NamedIndividual"/>
-        <obo:CDAO_0000149 rdf:resource="http://phyloinformatics.net/phylo/Tetrapoda#Lissamphibia"/>
-        <phyloref:has_Sibling rdf:resource="http://phyloinformatics.net/phylo/Tetrapoda#Tulerpeton"/>
+        <obo:CDAO_0000149 rdf:resource="http://ontology.phyloref.org/demo/Tetrapoda#Lissamphibia"/>
+        <phyloref:has_Sibling rdf:resource="http://ontology.phyloref.org/demo/Tetrapoda#Tulerpeton"/>
     </owl:Thing>
     
 
 
-    <!-- http://phyloinformatics.net/phylo/Tetrapoda#Panderichthys -->
+    <!-- http://ontology.phyloref.org/demo/Tetrapoda#Panderichthys -->
 
-    <owl:Thing rdf:about="http://phyloinformatics.net/phylo/Tetrapoda#Panderichthys">
+    <owl:Thing rdf:about="http://ontology.phyloref.org/demo/Tetrapoda#Panderichthys">
         <rdf:type rdf:resource="&obo;CDAO_0000138"/>
         <rdf:type rdf:resource="&owl;NamedIndividual"/>
     </owl:Thing>
     
 
 
-    <!-- http://phyloinformatics.net/phylo/Tetrapoda#Rhizodontidea -->
+    <!-- http://ontology.phyloref.org/demo/Tetrapoda#Rhizodontidea -->
 
-    <owl:Thing rdf:about="http://phyloinformatics.net/phylo/Tetrapoda#Rhizodontidea">
+    <owl:Thing rdf:about="http://ontology.phyloref.org/demo/Tetrapoda#Rhizodontidea">
         <rdf:type rdf:resource="&obo;CDAO_0000138"/>
         <rdf:type rdf:resource="&owl;NamedIndividual"/>
     </owl:Thing>
     
 
 
-    <!-- http://phyloinformatics.net/phylo/Tetrapoda#Tiktaalik -->
+    <!-- http://ontology.phyloref.org/demo/Tetrapoda#Tiktaalik -->
 
-    <owl:Thing rdf:about="http://phyloinformatics.net/phylo/Tetrapoda#Tiktaalik">
+    <owl:Thing rdf:about="http://ontology.phyloref.org/demo/Tetrapoda#Tiktaalik">
         <rdf:type rdf:resource="&obo;CDAO_0000138"/>
         <rdf:type rdf:resource="&owl;NamedIndividual"/>
     </owl:Thing>
     
 
 
-    <!-- http://phyloinformatics.net/phylo/Tetrapoda#Tulerpeton -->
+    <!-- http://ontology.phyloref.org/demo/Tetrapoda#Tulerpeton -->
 
-    <owl:Thing rdf:about="http://phyloinformatics.net/phylo/Tetrapoda#Tulerpeton">
+    <owl:Thing rdf:about="http://ontology.phyloref.org/demo/Tetrapoda#Tulerpeton">
         <rdf:type rdf:resource="&obo;CDAO_0000138"/>
         <rdf:type rdf:resource="&owl;NamedIndividual"/>
     </owl:Thing>
