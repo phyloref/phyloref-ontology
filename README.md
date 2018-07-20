@@ -58,8 +58,8 @@ The Tetrapoda.owl example (same procedure: load into Protege, run reasoner, swit
 IRIs, deployment and versioning
 -------------------------------
 
-The Phyloreferencing Ontology uses as its base IRI `http://ontology.phyloref.org/phyloref.owl`, which is served by GitHub Pages from [`docs/phyloref.owl`](./docs/phyloref.owl). This file is only updated upon a new release of this ontology. Thus, it may not be identical to [`./phyloref.owl`](./phyloref.owl), whose latest development version can be found in the `master` branch. We recommend using the canonical IRI.
+The Phyloreferencing Ontology uses as its base IRI `http://ontology.phyloref.org/phyloref.owl`, which is served by GitHub Pages from [`docs/phyloref.owl`](./docs/phyloref.owl). The demonstration A-box ontologies use `http://ontology.phyloref.org/demo/[Demo Name].owl` as their base IRI. All of these IRIs are resolvable. A full list of demonstration ontologies can be found in the [`docs/demo`](./docs/demo) directory.
 
-The demonstration A-box ontologies use `http://ontology.phyloref.org/demo/` as their prefix, but can be imported from `http://ontology.phyloref.org/[Demo Name].owl`. A full list of demonstration ontologies can be found in the [`docs/`](./docs) directory.
+Files served from `http://ontology.phyloref.org` (i.e. those in the `docs/` directory) are only updated upon a new release of this ontology. Development versions of these ontologies can be found in this repository, and may be different from the files available at the canonical IRIs.
 
 [1]: http://dx.doi.org/10.1080/106351591007453 (P. C. Sereno, “The logical basis of phylogenetic taxonomy.,” Systematic Biology, vol. 54, no. 4, pp. 595–619, Aug. 2005.)
