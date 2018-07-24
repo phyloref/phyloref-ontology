@@ -67,6 +67,6 @@ Terms of reuse
 
 If you use the Phyloreferencing Ontology or other parts of this work in your research, for now please cite this repository.
 
-To the extent possible under law, the Phyloreferencing Project investigators who associated CC0 with this work have waived all copyright and related or neighboring rights to the Phyloreferencing Ontology and all other ontologies maintained within this repository. Please see the file [LICENSE](./LICENSE], or <http://creativecommons.org/publicdomain/zero/1.0/>.
+To the extent possible under law, the Phyloreferencing Project investigators who associated CC0 with this work have waived all copyright and related or neighboring rights to the Phyloreferencing Ontology and all other ontologies maintained within this repository. Please see the file [LICENSE](./LICENSE), or <http://creativecommons.org/publicdomain/zero/1.0/>.
 
 [1]: http://dx.doi.org/10.1080/106351591007453 (P. C. Sereno, “The logical basis of phylogenetic taxonomy.,” Systematic Biology, vol. 54, no. 4, pp. 595–619, Aug. 2005.)
