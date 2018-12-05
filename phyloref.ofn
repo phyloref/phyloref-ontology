@@ -1,0 +1,79 @@
+Prefix(:=<http://ontology.phyloref.org/phyloref.owl#>)
+Prefix(dc:=<http://purl.org/dc/elements/1.1/>)
+Prefix(obo:=<http://purl.obolibrary.org/obo/>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+Prefix(dcterms:=<http://purl.org/dc/terms/>)
+Prefix(owl2xml:=<http://www.w3.org/2006/12/owl2-xml#>)
+Prefix(phyloref:=<http://ontology.phyloref.org/phyloref.owl#>)
+
+
+Ontology(<http://ontology.phyloref.org/phyloref.owl>
+<http://ontology.phyloref.org/2018-12-04/phyloref.owl>
+Import(<http://purl.obolibrary.org/obo/cdao.owl>)
+Annotation(dc:creator "Hilmar Lapp")
+Annotation(dc:description "The Phyloreferencing Ontology is an application ontology for defining, computing with, and resolving phylogenetic clade definitions in the form of logic expressions."@en)
+Annotation(dc:rights <http://creativecommons.org/publicdomain/zero/1.0/>)
+Annotation(dc:title "Phyloreferencing Ontology"@en)
+Annotation(dcterms:rights <http://creativecommons.org/publicdomain/zero/1.0/>)
+Annotation(rdfs:seeAlso <https://github.com/phyloref/phyloref-ontology>)
+Annotation(rdfs:seeAlso <https://phyloref.org/>)
+
+Declaration(Class(phyloref:Phyloreference))
+Declaration(Class(phyloref:SpecifiedGroup))
+Declaration(Class(owl:Thing))
+Declaration(ObjectProperty(phyloref:excludes_lineage_to))
+Declaration(ObjectProperty(phyloref:has_Progenitor))
+Declaration(ObjectProperty(phyloref:has_Sibling))
+Declaration(ObjectProperty(phyloref:has_specifier))
+Declaration(ObjectProperty(phyloref:includes_group))
+Declaration(ObjectProperty(obo:BFO_0000050))
+Declaration(ObjectProperty(obo:BFO_0000051))
+Declaration(ObjectProperty(obo:CDAO_0000149))
+Declaration(ObjectProperty(obo:CDAO_0000174))
+Declaration(AnnotationProperty(dcterms:rights))
+
+############################
+#   Object Properties
+############################
+
+# Object Property: phyloref:has_Sibling (phyloref:has_Sibling)
+
+SubObjectPropertyOf(phyloref:has_Sibling phyloref:excludes_lineage_to)
+SymmetricObjectProperty(phyloref:has_Sibling)
+
+# Object Property: phyloref:has_specifier (has specifier)
+
+AnnotationAssertion(rdfs:label phyloref:has_specifier "has specifier")
+
+# Object Property: phyloref:includes_group (includes group)
+
+AnnotationAssertion(rdfs:label phyloref:includes_group "includes group")
+
+# Object Property: obo:BFO_0000050 (part of)
+
+AnnotationAssertion(rdfs:label obo:BFO_0000050 "part of")
+InverseObjectProperties(obo:BFO_0000050 obo:BFO_0000051)
+
+# Object Property: obo:BFO_0000051 (has part)
+
+AnnotationAssertion(rdfs:label obo:BFO_0000051 "has part")
+TransitiveObjectProperty(obo:BFO_0000051)
+
+
+
+############################
+#   Classes
+############################
+
+# Class: phyloref:SpecifiedGroup (phyloref:SpecifiedGroup)
+
+EquivalentClasses(phyloref:SpecifiedGroup ObjectSomeValuesFrom(phyloref:has_specifier owl:Thing))
+
+
+SubObjectPropertyOf(ObjectPropertyChain(phyloref:has_Sibling obo:CDAO_0000174) phyloref:excludes_lineage_to)
+SubObjectPropertyOf(ObjectPropertyChain(obo:CDAO_0000149 phyloref:has_Sibling) obo:CDAO_0000149)
+)
