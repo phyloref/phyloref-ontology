@@ -34,7 +34,7 @@ One of the express design goals of TCAN is to avoid as much as possible creating
 (2) Select subsets suitable for its application domain from each source vocabulary, and drop extraneous axioms and annotations.
 (3) Apply error corrections and replace non-standard annotation properties with standard ones. Ensure there are no parse nor reasoner errors.
 (4) Supplement subclass, type, class expression and other axioms to promote alignment and interoperability between the source ontologies.
-(5) Ensure expressity is at least within the OWL-DL, and ideally within the OWL-EL profile.")
+(5) Ensure expressivity is at least within the OWL-DL, and ideally within the OWL-EL profile.")
 
 Declaration(Class(openbiodiv:ScientificName))
 Declaration(Class(openbiodiv:TaxonomicConcept))
