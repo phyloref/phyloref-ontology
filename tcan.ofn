@@ -1,0 +1,2123 @@
+Prefix(:=<http://ontology.phyloref.org/tcan.owl>)
+Prefix(dc:=<http://purl.org/dc/elements/1.1/>)
+Prefix(tc:=<http://rs.tdwg.org/ontology/voc/TaxonConcept#>)
+Prefix(tn:=<http://rs.tdwg.org/ontology/voc/TaxonName#>)
+Prefix(dwc:=<http://rs.tdwg.org/dwc/terms/>)
+Prefix(obo:=<http://purl.obolibrary.org/obo/>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+Prefix(skos:=<http://www.w3.org/2004/02/skos/core#>)
+Prefix(dwciri:=<http://rs.tdwg.org/dwc/iri/>)
+Prefix(dcterms:=<http://purl.org/dc/terms/>)
+Prefix(tdwgcmn:=<http://rs.tdwg.org/ontology/voc/Common#>)
+Prefix(openbiodiv:=<http://openbiodiv.net/>)
+
+
+Ontology(<http://ontology.phyloref.org/tcan.owl>
+Annotation(dc:creator "Hilmar Lapp")
+Annotation(dc:rights "Axioms under the namespace of this ontology are released under the Creative Commons Zero 1.0 public domain waiver. Terms and axioms imported from other sources are under the licenses of the vocabularies they are defined in (see rdfs:isDefinedBy annotations).")
+Annotation(dc:title "Ontology for Taxon Concepts And Names")
+Annotation(dcterms:source openbiodiv:ontology)
+Annotation(dcterms:source obo:NOMEN)
+Annotation(dcterms:source <http://rs.tdwg.org/ontology/voc/TaxonConcept>)
+Annotation(dcterms:source <http://rs.tdwg.org/ontology/voc/TaxonName>)
+Annotation(rdfs:comment "The Ontology for Taxon Concepts And Names (TCAN) is an application ontology for expressing, matching, and resolving taxon concepts and their names as encountered in the wild, such as in publications, taxon mentions, clade definitions, etc. One of the key use cases for which it is being developed is for expressing and matching specifiers (in essence taxon concepts) used in clade definitions.
+
+The TCAN ontology is a synthesis of a variety of relevant vocabularies and ontologies, including in particular the TDWG TaxonName, TaxonConcept, and DarwinCore vocabularies; the NOMEN ontology (SpeciesFileGroup); the OpenBiodiv Ontology (Pensoft); and the Comparative Data Analysis Ontology (CDAO).
+
+One of the express design goals of TCAN is to avoid as much as possible creating new terms, whether classes or properties. Hence, there will be few if any terms here that are not already present in its source vocabularies. Instead, TCAN considers its added value in the following.
+(1) Provide an ontology for its application domain that stands on its own, meaning all necessary axioms are either directly included, or are imported from locations that resolve automatically and reliably.
+(2) Select subsets suitable for its application domain from each source vocabulary, and drop extraneous axioms and annotations.
+(3) Apply error corrections and replace non-standard annotation properties with standard ones. Ensure there are no parse nor reasoner errors.
+(4) Supplement subclass, type, class expression and other axioms to promote alignment and interoperability between the source ontologies.
+(5) Ensure expressity is at least within the OWL-DL, and ideally within the OWL-EL profile.")
+
+Declaration(Class(openbiodiv:ScientificName))
+Declaration(Class(openbiodiv:TaxonomicConcept))
+Declaration(Class(openbiodiv:TaxonomicConceptLabel))
+Declaration(Class(openbiodiv:TaxonomicName))
+Declaration(Class(openbiodiv:VernacularName))
+Declaration(Class(obo:CDAO_0000138))
+Declaration(Class(obo:NOMEN_0000003))
+Declaration(Class(obo:NOMEN_0000005))
+Declaration(Class(obo:NOMEN_0000006))
+Declaration(Class(obo:NOMEN_0000007))
+Declaration(Class(obo:NOMEN_0000008))
+Declaration(Class(obo:NOMEN_0000009))
+Declaration(Class(obo:NOMEN_0000010))
+Declaration(Class(obo:NOMEN_0000011))
+Declaration(Class(obo:NOMEN_0000014))
+Declaration(Class(obo:NOMEN_0000015))
+Declaration(Class(obo:NOMEN_0000016))
+Declaration(Class(obo:NOMEN_0000019))
+Declaration(Class(obo:NOMEN_0000020))
+Declaration(Class(obo:NOMEN_0000026))
+Declaration(Class(obo:NOMEN_0000027))
+Declaration(Class(obo:NOMEN_0000029))
+Declaration(Class(obo:NOMEN_0000030))
+Declaration(Class(obo:NOMEN_0000033))
+Declaration(Class(obo:NOMEN_0000034))
+Declaration(Class(obo:NOMEN_0000036))
+Declaration(Class(obo:NOMEN_0000037))
+Declaration(Class(obo:NOMEN_0000043))
+Declaration(Class(obo:NOMEN_0000055))
+Declaration(Class(obo:NOMEN_0000056))
+Declaration(Class(obo:NOMEN_0000057))
+Declaration(Class(obo:NOMEN_0000062))
+Declaration(Class(obo:NOMEN_0000063))
+Declaration(Class(obo:NOMEN_0000064))
+Declaration(Class(obo:NOMEN_0000065))
+Declaration(Class(obo:NOMEN_0000066))
+Declaration(Class(obo:NOMEN_0000067))
+Declaration(Class(obo:NOMEN_0000068))
+Declaration(Class(obo:NOMEN_0000069))
+Declaration(Class(obo:NOMEN_0000070))
+Declaration(Class(obo:NOMEN_0000071))
+Declaration(Class(obo:NOMEN_0000072))
+Declaration(Class(obo:NOMEN_0000073))
+Declaration(Class(obo:NOMEN_0000074))
+Declaration(Class(obo:NOMEN_0000075))
+Declaration(Class(obo:NOMEN_0000076))
+Declaration(Class(obo:NOMEN_0000077))
+Declaration(Class(obo:NOMEN_0000078))
+Declaration(Class(obo:NOMEN_0000079))
+Declaration(Class(obo:NOMEN_0000080))
+Declaration(Class(obo:NOMEN_0000081))
+Declaration(Class(obo:NOMEN_0000082))
+Declaration(Class(obo:NOMEN_0000083))
+Declaration(Class(obo:NOMEN_0000084))
+Declaration(Class(obo:NOMEN_0000085))
+Declaration(Class(obo:NOMEN_0000086))
+Declaration(Class(obo:NOMEN_0000087))
+Declaration(Class(obo:NOMEN_0000088))
+Declaration(Class(obo:NOMEN_0000089))
+Declaration(Class(obo:NOMEN_0000090))
+Declaration(Class(obo:NOMEN_0000091))
+Declaration(Class(obo:NOMEN_0000092))
+Declaration(Class(obo:NOMEN_0000104))
+Declaration(Class(obo:NOMEN_0000107))
+Declaration(Class(obo:NOMEN_0000109))
+Declaration(Class(obo:NOMEN_0000110))
+Declaration(Class(obo:NOMEN_0000111))
+Declaration(Class(obo:NOMEN_0000113))
+Declaration(Class(obo:NOMEN_0000114))
+Declaration(Class(obo:NOMEN_0000115))
+Declaration(Class(obo:NOMEN_0000116))
+Declaration(Class(obo:NOMEN_0000117))
+Declaration(Class(obo:NOMEN_0000118))
+Declaration(Class(obo:NOMEN_0000125))
+Declaration(Class(obo:NOMEN_0000126))
+Declaration(Class(obo:NOMEN_0000127))
+Declaration(Class(obo:NOMEN_0000128))
+Declaration(Class(obo:NOMEN_0000129))
+Declaration(Class(obo:NOMEN_0000168))
+Declaration(Class(obo:NOMEN_0000169))
+Declaration(Class(obo:NOMEN_0000174))
+Declaration(Class(obo:NOMEN_0000191))
+Declaration(Class(obo:NOMEN_0000192))
+Declaration(Class(obo:NOMEN_0000193))
+Declaration(Class(obo:NOMEN_0000194))
+Declaration(Class(obo:NOMEN_0000197))
+Declaration(Class(obo:NOMEN_0000199))
+Declaration(Class(obo:NOMEN_0000201))
+Declaration(Class(obo:NOMEN_0000206))
+Declaration(Class(obo:NOMEN_0000217))
+Declaration(Class(obo:NOMEN_0000223))
+Declaration(Class(obo:NOMEN_0000224))
+Declaration(Class(obo:NOMEN_0000225))
+Declaration(Class(obo:NOMEN_0000226))
+Declaration(Class(obo:NOMEN_0000293))
+Declaration(Class(obo:NOMEN_0000295))
+Declaration(Class(obo:NOMEN_0000296))
+Declaration(Class(obo:NOMEN_0000297))
+Declaration(Class(obo:NOMEN_0000298))
+Declaration(Class(obo:NOMEN_0000299))
+Declaration(Class(obo:NOMEN_0000300))
+Declaration(Class(obo:NOMEN_0000301))
+Declaration(Class(obo:NOMEN_0000302))
+Declaration(Class(obo:NOMEN_0000304))
+Declaration(Class(obo:NOMEN_0000305))
+Declaration(Class(obo:NOMEN_0000306))
+Declaration(Class(obo:NOMEN_0000307))
+Declaration(Class(obo:NOMEN_0000308))
+Declaration(Class(obo:NOMEN_0000309))
+Declaration(Class(obo:NOMEN_0000310))
+Declaration(Class(obo:NOMEN_0000311))
+Declaration(Class(obo:NOMEN_0000312))
+Declaration(Class(obo:NOMEN_0000313))
+Declaration(Class(obo:NOMEN_0000314))
+Declaration(Class(obo:NOMEN_0000315))
+Declaration(Class(obo:NOMEN_0000316))
+Declaration(Class(obo:NOMEN_0000317))
+Declaration(Class(obo:NOMEN_0000318))
+Declaration(Class(obo:NOMEN_0000319))
+Declaration(Class(obo:NOMEN_0000320))
+Declaration(Class(obo:NOMEN_0000321))
+Declaration(Class(obo:NOMEN_0000322))
+Declaration(Class(obo:NOMEN_0000323))
+Declaration(Class(obo:NOMEN_0000324))
+Declaration(Class(obo:NOMEN_0000325))
+Declaration(Class(obo:NOMEN_0000326))
+Declaration(Class(obo:NOMEN_0000327))
+Declaration(Class(obo:NOMEN_0000328))
+Declaration(Class(obo:NOMEN_0000329))
+Declaration(Class(obo:NOMEN_0000330))
+Declaration(Class(obo:NOMEN_0000331))
+Declaration(Class(obo:NOMEN_0000332))
+Declaration(Class(obo:NOMEN_0000333))
+Declaration(Class(obo:NOMEN_0000334))
+Declaration(Class(obo:NOMEN_0000335))
+Declaration(Class(obo:NOMEN_0000336))
+Declaration(Class(obo:NOMEN_0000337))
+Declaration(Class(obo:NOMEN_0000338))
+Declaration(Class(obo:NOMEN_0000339))
+Declaration(Class(obo:NOMEN_0000341))
+Declaration(Class(obo:NOMEN_0000342))
+Declaration(Class(obo:NOMEN_0000343))
+Declaration(Class(obo:NOMEN_0000344))
+Declaration(Class(obo:NOMEN_0000345))
+Declaration(Class(obo:NOMEN_0000346))
+Declaration(Class(obo:NOMEN_0000347))
+Declaration(Class(obo:NOMEN_0000348))
+Declaration(Class(obo:NOMEN_0000349))
+Declaration(Class(obo:NOMEN_0000350))
+Declaration(Class(obo:NOMEN_0000351))
+Declaration(Class(obo:NOMEN_0000352))
+Declaration(Class(obo:NOMEN_0000353))
+Declaration(Class(obo:NOMEN_0000354))
+Declaration(Class(obo:NOMEN_0000355))
+Declaration(Class(obo:NOMEN_0000356))
+Declaration(Class(obo:NOMEN_0000357))
+Declaration(Class(obo:NOMEN_0000358))
+Declaration(Class(obo:NOMEN_0000359))
+Declaration(Class(obo:NOMEN_0000360))
+Declaration(Class(obo:NOMEN_0000361))
+Declaration(Class(obo:NOMEN_0000363))
+Declaration(Class(obo:NOMEN_0000364))
+Declaration(Class(obo:NOMEN_0000365))
+Declaration(Class(obo:NOMEN_0000366))
+Declaration(Class(obo:NOMEN_0000367))
+Declaration(Class(obo:NOMEN_0000368))
+Declaration(Class(obo:NOMEN_0000377))
+Declaration(Class(obo:NOMEN_0000379))
+Declaration(Class(obo:NOMEN_0000380))
+Declaration(Class(obo:NOMEN_0000381))
+Declaration(Class(obo:NOMEN_0000382))
+Declaration(Class(obo:NOMEN_0000383))
+Declaration(Class(obo:NOMEN_0000384))
+Declaration(Class(obo:NOMEN_0000385))
+Declaration(Class(obo:NOMEN_0000386))
+Declaration(Class(obo:NOMEN_0000387))
+Declaration(Class(obo:NOMEN_0000388))
+Declaration(Class(dwc:Taxon))
+Declaration(Class(<http://rs.tdwg.org/ontology/voc/Specimen#Specimen>))
+Declaration(Class(tc:TaxonConcept))
+Declaration(Class(tn:NomenclaturalCodeTerm))
+Declaration(Class(tn:NomenclaturalType))
+Declaration(Class(tn:NomenclaturalTypeTypeTerm))
+Declaration(Class(tn:TaxonName))
+Declaration(Class(<http://rs.tdwg.org/ontology/voc/TaxonRank#TaxonRankTerm>))
+Declaration(ObjectProperty(openbiodiv:nameAccordingTo))
+Declaration(ObjectProperty(openbiodiv:replacementName))
+Declaration(ObjectProperty(openbiodiv:scientificName))
+Declaration(ObjectProperty(openbiodiv:taxonomicConceptLabel))
+Declaration(ObjectProperty(openbiodiv:taxonomicName))
+Declaration(ObjectProperty(dwciri:nameAccordingTo))
+Declaration(ObjectProperty(dwciri:scientificName))
+Declaration(ObjectProperty(tn:basionymFor))
+Declaration(ObjectProperty(tn:hasBasionym))
+Declaration(ObjectProperty(tn:nomenclaturalCode))
+Declaration(ObjectProperty(tn:rank))
+Declaration(ObjectProperty(tn:typeName))
+Declaration(ObjectProperty(tn:typeOfType))
+Declaration(ObjectProperty(tn:typeSpecimen))
+Declaration(ObjectProperty(tn:typifiedBy))
+Declaration(DataProperty(tn:authorship))
+Declaration(DataProperty(tn:cultivarNameGroup))
+Declaration(DataProperty(tn:genusPart))
+Declaration(DataProperty(tn:infragenericEpithet))
+Declaration(DataProperty(tn:infraspecificEpithet))
+Declaration(DataProperty(tn:nameComplete))
+Declaration(DataProperty(tn:rankString))
+Declaration(DataProperty(tn:specificEpithet))
+Declaration(DataProperty(tn:typificationString))
+Declaration(DataProperty(tn:uninomial))
+Declaration(DataProperty(tn:year))
+Declaration(NamedIndividual(<http://ontology.phyloref.org/tcan.owl#ICNP>))
+Declaration(NamedIndividual(<http://ontology.phyloref.org/tcan.owl#ICTV>))
+Declaration(NamedIndividual(tn:Allolectotype))
+Declaration(NamedIndividual(tn:Alloneotype))
+Declaration(NamedIndividual(tn:Allotype))
+Declaration(NamedIndividual(tn:Bacteriological))
+Declaration(NamedIndividual(tn:Cotype))
+Declaration(NamedIndividual(tn:Epitype))
+Declaration(NamedIndividual(tn:ExEpitype))
+Declaration(NamedIndividual(tn:ExHolotype))
+Declaration(NamedIndividual(tn:ExIsotype))
+Declaration(NamedIndividual(tn:ExLectotype))
+Declaration(NamedIndividual(tn:ExNeotype))
+Declaration(NamedIndividual(tn:ExParatype))
+Declaration(NamedIndividual(tn:ExSyntype))
+Declaration(NamedIndividual(tn:ExType))
+Declaration(NamedIndividual(tn:Hapantotype))
+Declaration(NamedIndividual(tn:Holotype))
+Declaration(NamedIndividual(tn:ICBN))
+Declaration(NamedIndividual(tn:ICNCP))
+Declaration(NamedIndividual(tn:ICZN))
+Declaration(NamedIndividual(tn:Iconotype))
+Declaration(NamedIndividual(tn:Isolectotype))
+Declaration(NamedIndividual(tn:Isoneotype))
+Declaration(NamedIndividual(tn:Isosyntype))
+Declaration(NamedIndividual(tn:Isotype))
+Declaration(NamedIndividual(tn:Lectotype))
+Declaration(NamedIndividual(tn:Neotype))
+Declaration(NamedIndividual(tn:NotAType))
+Declaration(NamedIndividual(tn:Paralectotype))
+Declaration(NamedIndividual(tn:Paraneotype))
+Declaration(NamedIndividual(tn:Paratype))
+Declaration(NamedIndividual(tn:Plastoholotype))
+Declaration(NamedIndividual(tn:Plastoisotype))
+Declaration(NamedIndividual(tn:Plastolectotype))
+Declaration(NamedIndividual(tn:Plastoneotype))
+Declaration(NamedIndividual(tn:Plastoparatype))
+Declaration(NamedIndividual(tn:Plastosyntype))
+Declaration(NamedIndividual(tn:Plastotype))
+Declaration(NamedIndividual(tn:SecondaryType))
+Declaration(NamedIndividual(tn:SupplementaryType))
+Declaration(NamedIndividual(tn:Syntype))
+Declaration(NamedIndividual(tn:Topotype))
+Declaration(NamedIndividual(tn:Type))
+Declaration(NamedIndividual(tn:Viral))
+Declaration(AnnotationProperty(obo:NOMEN_0000017))
+Declaration(AnnotationProperty(obo:NOMEN_0000018))
+Declaration(AnnotationProperty(dc:creator))
+Declaration(AnnotationProperty(dc:description))
+Declaration(AnnotationProperty(dc:publisher))
+Declaration(AnnotationProperty(dc:relation))
+Declaration(AnnotationProperty(dc:rights))
+Declaration(AnnotationProperty(dc:title))
+Declaration(AnnotationProperty(dcterms:issued))
+Declaration(AnnotationProperty(dcterms:modified))
+Declaration(AnnotationProperty(dcterms:source))
+Declaration(AnnotationProperty(tdwgcmn:tcsEquivalence))
+Declaration(AnnotationProperty(skos:altLabel))
+Declaration(AnnotationProperty(skos:prefLabel))
+############################
+#   Annotation Properties
+############################
+
+# Annotation Property: obo:NOMEN_0000017 (synonym)
+
+AnnotationAssertion(rdfs:label obo:NOMEN_0000017 "synonym"@en)
+
+# Annotation Property: obo:NOMEN_0000018 (abbreviation)
+
+AnnotationAssertion(rdfs:label obo:NOMEN_0000018 "abbreviation"@en)
+
+
+############################
+#   Object Properties
+############################
+
+# Object Property: openbiodiv:nameAccordingTo (openbiodiv:nameAccordingTo)
+
+AnnotationAssertion(rdfs:comment openbiodiv:nameAccordingTo "The reference to the source in which the specific taxonomic
+    concept circumscription is defined or implied - traditionally signified by
+    the Latin 'sensu' or 'sec.'' (from secundum, meaning 'according to').
+    For taxa that are relevantly circumscribed by identifications, a reference
+    to the keys, monographs, experts and other sources should be given. Should
+    only be used with IRI's"@en)
+AnnotationAssertion(rdfs:isDefinedBy openbiodiv:nameAccordingTo openbiodiv:openbiodiv-ontology)
+SubObjectPropertyOf(openbiodiv:nameAccordingTo dwciri:nameAccordingTo)
+
+# Object Property: openbiodiv:replacementName (has replacement name)
+
+AnnotationAssertion(rdfs:comment openbiodiv:replacementName "This is a uni-directional property. Its meaning
+    is that one Linnaean name links to a different Linnaean name via the
+    usage of this property, then the object name is more accurate and should be
+    preferred given the information that system currently holds. This property is only
+    defined for Linnaean names."@en)
+AnnotationAssertion(rdfs:isDefinedBy openbiodiv:replacementName openbiodiv:openbiodiv-ontology)
+AnnotationAssertion(rdfs:label openbiodiv:replacementName "has replacement name"@en)
+TransitiveObjectProperty(openbiodiv:replacementName)
+
+# Object Property: openbiodiv:scientificName (has scientific name)
+
+AnnotationAssertion(rdfs:isDefinedBy openbiodiv:scientificName openbiodiv:openbiodiv-ontology)
+AnnotationAssertion(rdfs:label openbiodiv:scientificName "has scientific name"@en)
+SubObjectPropertyOf(openbiodiv:scientificName openbiodiv:taxonomicName)
+SubObjectPropertyOf(openbiodiv:scientificName dwciri:scientificName)
+ObjectPropertyDomain(openbiodiv:scientificName openbiodiv:TaxonomicConcept)
+ObjectPropertyRange(openbiodiv:scientificName openbiodiv:ScientificName)
+
+# Object Property: openbiodiv:taxonomicConceptLabel (has taxon concept label)
+
+AnnotationAssertion(rdfs:isDefinedBy openbiodiv:taxonomicConceptLabel openbiodiv:openbiodiv-ontology)
+AnnotationAssertion(rdfs:label openbiodiv:taxonomicConceptLabel "has taxon concept label"@en)
+SubObjectPropertyOf(openbiodiv:taxonomicConceptLabel openbiodiv:scientificName)
+ObjectPropertyDomain(openbiodiv:taxonomicConceptLabel openbiodiv:TaxonomicConcept)
+ObjectPropertyRange(openbiodiv:taxonomicConceptLabel openbiodiv:TaxonomicConceptLabel)
+
+# Object Property: openbiodiv:taxonomicName (has taxonomic name)
+
+AnnotationAssertion(rdfs:isDefinedBy openbiodiv:taxonomicName openbiodiv:openbiodiv-ontology)
+AnnotationAssertion(rdfs:label openbiodiv:taxonomicName "has taxonomic name"@en)
+ObjectPropertyDomain(openbiodiv:taxonomicName openbiodiv:TaxonomicConcept)
+ObjectPropertyRange(openbiodiv:taxonomicName openbiodiv:TaxonomicName)
+
+# Object Property: dwciri:nameAccordingTo (name according to)
+
+AnnotationAssertion(rdfs:comment dwciri:nameAccordingTo "the IRI version of dwc:nameAccordingTo"@en)
+AnnotationAssertion(rdfs:isDefinedBy dwciri:nameAccordingTo <http://rs.tdwg.org/dwc/iri/>)
+AnnotationAssertion(rdfs:label dwciri:nameAccordingTo "name according to"@en)
+AnnotationAssertion(rdfs:seeAlso dwciri:nameAccordingTo dwc:nameAccordingTo)
+
+# Object Property: dwciri:scientificName (has scientific name)
+
+AnnotationAssertion(rdfs:comment dwciri:scientificName "the IRI version of dwc:scientificName"@en)
+AnnotationAssertion(rdfs:isDefinedBy dwciri:scientificName <http://rs.tdwg.org/dwc/iri/>)
+AnnotationAssertion(rdfs:label dwciri:scientificName "has scientific name"@en)
+AnnotationAssertion(rdfs:seeAlso dwciri:scientificName dwc:scientificName)
+
+# Object Property: tn:basionymFor (Basionym For)
+
+AnnotationAssertion(tdwgcmn:tcsEquivalence tn:basionymFor "No equivalent in TCS but is inverse of ScientificName/Basionym ")
+AnnotationAssertion(rdfs:comment tn:basionymFor " Relationship between a basionym and a new combination of the name. ")
+AnnotationAssertion(rdfs:isDefinedBy tn:basionymFor <http://rs.tdwg.org/ontology/voc/TaxonName>)
+AnnotationAssertion(rdfs:label tn:basionymFor "Basionym For")
+InverseObjectProperties(tn:basionymFor tn:hasBasionym)
+ObjectPropertyDomain(tn:basionymFor tn:TaxonName)
+ObjectPropertyRange(tn:basionymFor tn:TaxonName)
+
+# Object Property: tn:hasBasionym (Has Basionym)
+
+AnnotationAssertion(tdwgcmn:tcsEquivalence tn:hasBasionym "ScientificName/Basionym")
+AnnotationAssertion(rdfs:comment tn:hasBasionym " The basionym of this name if it is a new combination. The current name is a recombination (comb. nov.) of the name pointed to and the name pointed to is not, itself, a
+         recombination.")
+AnnotationAssertion(rdfs:isDefinedBy tn:hasBasionym <http://rs.tdwg.org/ontology/voc/TaxonName>)
+AnnotationAssertion(rdfs:label tn:hasBasionym "Has Basionym")
+ObjectPropertyDomain(tn:hasBasionym tn:TaxonName)
+ObjectPropertyRange(tn:hasBasionym tn:TaxonName)
+
+# Object Property: tn:nomenclaturalCode (Nomenclatural Code)
+
+AnnotationAssertion(tdwgcmn:tcsEquivalence tn:nomenclaturalCode "ScientificName@nomenclaturalCode")
+AnnotationAssertion(rdfs:comment tn:nomenclaturalCode " The nomenclatural code that governs this name. By definition all taxon names are governed by one of the codes of nomenclature. These include ICBN, ICZN, ICNCP and others.")
+AnnotationAssertion(rdfs:isDefinedBy tn:nomenclaturalCode <http://rs.tdwg.org/ontology/voc/TaxonName>)
+AnnotationAssertion(rdfs:label tn:nomenclaturalCode "Nomenclatural Code")
+ObjectPropertyDomain(tn:nomenclaturalCode tn:TaxonName)
+ObjectPropertyRange(tn:nomenclaturalCode tn:NomenclaturalCodeTerm)
+
+# Object Property: tn:rank (Rank)
+
+AnnotationAssertion(dc:relation tn:rank tn:rankString)
+AnnotationAssertion(tdwgcmn:tcsEquivalence tn:rank "ScientificName/Rank/@code")
+AnnotationAssertion(rdfs:comment tn:rank "The taxonomic rank of this name. This is a link to an instance of TaxonomicRank. Compare with the rankString property.")
+AnnotationAssertion(rdfs:isDefinedBy tn:rank <http://rs.tdwg.org/ontology/voc/TaxonName>)
+AnnotationAssertion(rdfs:label tn:rank "Rank")
+ObjectPropertyDomain(tn:rank tn:TaxonName)
+ObjectPropertyRange(tn:rank <http://rs.tdwg.org/ontology/voc/TaxonRank#TaxonRankTerm>)
+
+# Object Property: tn:typeName (Type Name)
+
+AnnotationAssertion(rdfs:comment tn:typeName "The name that is the type. TaxonNames at ranks above species level are typified by the NAME of a lower taxon. Ultimately, by following the chain of type names, all names resolve to
+         a type species and so a type specimen. This property is mutually exclusive with typeSpecimen. A name can't have both. Equivalent to TCS ScientificName/Typification/TypeName. ")
+AnnotationAssertion(rdfs:isDefinedBy tn:typeName <http://rs.tdwg.org/ontology/voc/TaxonName>)
+AnnotationAssertion(rdfs:label tn:typeName "Type Name")
+ObjectPropertyDomain(tn:typeName tn:NomenclaturalType)
+ObjectPropertyRange(tn:typeName tn:TaxonName)
+
+# Object Property: tn:typeOfType (Type of Type)
+
+AnnotationAssertion(rdfs:comment tn:typeOfType "The kind of type this specimen is e.g. paratype, isotype, holotype etc. Types can be of different kinds. Equivalent to TCS
+         ScientificName/Typification/TypeVouchers/TypeVoucher@typeOfType ")
+AnnotationAssertion(rdfs:isDefinedBy tn:typeOfType <http://rs.tdwg.org/ontology/voc/TaxonName>)
+AnnotationAssertion(rdfs:label tn:typeOfType "Type of Type")
+ObjectPropertyDomain(tn:typeOfType tn:NomenclaturalType)
+ObjectPropertyRange(tn:typeOfType tn:NomenclaturalTypeTypeTerm)
+
+# Object Property: tn:typeSpecimen (Type Specimen)
+
+AnnotationAssertion(rdfs:comment tn:typeSpecimen "The specimen that is the type. TaxonNames at ranks of family and below are typified by a specimen. This property is mutually exclusive with typeName. Equivalent to TCS
+         ScientificName/Typification/TypeVouchers/TypeVoucher ")
+AnnotationAssertion(rdfs:isDefinedBy tn:typeSpecimen <http://rs.tdwg.org/ontology/voc/TaxonName>)
+AnnotationAssertion(rdfs:label tn:typeSpecimen "Type Specimen")
+ObjectPropertyDomain(tn:typeSpecimen tn:NomenclaturalType)
+ObjectPropertyRange(tn:typeSpecimen <http://rs.tdwg.org/ontology/voc/Specimen#Specimen>)
+
+# Object Property: tn:typifiedBy (Typified By)
+
+AnnotationAssertion(dc:relation tn:typifiedBy tn:typificationString)
+AnnotationAssertion(tdwgcmn:tcsEquivalence tn:typifiedBy "ScientificName/Typification")
+AnnotationAssertion(rdfs:comment tn:typifiedBy "A NomenclaturalType that typifies this name. An instance of NomenclaturalType that contains a type specimen or name for this name. See also note with NomenclaturalType class. See
+         also the typificationString property.")
+AnnotationAssertion(rdfs:isDefinedBy tn:typifiedBy <http://rs.tdwg.org/ontology/voc/TaxonName>)
+AnnotationAssertion(rdfs:label tn:typifiedBy "Typified By")
+ObjectPropertyDomain(tn:typifiedBy tn:TaxonName)
+ObjectPropertyRange(tn:typifiedBy tn:NomenclaturalType)
+
+
+############################
+#   Data Properties
+############################
+
+# Data Property: tn:authorship (Authorship)
+
+AnnotationAssertion(tdwgcmn:tcsEquivalence tn:authorship "ScientificName/CanonicalAuthorship/Simple")
+AnnotationAssertion(rdfs:comment tn:authorship " The full author string used for this name. The full code-appropriate author team string for this name at this rank. Use this property for all names including both original
+         combinations and new combinations of bi and trinomial names (where some of the authors may be in brackets). If the TaxonName instance contains any details about authorship a representation of
+         them should be included in this property.")
+AnnotationAssertion(rdfs:isDefinedBy tn:authorship <http://rs.tdwg.org/ontology/voc/TaxonName>)
+AnnotationAssertion(rdfs:label tn:authorship "Authorship")
+DataPropertyDomain(tn:authorship tn:TaxonName)
+DataPropertyRange(tn:authorship xsd:string)
+
+# Data Property: tn:cultivarNameGroup (Cultivar Name or Cultivar Group Name)
+
+AnnotationAssertion(tdwgcmn:tcsEquivalence tn:cultivarNameGroup "ScientificName/CanonicalName/CultivarNameGroup")
+AnnotationAssertion(rdfs:comment tn:cultivarNameGroup " The cultivar or related name governed by ICNCP. The name of the Cultivar, Cultivar Group, grex, convar or graft chimera under the International Code for the Nomenclature of
+         Cultivated Plants. Only include here the string of the name. i.e. omit the single quotes around cultivar names, the word Group that denotes cultivar group and the + sign used in chimeras.
+         These symbols can be added in later on the basis of the rank of the name. For example the use of the word 'Group' is language dependent.")
+AnnotationAssertion(rdfs:isDefinedBy tn:cultivarNameGroup <http://rs.tdwg.org/ontology/voc/TaxonName>)
+AnnotationAssertion(rdfs:label tn:cultivarNameGroup "Cultivar Name or Cultivar Group Name")
+DataPropertyDomain(tn:cultivarNameGroup tn:TaxonName)
+DataPropertyRange(tn:cultivarNameGroup xsd:string)
+
+# Data Property: tn:genusPart (Genus Part)
+
+AnnotationAssertion(tdwgcmn:tcsEquivalence tn:genusPart "ScientificName/CanonicalName/Genus")
+AnnotationAssertion(rdfs:comment tn:genusPart " The genus part of a bi or trinomial name. The name of the genus for names below the rank of genus. This property should not be used for names at and above the rank of genus. For
+         names at and above genus rank the uninomial property should be used.")
+AnnotationAssertion(rdfs:isDefinedBy tn:genusPart <http://rs.tdwg.org/ontology/voc/TaxonName>)
+AnnotationAssertion(rdfs:label tn:genusPart "Genus Part")
+DataPropertyDomain(tn:genusPart tn:TaxonName)
+DataPropertyRange(tn:genusPart xsd:string)
+
+# Data Property: tn:infragenericEpithet (Infrageneric Epithet)
+
+AnnotationAssertion(tdwgcmn:tcsEquivalence tn:infragenericEpithet "ScientificName/CanonicalName/InfragenericEpithet")
+AnnotationAssertion(rdfs:comment tn:infragenericEpithet " The infrageneric part of a binomial name at ranks above species but below genus. Names at ranks between species and genus are composed of two words; the genus and this
+         infrageneric epithet. This property should therefore always be accompanied by the genusPart property. If the infragenericEpithet property is present the uninomial, infraspecificEpithet,
+         specificEpithet and subspecificEpithet properties should be absent.")
+AnnotationAssertion(rdfs:isDefinedBy tn:infragenericEpithet <http://rs.tdwg.org/ontology/voc/TaxonName>)
+AnnotationAssertion(rdfs:label tn:infragenericEpithet "Infrageneric Epithet")
+DataPropertyDomain(tn:infragenericEpithet tn:TaxonName)
+DataPropertyRange(tn:infragenericEpithet xsd:string)
+
+# Data Property: tn:infraspecificEpithet (Infraspecific Epithet)
+
+AnnotationAssertion(tdwgcmn:tcsEquivalence tn:infraspecificEpithet "ScientificName/CanonicalName/InfraspecificEpithet")
+AnnotationAssertion(rdfs:comment tn:infraspecificEpithet " The infraspecific epithet part of a trinomial name below the rank of species. Names at ranks below species are composed of three words; the genus epithet, the specific epithet and
+         an infraspecific epithet. This property should therefore always be accompanied by the genusPart property and a specificEpithet property. If the specificEpithet property is present the
+         uninomial and infragenusPart properties should be absent. ")
+AnnotationAssertion(rdfs:isDefinedBy tn:infraspecificEpithet <http://rs.tdwg.org/ontology/voc/TaxonName>)
+AnnotationAssertion(rdfs:label tn:infraspecificEpithet "Infraspecific Epithet")
+DataPropertyDomain(tn:infraspecificEpithet tn:TaxonName)
+DataPropertyRange(tn:infraspecificEpithet xsd:string)
+
+# Data Property: tn:nameComplete (Name Complete)
+
+AnnotationAssertion(tdwgcmn:tcsEquivalence tn:nameComplete "ScientificName/CanonicalName/Simple")
+AnnotationAssertion(rdfs:comment tn:nameComplete " The complete uninomial, binomial or trinomial name without any authority or year components. Every TaxonName should have a DublinCore:title property that contains the complete
+         name string including authors and year (where appropriate).")
+AnnotationAssertion(rdfs:isDefinedBy tn:nameComplete <http://rs.tdwg.org/ontology/voc/TaxonName>)
+AnnotationAssertion(rdfs:label tn:nameComplete "Name Complete")
+DataPropertyDomain(tn:nameComplete tn:TaxonName)
+DataPropertyRange(tn:nameComplete xsd:string)
+
+# Data Property: tn:rankString (Rank String)
+
+AnnotationAssertion(dc:relation tn:rankString tn:rank)
+AnnotationAssertion(tdwgcmn:tcsEquivalence tn:rankString "ScientificName/Rank")
+AnnotationAssertion(rdfs:comment tn:rankString "The taxonomic rank of this name as a string. A string representation of the rank of this name. It is highly recommended that the rank property be used along with this one unless
+         the correct rank is not available in the rank vocabulary.")
+AnnotationAssertion(rdfs:isDefinedBy tn:rankString <http://rs.tdwg.org/ontology/voc/TaxonName>)
+AnnotationAssertion(rdfs:label tn:rankString "Rank String")
+DataPropertyDomain(tn:rankString tn:TaxonName)
+DataPropertyRange(tn:rankString xsd:string)
+
+# Data Property: tn:specificEpithet (Specific Epithet)
+
+AnnotationAssertion(tdwgcmn:tcsEquivalence tn:specificEpithet "ScientificName/CanonicalName/SpecificEpithet")
+AnnotationAssertion(rdfs:comment tn:specificEpithet " The specific epithet part of a binomial or trinomial name at or below the rank of species. Names at ranks of species and below are composed of two or three words; the genus
+         epithet, the specific epithet and possibly an infraspecific epithet. This property should therefore always be accompanied by the genusPart property. If the specificEpithet property is present
+         the uninomial and infragenericEpithet properties should be absent.")
+AnnotationAssertion(rdfs:isDefinedBy tn:specificEpithet <http://rs.tdwg.org/ontology/voc/TaxonName>)
+AnnotationAssertion(rdfs:label tn:specificEpithet "Specific Epithet")
+DataPropertyDomain(tn:specificEpithet tn:TaxonName)
+DataPropertyRange(tn:specificEpithet xsd:string)
+
+# Data Property: tn:typificationString (Typified String)
+
+AnnotationAssertion(dc:relation tn:typificationString tn:typifiedBy)
+AnnotationAssertion(tdwgcmn:tcsEquivalence tn:typificationString "ScientificName/Typification/Simple")
+AnnotationAssertion(rdfs:comment tn:typificationString "A string representing the typification of this name. See also the typifiedBy property.")
+AnnotationAssertion(rdfs:isDefinedBy tn:typificationString <http://rs.tdwg.org/ontology/voc/TaxonName>)
+AnnotationAssertion(rdfs:label tn:typificationString "Typified String")
+DataPropertyDomain(tn:typificationString tn:TaxonName)
+DataPropertyRange(tn:typificationString xsd:string)
+
+# Data Property: tn:uninomial (Uninomial)
+
+AnnotationAssertion(tdwgcmn:tcsEquivalence tn:uninomial "ScientificName/CanonicalName/Uninomial")
+AnnotationAssertion(rdfs:comment tn:uninomial " Family, genus, infrafamilial, suprafamilial or other uninomial name. This property should be used for any 'single word' names. These include Family, genus, infrafamilial, and
+         suprafamilial names. Note that this property should be used for Genus names. The genus field should only be used for names below rank of genus. ")
+AnnotationAssertion(rdfs:isDefinedBy tn:uninomial <http://rs.tdwg.org/ontology/voc/TaxonName>)
+AnnotationAssertion(rdfs:label tn:uninomial "Uninomial")
+DataPropertyDomain(tn:uninomial tn:TaxonName)
+DataPropertyRange(tn:uninomial xsd:string)
+
+# Data Property: tn:year (Publication Year)
+
+AnnotationAssertion(tdwgcmn:tcsEquivalence tn:year "ScientificName/Year")
+AnnotationAssertion(rdfs:comment tn:year " The year of publication of this name. This is the year this name was published. If it is a new combination of the name then it is the year of publication of the combination not
+         the basionym. It should be the same as the year given in the publishedIn property. In zoology the place of first publication of a new combination is rarely given as it is not considered a
+         nomenclatural act unless it leads to homonymy. For new combinations of names in zoology it may therefore be inappropriate to supply this property or the publishedIn, combintationAuthorship or
+         combintationAuthorTeam properties. The main role of this property is to aid disambiguation where author strings may be confusing. This property is not restricted to a date type as feedback
+         from TCS suggested that this restriction was inappropriate.")
+AnnotationAssertion(rdfs:isDefinedBy tn:year <http://rs.tdwg.org/ontology/voc/TaxonName>)
+AnnotationAssertion(rdfs:label tn:year "Publication Year")
+DataPropertyDomain(tn:year tn:TaxonName)
+DataPropertyRange(tn:year xsd:string)
+
+
+
+############################
+#   Classes
+############################
+
+# Class: openbiodiv:ScientificName (Scientific Name)
+
+AnnotationAssertion(rdfs:isDefinedBy openbiodiv:ScientificName openbiodiv:openbiodiv-ontology)
+AnnotationAssertion(rdfs:label openbiodiv:ScientificName "Scientific Name"@en)
+EquivalentClasses(openbiodiv:ScientificName obo:NOMEN_0000036)
+SubClassOf(openbiodiv:ScientificName openbiodiv:TaxonomicName)
+
+# Class: openbiodiv:TaxonomicConcept (openbiodiv:TaxonomicConcept)
+
+AnnotationAssertion(rdfs:comment openbiodiv:TaxonomicConcept "A taxonomic concept in the sense of Berendsohn"@en)
+AnnotationAssertion(rdfs:isDefinedBy openbiodiv:TaxonomicConcept openbiodiv:openbiodiv-ontology)
+EquivalentClasses(openbiodiv:TaxonomicConcept dwc:Taxon)
+SubClassOf(Annotation(rdfs:isDefinedBy :tcan.owltcan.owl) openbiodiv:TaxonomicConcept tc:TaxonConcept)
+
+# Class: openbiodiv:TaxonomicConceptLabel (Taxon Concept Label)
+
+AnnotationAssertion(rdfs:comment openbiodiv:TaxonomicConceptLabel "A taxon concept label is a taxonomic name
+    usage accompanied by an additional part, consisting of 'sec.' + an identifier
+    or a literature reference of a work containing the expression of a taxon concept
+    (treatment)."@en)
+AnnotationAssertion(rdfs:isDefinedBy openbiodiv:TaxonomicConceptLabel openbiodiv:openbiodiv-ontology)
+AnnotationAssertion(rdfs:label openbiodiv:TaxonomicConceptLabel "Taxon Concept Label"@en)
+
+# Class: openbiodiv:TaxonomicName (openbiodiv:TaxonomicName)
+
+AnnotationAssertion(rdfs:isDefinedBy openbiodiv:TaxonomicName openbiodiv:openbiodiv-ontology)
+AnnotationAssertion(skos:altLabel openbiodiv:TaxonomicName "Biological Name"@en)
+AnnotationAssertion(skos:prefLabel openbiodiv:TaxonomicName "Taxonomic Name"@en)
+EquivalentClasses(openbiodiv:TaxonomicName obo:NOMEN_0000030)
+
+# Class: openbiodiv:VernacularName (Vernacular Name)
+
+AnnotationAssertion(rdfs:isDefinedBy openbiodiv:VernacularName openbiodiv:openbiodiv-ontology)
+AnnotationAssertion(rdfs:label openbiodiv:VernacularName "Vernacular Name"@en)
+EquivalentClasses(openbiodiv:VernacularName obo:NOMEN_0000037)
+SubClassOf(openbiodiv:VernacularName openbiodiv:TaxonomicName)
+
+# Class: obo:CDAO_0000138 (TU)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:CDAO_0000138 obo:cdao.owl)
+AnnotationAssertion(rdfs:label obo:CDAO_0000138 "TU"@en)
+
+# Class: obo:NOMEN_0000003 (ICZN nonorder)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000003 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000003 "ICZN nonorder"@en)
+SubClassOf(obo:NOMEN_0000003 obo:NOMEN_0000317)
+
+# Class: obo:NOMEN_0000005 (ICN autonym)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000005 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000005 "ICN autonym"@en)
+SubClassOf(obo:NOMEN_0000005 obo:NOMEN_0000384)
+
+# Class: obo:NOMEN_0000006 (ICN subdivision of species and infraspecies)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000006 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000006 "ICN subdivision of species and infraspecies"@en)
+SubClassOf(obo:NOMEN_0000006 obo:NOMEN_0000339)
+
+# Class: obo:NOMEN_0000007 (ICN validly published name)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000007 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000007 "ICN validly published name"@en)
+SubClassOf(obo:NOMEN_0000007 obo:NOMEN_0000383)
+DisjointClasses(obo:NOMEN_0000007 obo:NOMEN_0000008)
+
+# Class: obo:NOMEN_0000008 (ICN invalidly published name)
+
+AnnotationAssertion(rdfs:comment obo:NOMEN_0000008 "invalidum")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000008 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000008 "ICN invalidly published name"@en)
+SubClassOf(obo:NOMEN_0000008 obo:NOMEN_0000383)
+
+# Class: obo:NOMEN_0000009 (ICN conserved name)
+
+AnnotationAssertion(obo:NOMEN_0000018 obo:NOMEN_0000009 "nom. cons.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000009 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000009 "ICN conserved name"@en)
+SubClassOf(obo:NOMEN_0000009 obo:NOMEN_0000384)
+
+# Class: obo:NOMEN_0000010 (ICN correct name)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000010 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000010 "ICN correct name"@en)
+SubClassOf(obo:NOMEN_0000010 obo:NOMEN_0000384)
+DisjointClasses(obo:NOMEN_0000010 obo:NOMEN_0000011)
+
+# Class: obo:NOMEN_0000011 (ICN incorrect name)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000011 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000011 "ICN incorrect name"@en)
+SubClassOf(obo:NOMEN_0000011 obo:NOMEN_0000384)
+
+# Class: obo:NOMEN_0000014 (ICN incorrect original spelling)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000014 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000014 "ICN incorrect original spelling"@en)
+SubClassOf(obo:NOMEN_0000014 obo:NOMEN_0000386)
+
+# Class: obo:NOMEN_0000015 (ICN superfluous)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000015 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000015 "ICN superfluous"@en)
+SubClassOf(obo:NOMEN_0000015 obo:NOMEN_0000386)
+
+# Class: obo:NOMEN_0000016 (ICN homonym)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000016 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000016 "ICN homonym"@en)
+SubClassOf(obo:NOMEN_0000016 obo:NOMEN_0000386)
+
+# Class: obo:NOMEN_0000019 (ICN as synonym)
+
+AnnotationAssertion(obo:NOMEN_0000018 obo:NOMEN_0000019 "pro syn.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000019 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000019 "ICN as synonym"@en)
+SubClassOf(obo:NOMEN_0000019 obo:NOMEN_0000008)
+
+# Class: obo:NOMEN_0000020 (ICN conserved spelling)
+
+AnnotationAssertion(obo:NOMEN_0000018 obo:NOMEN_0000020 "orth. cons.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000020 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000020 "ICN conserved spelling"@en)
+SubClassOf(obo:NOMEN_0000020 obo:NOMEN_0000384)
+
+# Class: obo:NOMEN_0000026 (ICZN excluded)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000026 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000026 "ICZN excluded"@en)
+SubClassOf(obo:NOMEN_0000026 obo:NOMEN_0000168)
+
+# Class: obo:NOMEN_0000027 (nomenclatural rank)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000027 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000027 "nomenclatural rank"@en)
+SubClassOf(obo:NOMEN_0000027 <http://rs.tdwg.org/ontology/voc/TaxonRank#TaxonRankTerm>)
+
+# Class: obo:NOMEN_0000029 (name)
+
+AnnotationAssertion(rdfs:comment obo:NOMEN_0000029 "The name that identifies a thing.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000029 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000029 "name"@en)
+
+# Class: obo:NOMEN_0000030 (biological name)
+
+AnnotationAssertion(rdfs:comment obo:NOMEN_0000030 "The name that identifies a biological thing.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000030 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000030 "biological name"@en)
+SubClassOf(obo:NOMEN_0000030 obo:NOMEN_0000029)
+
+# Class: obo:NOMEN_0000033 (above nomenclatural codes)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000033 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000033 "above nomenclatural codes"@en)
+SubClassOf(obo:NOMEN_0000033 obo:NOMEN_0000027)
+
+# Class: obo:NOMEN_0000034 (domain)
+
+AnnotationAssertion(obo:NOMEN_0000017 obo:NOMEN_0000034 "empire")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000034 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000034 "domain"@en)
+SubClassOf(obo:NOMEN_0000034 obo:NOMEN_0000033)
+
+# Class: obo:NOMEN_0000036 (scientific name)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000036 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000036 "scientific name"@en)
+SubClassOf(obo:NOMEN_0000036 obo:NOMEN_0000030)
+SubClassOf(Annotation(rdfs:isDefinedBy :tcan.owltcan.owl) obo:NOMEN_0000036 tn:TaxonName)
+
+# Class: obo:NOMEN_0000037 (vernacular name)
+
+AnnotationAssertion(obo:NOMEN_0000017 obo:NOMEN_0000037 "common name")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000037 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000037 "vernacular name"@en)
+SubClassOf(obo:NOMEN_0000037 obo:NOMEN_0000030)
+
+# Class: obo:NOMEN_0000043 (ICZN homonym)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000043 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000043 "ICZN homonym"@en)
+SubClassOf(obo:NOMEN_0000043 obo:NOMEN_0000226)
+
+# Class: obo:NOMEN_0000055 (ICZN fossil)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000055 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000055 "ICZN fossil"@en)
+SubClassOf(obo:NOMEN_0000055 obo:NOMEN_0000107)
+
+# Class: obo:NOMEN_0000056 (ICN hybrid)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000056 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000056 "ICN hybrid"@en)
+SubClassOf(obo:NOMEN_0000056 obo:NOMEN_0000109)
+
+# Class: obo:NOMEN_0000057 (ICN fossil)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000057 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000057 "ICN fossil"@en)
+SubClassOf(obo:NOMEN_0000057 obo:NOMEN_0000109)
+
+# Class: obo:NOMEN_0000062 (ICNP nomenclatural rank)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000062 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000062 "ICNP nomenclatural rank"@en)
+SubClassOf(Annotation(rdfs:isDefinedBy :tcan.owltcan.owl) obo:NOMEN_0000062 ObjectIntersectionOf(obo:NOMEN_0000027 ObjectHasValue(tn:nomenclaturalCode <http://ontology.phyloref.org/tcan.owl#ICNP>)))
+
+# Class: obo:NOMEN_0000063 (ICNB above family-group)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000063 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000063 "ICNB above family-group"@en)
+SubClassOf(obo:NOMEN_0000063 obo:NOMEN_0000062)
+
+# Class: obo:NOMEN_0000064 (ICNB family-group)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000064 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000064 "ICNB family-group"@en)
+SubClassOf(obo:NOMEN_0000064 obo:NOMEN_0000062)
+
+# Class: obo:NOMEN_0000065 (ICNB genus-group)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000065 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000065 "ICNB genus-group"@en)
+SubClassOf(obo:NOMEN_0000065 obo:NOMEN_0000062)
+
+# Class: obo:NOMEN_0000066 (ICNB species-group)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000066 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000066 "ICNB species-group"@en)
+SubClassOf(obo:NOMEN_0000066 obo:NOMEN_0000062)
+
+# Class: obo:NOMEN_0000067 (ICNB species)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000067 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000067 "ICNB species"@en)
+SubClassOf(obo:NOMEN_0000067 obo:NOMEN_0000066)
+
+# Class: obo:NOMEN_0000068 (ICNB subspecies)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000068 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000068 "ICNB subspecies"@en)
+SubClassOf(obo:NOMEN_0000068 obo:NOMEN_0000066)
+
+# Class: obo:NOMEN_0000069 (ICNB genus)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000069 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000069 "ICNB genus"@en)
+SubClassOf(obo:NOMEN_0000069 obo:NOMEN_0000065)
+
+# Class: obo:NOMEN_0000070 (ICNB subgenus)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000070 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000070 "ICNB subgenus"@en)
+SubClassOf(obo:NOMEN_0000070 obo:NOMEN_0000065)
+
+# Class: obo:NOMEN_0000071 (ICNB family)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000071 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000071 "ICNB family"@en)
+SubClassOf(obo:NOMEN_0000071 obo:NOMEN_0000064)
+
+# Class: obo:NOMEN_0000072 (ICNB subfamily)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000072 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000072 "ICNB subfamily"@en)
+SubClassOf(obo:NOMEN_0000072 obo:NOMEN_0000064)
+
+# Class: obo:NOMEN_0000073 (ICNB tribe)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000073 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000073 "ICNB tribe"@en)
+SubClassOf(obo:NOMEN_0000073 obo:NOMEN_0000064)
+
+# Class: obo:NOMEN_0000074 (ICNB subtribe)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000074 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000074 "ICNB subtribe"@en)
+SubClassOf(obo:NOMEN_0000074 obo:NOMEN_0000064)
+
+# Class: obo:NOMEN_0000075 (ICNB order)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000075 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000075 "ICNB order"@en)
+SubClassOf(obo:NOMEN_0000075 obo:NOMEN_0000063)
+
+# Class: obo:NOMEN_0000076 (ICNB suborder)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000076 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000076 "ICNB suborder"@en)
+SubClassOf(obo:NOMEN_0000076 obo:NOMEN_0000063)
+
+# Class: obo:NOMEN_0000077 (ICNB class)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000077 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000077 "ICNB class"@en)
+SubClassOf(obo:NOMEN_0000077 obo:NOMEN_0000063)
+
+# Class: obo:NOMEN_0000078 (ICNB subclass)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000078 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000078 "ICNB subclass"@en)
+SubClassOf(obo:NOMEN_0000078 obo:NOMEN_0000063)
+
+# Class: obo:NOMEN_0000079 (ICNB kingdom)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000079 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000079 "ICNB kingdom"@en)
+SubClassOf(obo:NOMEN_0000079 obo:NOMEN_0000063)
+
+# Class: obo:NOMEN_0000080 (ICNB phylum)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000080 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000080 "ICNB phylum"@en)
+SubClassOf(obo:NOMEN_0000080 obo:NOMEN_0000063)
+
+# Class: obo:NOMEN_0000081 (ICNP effectively published name)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000081 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000081 "ICNP effectively published name"@en)
+SubClassOf(obo:NOMEN_0000081 obo:NOMEN_0000110)
+
+# Class: obo:NOMEN_0000082 (ICNP not effectively published name)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000082 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000082 "ICNP not effectively published name"@en)
+SubClassOf(obo:NOMEN_0000082 obo:NOMEN_0000110)
+
+# Class: obo:NOMEN_0000083 (ICNP invalidly published name)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000083 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000083 "ICNP invalidly published name"@en)
+SubClassOf(obo:NOMEN_0000083 obo:NOMEN_0000081)
+
+# Class: obo:NOMEN_0000084 (ICNP validly published name)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000084 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000084 "ICNP validly published name"@en)
+SubClassOf(obo:NOMEN_0000084 obo:NOMEN_0000081)
+
+# Class: obo:NOMEN_0000085 (ICNP illegitimate name)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000085 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000085 "ICNP illegitimate name"@en)
+SubClassOf(obo:NOMEN_0000085 obo:NOMEN_0000084)
+
+# Class: obo:NOMEN_0000086 (ICNP legitimate name)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000086 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000086 "ICNP legitimate name"@en)
+SubClassOf(obo:NOMEN_0000086 obo:NOMEN_0000084)
+
+# Class: obo:NOMEN_0000087 (ICNP correct name)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000087 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000087 "ICNP correct name"@en)
+SubClassOf(obo:NOMEN_0000087 obo:NOMEN_0000086)
+
+# Class: obo:NOMEN_0000088 (ICNP incorrect name)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000088 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000088 "ICNP incorrect name"@en)
+SubClassOf(obo:NOMEN_0000088 obo:NOMEN_0000086)
+
+# Class: obo:NOMEN_0000089 (ICNP nomen novum)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000089 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000089 "ICNP nomen novum"@en)
+SubClassOf(obo:NOMEN_0000089 obo:NOMEN_0000086)
+
+# Class: obo:NOMEN_0000090 (ICNP nomen nudum)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000090 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000090 "ICNP nomen nudum"@en)
+SubClassOf(obo:NOMEN_0000090 obo:NOMEN_0000083)
+
+# Class: obo:NOMEN_0000091 (ICNP homonym)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000091 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000091 "ICNP homonym"@en)
+SubClassOf(obo:NOMEN_0000091 obo:NOMEN_0000085)
+
+# Class: obo:NOMEN_0000092 (ICNP candidatus)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000092 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000092 "ICNP candidatus"@en)
+SubClassOf(obo:NOMEN_0000092 obo:NOMEN_0000086)
+
+# Class: obo:NOMEN_0000104 (ICNP rejected)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000104 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000104 "ICNP rejected"@en)
+SubClassOf(obo:NOMEN_0000104 obo:NOMEN_0000085)
+
+# Class: obo:NOMEN_0000107 (ICZN name)
+
+AnnotationAssertion(rdfs:comment obo:NOMEN_0000107 "The biological name that is applicable to animals.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000107 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000107 "ICZN name"@en)
+SubClassOf(Annotation(rdfs:isDefinedBy :tcan.owltcan.owl) obo:NOMEN_0000107 ObjectIntersectionOf(obo:NOMEN_0000036 ObjectHasValue(tn:nomenclaturalCode tn:ICZN)))
+
+# Class: obo:NOMEN_0000109 (ICN name)
+
+AnnotationAssertion(rdfs:comment obo:NOMEN_0000109 "The biological name that is applicable to algae, fungi, or plants.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000109 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000109 "ICN name"@en)
+SubClassOf(Annotation(rdfs:isDefinedBy :tcan.owltcan.owl) obo:NOMEN_0000109 ObjectIntersectionOf(obo:NOMEN_0000036 ObjectHasValue(tn:nomenclaturalCode tn:ICBN)))
+
+# Class: obo:NOMEN_0000110 (ICNP name)
+
+AnnotationAssertion(rdfs:comment obo:NOMEN_0000110 "The biological name that is applicable to bacteria.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000110 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000110 "ICNP name"@en)
+SubClassOf(Annotation(rdfs:isDefinedBy :tcan.owltcan.owl) obo:NOMEN_0000110 ObjectIntersectionOf(obo:NOMEN_0000036 ObjectHasValue(tn:nomenclaturalCode <http://ontology.phyloref.org/tcan.owl#ICNP>)))
+
+# Class: obo:NOMEN_0000111 (ICTV name)
+
+AnnotationAssertion(rdfs:comment obo:NOMEN_0000111 "The biological name that is applicable to viruses.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000111 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000111 "ICTV name"@en)
+SubClassOf(Annotation(rdfs:isDefinedBy :tcan.owltcan.owl) obo:NOMEN_0000111 ObjectIntersectionOf(obo:NOMEN_0000036 ObjectHasValue(tn:nomenclaturalCode <http://ontology.phyloref.org/tcan.owl#ICTV>)))
+
+# Class: obo:NOMEN_0000113 (ICTV nomenclatural rank)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000113 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000113 "ICTV nomenclatural rank"@en)
+SubClassOf(Annotation(rdfs:isDefinedBy :tcan.owltcan.owl) obo:NOMEN_0000113 ObjectIntersectionOf(obo:NOMEN_0000027 ObjectHasValue(tn:nomenclaturalCode <http://ontology.phyloref.org/tcan.owl#ICTV>)))
+
+# Class: obo:NOMEN_0000114 (ICTV order)
+
+AnnotationAssertion(obo:NOMEN_0000018 obo:NOMEN_0000114 "ord.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000114 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000114 "ICTV order"@en)
+SubClassOf(obo:NOMEN_0000114 obo:NOMEN_0000113)
+
+# Class: obo:NOMEN_0000115 (ICTV family)
+
+AnnotationAssertion(obo:NOMEN_0000018 obo:NOMEN_0000115 "fam.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000115 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000115 "ICTV family"@en)
+SubClassOf(obo:NOMEN_0000115 obo:NOMEN_0000113)
+
+# Class: obo:NOMEN_0000116 (ICTV subfamily)
+
+AnnotationAssertion(obo:NOMEN_0000018 obo:NOMEN_0000116 "subfam.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000116 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000116 "ICTV subfamily"@en)
+SubClassOf(obo:NOMEN_0000116 obo:NOMEN_0000113)
+
+# Class: obo:NOMEN_0000117 (ICTV genus)
+
+AnnotationAssertion(obo:NOMEN_0000018 obo:NOMEN_0000117 "gen.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000117 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000117 "ICTV genus"@en)
+SubClassOf(obo:NOMEN_0000117 obo:NOMEN_0000113)
+
+# Class: obo:NOMEN_0000118 (ICTV species)
+
+AnnotationAssertion(obo:NOMEN_0000018 obo:NOMEN_0000118 "sp.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000118 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000118 "ICTV species"@en)
+SubClassOf(obo:NOMEN_0000118 obo:NOMEN_0000113)
+
+# Class: obo:NOMEN_0000125 (ICTV valid)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000125 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000125 "ICTV valid"@en)
+SubClassOf(obo:NOMEN_0000125 obo:NOMEN_0000111)
+
+# Class: obo:NOMEN_0000126 (ICTV invalid)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000126 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000126 "ICTV invalid"@en)
+SubClassOf(obo:NOMEN_0000126 obo:NOMEN_0000111)
+
+# Class: obo:NOMEN_0000127 (ICTV accepted)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000127 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000127 "ICTV accepted"@en)
+SubClassOf(obo:NOMEN_0000127 obo:NOMEN_0000125)
+
+# Class: obo:NOMEN_0000128 (ICTV unaccepted)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000128 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000128 "ICTV unaccepted"@en)
+SubClassOf(obo:NOMEN_0000128 obo:NOMEN_0000125)
+
+# Class: obo:NOMEN_0000129 (ICZN nomen inquirendum)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000129 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000129 "ICZN nomen inquirendum"@en)
+SubClassOf(obo:NOMEN_0000129 obo:NOMEN_0000224)
+
+# Class: obo:NOMEN_0000168 (ICZN unavailable)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000168 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000168 "ICZN unavailable"@en)
+SubClassOf(obo:NOMEN_0000168 obo:NOMEN_0000107)
+DisjointClasses(obo:NOMEN_0000168 obo:NOMEN_0000223)
+
+# Class: obo:NOMEN_0000169 (ICZN non binomial)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000169 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000169 "ICZN non binomial"@en)
+SubClassOf(obo:NOMEN_0000169 obo:NOMEN_0000168)
+
+# Class: obo:NOMEN_0000174 (ICZN nomen nudum)
+
+AnnotationAssertion(obo:NOMEN_0000018 obo:NOMEN_0000174 "nom. nud.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000174 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000174 "ICZN nomen nudum"@en)
+SubClassOf(obo:NOMEN_0000174 obo:NOMEN_0000168)
+
+# Class: obo:NOMEN_0000191 (ICZN hypothetical concept)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000191 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000191 "ICZN hypothetical concept"@en)
+SubClassOf(obo:NOMEN_0000191 obo:NOMEN_0000026)
+
+# Class: obo:NOMEN_0000192 (ICZN name for teratological specimen)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000192 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000192 "ICZN name for teratological specimen"@en)
+SubClassOf(obo:NOMEN_0000192 obo:NOMEN_0000026)
+
+# Class: obo:NOMEN_0000193 (ICZN name for hybrid)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000193 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000193 "ICZN name for hybrid"@en)
+SubClassOf(obo:NOMEN_0000193 obo:NOMEN_0000026)
+
+# Class: obo:NOMEN_0000194 (ICZN temporary name)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000194 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000194 "ICZN temporary name"@en)
+SubClassOf(obo:NOMEN_0000194 obo:NOMEN_0000026)
+
+# Class: obo:NOMEN_0000197 (ICZN not for nomenclature)
+
+AnnotationAssertion(obo:NOMEN_0000017 obo:NOMEN_0000197 "unpublished work"^^xsd:dateTime)
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000197 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000197 "ICZN not for nomenclature"@en)
+SubClassOf(obo:NOMEN_0000197 obo:NOMEN_0000026)
+
+# Class: obo:NOMEN_0000199 (ICZN infrasubspecific)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000199 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000199 "ICZN infrasubspecific"@en)
+SubClassOf(obo:NOMEN_0000199 obo:NOMEN_0000026)
+
+# Class: obo:NOMEN_0000201 (ICZN not Latin)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000201 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000201 "ICZN not Latin"@en)
+SubClassOf(obo:NOMEN_0000201 obo:NOMEN_0000168)
+
+# Class: obo:NOMEN_0000206 (ICZN based on fossil genus formula)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000206 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000206 "ICZN based on fossil genus formula"@en)
+SubClassOf(obo:NOMEN_0000206 obo:NOMEN_0000026)
+
+# Class: obo:NOMEN_0000217 (ICZN incorrect original spelling)
+
+AnnotationAssertion(obo:NOMEN_0000017 obo:NOMEN_0000217 "leipoprotograph")
+AnnotationAssertion(obo:NOMEN_0000017 obo:NOMEN_0000217 "nothograph")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000217 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000217 "ICZN incorrect original spelling"@en)
+SubClassOf(obo:NOMEN_0000217 obo:NOMEN_0000168)
+
+# Class: obo:NOMEN_0000223 (ICZN available)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000223 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000223 "ICZN available"@en)
+SubClassOf(obo:NOMEN_0000223 obo:NOMEN_0000107)
+
+# Class: obo:NOMEN_0000224 (ICZN valid)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000224 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000224 "ICZN valid"@en)
+SubClassOf(obo:NOMEN_0000224 obo:NOMEN_0000223)
+DisjointClasses(obo:NOMEN_0000224 obo:NOMEN_0000226)
+
+# Class: obo:NOMEN_0000225 (ICZN nomen dubium)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000225 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000225 "ICZN nomen dubium"@en)
+SubClassOf(obo:NOMEN_0000225 obo:NOMEN_0000224)
+
+# Class: obo:NOMEN_0000226 (ICZN invalid)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000226 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000226 "ICZN invalid"@en)
+SubClassOf(obo:NOMEN_0000226 obo:NOMEN_0000223)
+
+# Class: obo:NOMEN_0000293 (ICZN nomenclatural rank)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000293 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000293 "ICZN nomenclatural rank"@en)
+SubClassOf(Annotation(rdfs:isDefinedBy :tcan.owltcan.owl) obo:NOMEN_0000293 ObjectIntersectionOf(obo:NOMEN_0000027 ObjectHasValue(tn:nomenclaturalCode tn:ICZN)))
+
+# Class: obo:NOMEN_0000295 (ICZN family-group)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000295 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000295 "ICZN family-group"@en)
+SubClassOf(obo:NOMEN_0000295 obo:NOMEN_0000293)
+
+# Class: obo:NOMEN_0000296 (ICZN epifamily)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000296 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000296 "ICZN epifamily"@en)
+SubClassOf(obo:NOMEN_0000296 obo:NOMEN_0000295)
+
+# Class: obo:NOMEN_0000297 (ICZN family)
+
+AnnotationAssertion(obo:NOMEN_0000018 obo:NOMEN_0000297 "fam.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000297 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000297 "ICZN family"@en)
+SubClassOf(obo:NOMEN_0000297 obo:NOMEN_0000295)
+
+# Class: obo:NOMEN_0000298 (ICZN infrafamily)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000298 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000298 "ICZN infrafamily"@en)
+SubClassOf(obo:NOMEN_0000298 obo:NOMEN_0000295)
+
+# Class: obo:NOMEN_0000299 (ICZN subfamily)
+
+AnnotationAssertion(obo:NOMEN_0000018 obo:NOMEN_0000299 "subfam.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000299 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000299 "ICZN subfamily"@en)
+SubClassOf(obo:NOMEN_0000299 obo:NOMEN_0000295)
+
+# Class: obo:NOMEN_0000300 (ICZN supersubsubfamily)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000300 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000300 "ICZN supersubsubfamily"@en)
+SubClassOf(obo:NOMEN_0000300 obo:NOMEN_0000295)
+
+# Class: obo:NOMEN_0000301 (ICZN subtribe)
+
+AnnotationAssertion(obo:NOMEN_0000018 obo:NOMEN_0000301 "subtr.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000301 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000301 "ICZN subtribe"@en)
+SubClassOf(obo:NOMEN_0000301 obo:NOMEN_0000295)
+
+# Class: obo:NOMEN_0000302 (ICZN superfamily)
+
+AnnotationAssertion(obo:NOMEN_0000018 obo:NOMEN_0000302 "superfam.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000302 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000302 "ICZN superfamily"@en)
+SubClassOf(obo:NOMEN_0000302 obo:NOMEN_0000295)
+
+# Class: obo:NOMEN_0000304 (ICZN supertribe)
+
+AnnotationAssertion(obo:NOMEN_0000018 obo:NOMEN_0000304 "supertr.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000304 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000304 "ICZN supertribe"@en)
+SubClassOf(obo:NOMEN_0000304 obo:NOMEN_0000295)
+
+# Class: obo:NOMEN_0000305 (ICZN tribe)
+
+AnnotationAssertion(obo:NOMEN_0000018 obo:NOMEN_0000305 "tr.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000305 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000305 "ICZN tribe"@en)
+SubClassOf(obo:NOMEN_0000305 obo:NOMEN_0000295)
+
+# Class: obo:NOMEN_0000306 (ICZN genus-group)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000306 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000306 "ICZN genus-group"@en)
+SubClassOf(obo:NOMEN_0000306 obo:NOMEN_0000293)
+
+# Class: obo:NOMEN_0000307 (ICZN genus)
+
+AnnotationAssertion(obo:NOMEN_0000018 obo:NOMEN_0000307 "gen.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000307 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000307 "ICZN genus"@en)
+SubClassOf(obo:NOMEN_0000307 obo:NOMEN_0000306)
+
+# Class: obo:NOMEN_0000308 (ICZN supergenus)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000308 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000308 "ICZN supergenus"@en)
+SubClassOf(obo:NOMEN_0000308 obo:NOMEN_0000306)
+
+# Class: obo:NOMEN_0000309 (ICZN infragenus)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000309 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000309 "ICZN infragenus"@en)
+SubClassOf(obo:NOMEN_0000309 obo:NOMEN_0000306)
+
+# Class: obo:NOMEN_0000310 (ICZN subgenus)
+
+AnnotationAssertion(obo:NOMEN_0000018 obo:NOMEN_0000310 "sgen.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000310 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000310 "ICZN subgenus"@en)
+SubClassOf(obo:NOMEN_0000310 obo:NOMEN_0000306)
+
+# Class: obo:NOMEN_0000311 (ICZN species-group)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000311 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000311 "ICZN species-group"@en)
+SubClassOf(obo:NOMEN_0000311 obo:NOMEN_0000293)
+
+# Class: obo:NOMEN_0000312 (ICZN species)
+
+AnnotationAssertion(obo:NOMEN_0000018 obo:NOMEN_0000312 "sp.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000312 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000312 "ICZN species"@en)
+SubClassOf(obo:NOMEN_0000312 obo:NOMEN_0000311)
+
+# Class: obo:NOMEN_0000313 (ICZN superspecies)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000313 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000313 "ICZN superspecies"@en)
+SubClassOf(obo:NOMEN_0000313 obo:NOMEN_0000311)
+
+# Class: obo:NOMEN_0000314 (ICZN supersuperspecies)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000314 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000314 "ICZN supersuperspecies"@en)
+SubClassOf(obo:NOMEN_0000314 obo:NOMEN_0000311)
+
+# Class: obo:NOMEN_0000315 (ICZN subsuperspecies)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000315 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000315 "ICZN subsuperspecies"@en)
+SubClassOf(obo:NOMEN_0000315 obo:NOMEN_0000311)
+
+# Class: obo:NOMEN_0000316 (ICZN subspecies)
+
+AnnotationAssertion(obo:NOMEN_0000018 obo:NOMEN_0000316 "subsp.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000316 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000316 "ICZN subspecies"@en)
+SubClassOf(obo:NOMEN_0000316 obo:NOMEN_0000311)
+
+# Class: obo:NOMEN_0000317 (ICZN above family-group)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000317 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000317 "ICZN above family-group"@en)
+SubClassOf(obo:NOMEN_0000317 obo:NOMEN_0000293)
+
+# Class: obo:NOMEN_0000318 (ICZN class)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000318 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000318 "ICZN class"@en)
+SubClassOf(obo:NOMEN_0000318 obo:NOMEN_0000317)
+
+# Class: obo:NOMEN_0000319 (ICZN cohort)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000319 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000319 "ICZN cohort"@en)
+SubClassOf(obo:NOMEN_0000319 obo:NOMEN_0000317)
+
+# Class: obo:NOMEN_0000320 (ICZN infraclass)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000320 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000320 "ICZN infraclass"@en)
+SubClassOf(obo:NOMEN_0000320 obo:NOMEN_0000317)
+
+# Class: obo:NOMEN_0000321 (ICZN infrakingdom)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000321 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000321 "ICZN infrakingdom"@en)
+SubClassOf(obo:NOMEN_0000321 obo:NOMEN_0000317)
+
+# Class: obo:NOMEN_0000322 (ICZN infraorder)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000322 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000322 "ICZN infraorder"@en)
+SubClassOf(obo:NOMEN_0000322 obo:NOMEN_0000317)
+
+# Class: obo:NOMEN_0000323 (ICZN infraphylum)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000323 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000323 "ICZN infraphylum"@en)
+SubClassOf(obo:NOMEN_0000323 obo:NOMEN_0000317)
+
+# Class: obo:NOMEN_0000324 (ICZN kingdom)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000324 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000324 "ICZN kingdom"@en)
+SubClassOf(obo:NOMEN_0000324 obo:NOMEN_0000317)
+
+# Class: obo:NOMEN_0000325 (ICZN magnorder)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000325 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000325 "ICZN magnorder"@en)
+SubClassOf(obo:NOMEN_0000325 obo:NOMEN_0000317)
+
+# Class: obo:NOMEN_0000326 (ICZN mirorder)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000326 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000326 "ICZN mirorder"@en)
+SubClassOf(obo:NOMEN_0000326 obo:NOMEN_0000317)
+
+# Class: obo:NOMEN_0000327 (ICZN order)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000327 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000327 "ICZN order"@en)
+SubClassOf(obo:NOMEN_0000327 obo:NOMEN_0000317)
+
+# Class: obo:NOMEN_0000328 (ICZN phylum)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000328 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000328 "ICZN phylum"@en)
+SubClassOf(obo:NOMEN_0000328 obo:NOMEN_0000317)
+
+# Class: obo:NOMEN_0000329 (ICZN subclass)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000329 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000329 "ICZN subclass"@en)
+SubClassOf(obo:NOMEN_0000329 obo:NOMEN_0000317)
+
+# Class: obo:NOMEN_0000330 (ICZN parvorder)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000330 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000330 "ICZN parvorder"@en)
+SubClassOf(obo:NOMEN_0000330 obo:NOMEN_0000317)
+
+# Class: obo:NOMEN_0000331 (ICZN subkingdom)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000331 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000331 "ICZN subkingdom"@en)
+SubClassOf(obo:NOMEN_0000331 obo:NOMEN_0000317)
+
+# Class: obo:NOMEN_0000332 (ICZN suborder)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000332 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000332 "ICZN suborder"@en)
+SubClassOf(obo:NOMEN_0000332 obo:NOMEN_0000317)
+
+# Class: obo:NOMEN_0000333 (ICZN subphylum)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000333 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000333 "ICZN subphylum"@en)
+SubClassOf(obo:NOMEN_0000333 obo:NOMEN_0000317)
+
+# Class: obo:NOMEN_0000334 (ICZN superclass)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000334 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000334 "ICZN superclass"@en)
+SubClassOf(obo:NOMEN_0000334 obo:NOMEN_0000317)
+
+# Class: obo:NOMEN_0000335 (ICZN supercohort)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000335 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000335 "ICZN supercohort"@en)
+SubClassOf(obo:NOMEN_0000335 obo:NOMEN_0000317)
+
+# Class: obo:NOMEN_0000336 (ICZN superkingdom)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000336 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000336 "ICZN superkingdom"@en)
+SubClassOf(obo:NOMEN_0000336 obo:NOMEN_0000317)
+
+# Class: obo:NOMEN_0000337 (ICZN superorder)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000337 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000337 "ICZN superorder"@en)
+SubClassOf(obo:NOMEN_0000337 obo:NOMEN_0000317)
+
+# Class: obo:NOMEN_0000338 (ICZN superphylum)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000338 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000338 "ICZN superphylum"@en)
+SubClassOf(obo:NOMEN_0000338 obo:NOMEN_0000317)
+
+# Class: obo:NOMEN_0000339 (ICN nomenclatural rank)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000339 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000339 "ICN nomenclatural rank"@en)
+SubClassOf(Annotation(rdfs:isDefinedBy :tcan.owltcan.owl) obo:NOMEN_0000339 ObjectIntersectionOf(obo:NOMEN_0000027 ObjectHasValue(tn:nomenclaturalCode tn:ICBN)))
+
+# Class: obo:NOMEN_0000341 (ICN subdivision of family)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000341 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000341 "ICN subdivision of family"@en)
+SubClassOf(obo:NOMEN_0000341 obo:NOMEN_0000339)
+
+# Class: obo:NOMEN_0000342 (ICN family)
+
+AnnotationAssertion(obo:NOMEN_0000017 obo:NOMEN_0000342 "familia")
+AnnotationAssertion(obo:NOMEN_0000018 obo:NOMEN_0000342 "fam.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000342 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000342 "ICN family"@en)
+SubClassOf(obo:NOMEN_0000342 obo:NOMEN_0000341)
+
+# Class: obo:NOMEN_0000343 (ICN subfamily)
+
+AnnotationAssertion(obo:NOMEN_0000017 obo:NOMEN_0000343 "subfamilia")
+AnnotationAssertion(obo:NOMEN_0000018 obo:NOMEN_0000343 "subfam.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000343 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000343 "ICN subfamily"@en)
+SubClassOf(obo:NOMEN_0000343 obo:NOMEN_0000341)
+
+# Class: obo:NOMEN_0000344 (ICN subtribe)
+
+AnnotationAssertion(obo:NOMEN_0000018 obo:NOMEN_0000344 "subtr.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000344 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000344 "ICN subtribe"@en)
+SubClassOf(obo:NOMEN_0000344 obo:NOMEN_0000341)
+
+# Class: obo:NOMEN_0000345 (ICN tribe)
+
+AnnotationAssertion(obo:NOMEN_0000018 obo:NOMEN_0000345 "tr.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000345 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000345 "ICN tribe"@en)
+SubClassOf(obo:NOMEN_0000345 obo:NOMEN_0000341)
+
+# Class: obo:NOMEN_0000346 (ICN subdivision of genus)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000346 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000346 "ICN subdivision of genus"@en)
+SubClassOf(obo:NOMEN_0000346 obo:NOMEN_0000339)
+
+# Class: obo:NOMEN_0000347 (ICN genus)
+
+AnnotationAssertion(obo:NOMEN_0000018 obo:NOMEN_0000347 "gen.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000347 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000347 "ICN genus"@en)
+SubClassOf(obo:NOMEN_0000347 obo:NOMEN_0000346)
+
+# Class: obo:NOMEN_0000348 (ICN subgenus)
+
+AnnotationAssertion(obo:NOMEN_0000018 obo:NOMEN_0000348 "sgen.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000348 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000348 "ICN subgenus"@en)
+SubClassOf(obo:NOMEN_0000348 obo:NOMEN_0000346)
+
+# Class: obo:NOMEN_0000349 (ICN section)
+
+AnnotationAssertion(obo:NOMEN_0000017 obo:NOMEN_0000349 "sectio")
+AnnotationAssertion(obo:NOMEN_0000018 obo:NOMEN_0000349 "sect.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000349 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000349 "ICN section"@en)
+SubClassOf(obo:NOMEN_0000349 obo:NOMEN_0000346)
+
+# Class: obo:NOMEN_0000350 (ICN series)
+
+AnnotationAssertion(obo:NOMEN_0000018 obo:NOMEN_0000350 "ser.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000350 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000350 "ICN series"@en)
+SubClassOf(obo:NOMEN_0000350 obo:NOMEN_0000346)
+
+# Class: obo:NOMEN_0000351 (ICN subsection)
+
+AnnotationAssertion(obo:NOMEN_0000017 obo:NOMEN_0000351 "subsectio")
+AnnotationAssertion(obo:NOMEN_0000018 obo:NOMEN_0000351 "subsect.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000351 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000351 "ICN subsection"@en)
+SubClassOf(obo:NOMEN_0000351 obo:NOMEN_0000346)
+
+# Class: obo:NOMEN_0000352 (ICN subseries)
+
+AnnotationAssertion(obo:NOMEN_0000018 obo:NOMEN_0000352 "subser.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000352 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000352 "ICN subseries"@en)
+SubClassOf(obo:NOMEN_0000352 obo:NOMEN_0000346)
+
+# Class: obo:NOMEN_0000353 (ICN subdivision above family)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000353 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000353 "ICN subdivision above family"@en)
+SubClassOf(obo:NOMEN_0000353 obo:NOMEN_0000339)
+
+# Class: obo:NOMEN_0000354 (ICN class)
+
+AnnotationAssertion(obo:NOMEN_0000017 obo:NOMEN_0000354 "classis")
+AnnotationAssertion(obo:NOMEN_0000018 obo:NOMEN_0000354 "cl.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000354 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000354 "ICN class"@en)
+SubClassOf(obo:NOMEN_0000354 obo:NOMEN_0000353)
+
+# Class: obo:NOMEN_0000355 (ICN order)
+
+AnnotationAssertion(obo:NOMEN_0000017 obo:NOMEN_0000355 "cohors, nixus, alliance, reihe, ordo")
+AnnotationAssertion(obo:NOMEN_0000018 obo:NOMEN_0000355 "ord.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000355 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000355 "ICN order"@en)
+SubClassOf(obo:NOMEN_0000355 obo:NOMEN_0000353)
+
+# Class: obo:NOMEN_0000356 (ICN phylum)
+
+AnnotationAssertion(obo:NOMEN_0000017 obo:NOMEN_0000356 "division")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000356 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000356 "ICN phylum"@en)
+SubClassOf(obo:NOMEN_0000356 obo:NOMEN_0000353)
+
+# Class: obo:NOMEN_0000357 (ICN kingdom)
+
+AnnotationAssertion(obo:NOMEN_0000017 obo:NOMEN_0000357 "regnum")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000357 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000357 "ICN kingdom"@en)
+SubClassOf(obo:NOMEN_0000357 obo:NOMEN_0000353)
+
+# Class: obo:NOMEN_0000358 (ICN subclass)
+
+AnnotationAssertion(obo:NOMEN_0000017 obo:NOMEN_0000358 "subclassis")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000358 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000358 "ICN subclass"@en)
+SubClassOf(obo:NOMEN_0000358 obo:NOMEN_0000353)
+
+# Class: obo:NOMEN_0000359 (ICN suborder)
+
+AnnotationAssertion(obo:NOMEN_0000017 obo:NOMEN_0000359 "subordo")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000359 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000359 "ICN suborder"@en)
+SubClassOf(obo:NOMEN_0000359 obo:NOMEN_0000353)
+
+# Class: obo:NOMEN_0000360 (ICN subphylum)
+
+AnnotationAssertion(obo:NOMEN_0000017 obo:NOMEN_0000360 "Subdivision")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000360 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000360 "ICN subphylum"@en)
+SubClassOf(obo:NOMEN_0000360 obo:NOMEN_0000353)
+
+# Class: obo:NOMEN_0000361 (ICN subkingdom)
+
+AnnotationAssertion(obo:NOMEN_0000017 obo:NOMEN_0000361 "subregnum")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000361 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000361 "ICN subkingdom"@en)
+SubClassOf(obo:NOMEN_0000361 obo:NOMEN_0000353)
+
+# Class: obo:NOMEN_0000363 (ICN species)
+
+AnnotationAssertion(obo:NOMEN_0000018 obo:NOMEN_0000363 "sp.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000363 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000363 "ICN species"@en)
+SubClassOf(obo:NOMEN_0000363 obo:NOMEN_0000006)
+
+# Class: obo:NOMEN_0000364 (ICN form)
+
+AnnotationAssertion(obo:NOMEN_0000017 obo:NOMEN_0000364 "forma")
+AnnotationAssertion(obo:NOMEN_0000018 obo:NOMEN_0000364 "f.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000364 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000364 "ICN form"@en)
+SubClassOf(obo:NOMEN_0000364 obo:NOMEN_0000006)
+
+# Class: obo:NOMEN_0000365 (ICN subform)
+
+AnnotationAssertion(obo:NOMEN_0000017 obo:NOMEN_0000365 "subforma")
+AnnotationAssertion(obo:NOMEN_0000018 obo:NOMEN_0000365 "subf.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000365 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000365 "ICN subform"@en)
+SubClassOf(obo:NOMEN_0000365 obo:NOMEN_0000006)
+
+# Class: obo:NOMEN_0000366 (ICN subvariety)
+
+AnnotationAssertion(obo:NOMEN_0000017 obo:NOMEN_0000366 "subvarietas")
+AnnotationAssertion(obo:NOMEN_0000018 obo:NOMEN_0000366 "subvar.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000366 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000366 "ICN subvariety"@en)
+SubClassOf(obo:NOMEN_0000366 obo:NOMEN_0000006)
+
+# Class: obo:NOMEN_0000367 (ICN variety)
+
+AnnotationAssertion(obo:NOMEN_0000017 obo:NOMEN_0000367 "varietas")
+AnnotationAssertion(obo:NOMEN_0000018 obo:NOMEN_0000367 "var.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000367 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000367 "ICN variety"@en)
+SubClassOf(obo:NOMEN_0000367 obo:NOMEN_0000006)
+
+# Class: obo:NOMEN_0000368 (ICN subspecies)
+
+AnnotationAssertion(obo:NOMEN_0000018 obo:NOMEN_0000368 "subsp.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000368 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000368 "ICN subspecies"@en)
+SubClassOf(obo:NOMEN_0000368 obo:NOMEN_0000006)
+
+# Class: obo:NOMEN_0000377 (ICN not effectively published name)
+
+AnnotationAssertion(rdfs:comment obo:NOMEN_0000377 "invalidum")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000377 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000377 "ICN not effectively published name"@en)
+SubClassOf(obo:NOMEN_0000377 obo:NOMEN_0000109)
+DisjointClasses(obo:NOMEN_0000377 obo:NOMEN_0000383)
+
+# Class: obo:NOMEN_0000379 (ICN nomen nudum)
+
+AnnotationAssertion(obo:NOMEN_0000018 obo:NOMEN_0000379 "nom.nud.")
+AnnotationAssertion(rdfs:comment obo:NOMEN_0000379 "nudum")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000379 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000379 "ICN nomen nudum"@en)
+SubClassOf(obo:NOMEN_0000379 obo:NOMEN_0000008)
+
+# Class: obo:NOMEN_0000380 (ICN rejected publication)
+
+AnnotationAssertion(rdfs:comment obo:NOMEN_0000380 "oppressa")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000380 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000380 "ICN rejected publication"@en)
+SubClassOf(obo:NOMEN_0000380 obo:NOMEN_0000008)
+
+# Class: obo:NOMEN_0000381 (ICN provisional name)
+
+AnnotationAssertion(rdfs:comment obo:NOMEN_0000381 "provisorium")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000381 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000381 "ICN provisional name"@en)
+SubClassOf(obo:NOMEN_0000381 obo:NOMEN_0000008)
+
+# Class: obo:NOMEN_0000382 (ICN tautonym)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000382 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000382 "ICN tautonym"@en)
+SubClassOf(obo:NOMEN_0000382 obo:NOMEN_0000008)
+
+# Class: obo:NOMEN_0000383 (ICN effectively published name)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000383 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000383 "ICN effectively published name"@en)
+SubClassOf(obo:NOMEN_0000383 obo:NOMEN_0000109)
+
+# Class: obo:NOMEN_0000384 (ICN legitimate name)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000384 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000384 "ICN legitimate name"@en)
+SubClassOf(obo:NOMEN_0000384 obo:NOMEN_0000007)
+DisjointClasses(obo:NOMEN_0000384 obo:NOMEN_0000386)
+
+# Class: obo:NOMEN_0000385 (ICN sanctioned name)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000385 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000385 "ICN sanctioned name"@en)
+SubClassOf(obo:NOMEN_0000385 obo:NOMEN_0000384)
+
+# Class: obo:NOMEN_0000386 (ICN illegitimate name)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000386 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000386 "ICN illegitimate name"@en)
+SubClassOf(obo:NOMEN_0000386 obo:NOMEN_0000007)
+
+# Class: obo:NOMEN_0000387 (ICN nomen novum)
+
+AnnotationAssertion(obo:NOMEN_0000018 obo:NOMEN_0000387 "nom. nov.")
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000387 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000387 "ICN nomen novum"@en)
+SubClassOf(obo:NOMEN_0000387 obo:NOMEN_0000384)
+
+# Class: obo:NOMEN_0000388 (ICN nothotaxon)
+
+AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000388 obo:NOMEN)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000388 "ICN nothotaxon"@en)
+SubClassOf(obo:NOMEN_0000388 obo:NOMEN_0000384)
+
+# Class: dwc:Taxon (Taxon)
+
+AnnotationAssertion(rdfs:comment dwc:Taxon "A group of organisms (sensu http://purl.obolibrary.org/obo/OBI_0100026) considered by taxonomists to form a homogeneous unit."@en)
+AnnotationAssertion(rdfs:isDefinedBy dwc:Taxon <http://rs.tdwg.org/dwc/terms/>)
+AnnotationAssertion(rdfs:label dwc:Taxon "Taxon"@en)
+
+# Class: tc:TaxonConcept (tc:TaxonConcept)
+
+SubClassOf(Annotation(rdfs:isDefinedBy :tcan.owltcan.owl) tc:TaxonConcept obo:CDAO_0000138)
+
+# Class: tn:NomenclaturalCodeTerm (Nomenclatural Code Term)
+
+AnnotationAssertion(rdfs:comment tn:NomenclaturalCodeTerm " A class for which instances can be defined to create a controlled vocabulary for the nomenclatural codes. Equivalent to TCS NomenclaturalCodesEnum ")
+AnnotationAssertion(rdfs:isDefinedBy tn:NomenclaturalCodeTerm <http://rs.tdwg.org/ontology/voc/TaxonName>)
+AnnotationAssertion(rdfs:label tn:NomenclaturalCodeTerm "Nomenclatural Code Term")
+
+# Class: tn:NomenclaturalType (Nomenclatural Type)
+
+AnnotationAssertion(rdfs:comment tn:NomenclaturalType "A type name or specimen. Typification can be complex to represent. On the one hand a type is a property of a TaxonName that is created at the time the name is published. But it
+         needs to exist as a structure so that the type of type can be indicated. On the other hand a type can be the result of a later typification event - almost like a nomenclatural note. This
+         object can therefore be used in two ways. It can be the target of the 'type' property in a TaxonName object (in which case the typeOf property may be ommitted) or it can be used as a free
+         standing object with its own ID and the typeOf property used to indicate which TaxonName this is a type of - this is more likely scenario in a the case of a leptotypification event.
+         Equivalent to TCS ScientificName/Typification ")
+AnnotationAssertion(rdfs:isDefinedBy tn:NomenclaturalType <http://rs.tdwg.org/ontology/voc/TaxonName>)
+AnnotationAssertion(rdfs:label tn:NomenclaturalType "Nomenclatural Type")
+
+# Class: tn:NomenclaturalTypeTypeTerm (Nomenclatural Type Type)
+
+AnnotationAssertion(rdfs:comment tn:NomenclaturalTypeTypeTerm " A kind of nomenclatural type. Nomenclatural types can be of different kinds (or types) to indicate whether they are duplicates, replacements, related specimens etc. Instances of
+         this class describe kinds of nomenclatural types. Equivalent to TCS NomenclaturalTypeStatusOfUnitsEnum ")
+AnnotationAssertion(rdfs:isDefinedBy tn:NomenclaturalTypeTypeTerm <http://rs.tdwg.org/ontology/voc/TaxonName>)
+AnnotationAssertion(rdfs:label tn:NomenclaturalTypeTypeTerm "Nomenclatural Type Type")
+
+# Class: tn:TaxonName (Taxon Name)
+
+AnnotationAssertion(tdwgcmn:tcsEquivalence tn:TaxonName "ScientificName complexType")
+AnnotationAssertion(rdfs:comment tn:TaxonName " A scientific biological name. An object that represents a single scientific biological name that either is governed by or appears to be governed by one of the biological codes of
+         nomenclature. These are not taxa. Taxa, whether accepted or not, are represented by TaxonConcept objects. ")
+AnnotationAssertion(rdfs:isDefinedBy tn:TaxonName <http://rs.tdwg.org/ontology/voc/TaxonName>)
+AnnotationAssertion(rdfs:label tn:TaxonName "Taxon Name")
+
+
+############################
+#   Named Individuals
+############################
+
+# Individual: <http://ontology.phyloref.org/tcan.owl#ICNP> (ICNP)
+
+AnnotationAssertion(dc:title <http://ontology.phyloref.org/tcan.owl#ICNP> "ICNP")
+AnnotationAssertion(rdfs:comment <http://ontology.phyloref.org/tcan.owl#ICNP> "International Code of Nomenclature of Prokaryotes")
+AnnotationAssertion(rdfs:isDefinedBy <http://ontology.phyloref.org/tcan.owl#ICNP> :tcan.owltcan.owl)
+AnnotationAssertion(rdfs:label <http://ontology.phyloref.org/tcan.owl#ICNP> "ICNP")
+ClassAssertion(tn:NomenclaturalCodeTerm <http://ontology.phyloref.org/tcan.owl#ICNP>)
+SameIndividual(<http://ontology.phyloref.org/tcan.owl#ICNP> tn:Bacteriological)
+
+# Individual: <http://ontology.phyloref.org/tcan.owl#ICTV> (ICTV)
+
+AnnotationAssertion(dc:title <http://ontology.phyloref.org/tcan.owl#ICTV> "ICTV")
+AnnotationAssertion(rdfs:comment <http://ontology.phyloref.org/tcan.owl#ICTV> "International Committee on Taxonomy of Viruses")
+AnnotationAssertion(rdfs:isDefinedBy <http://ontology.phyloref.org/tcan.owl#ICTV> :tcan.owltcan.owl)
+AnnotationAssertion(rdfs:label <http://ontology.phyloref.org/tcan.owl#ICTV> "ICTV")
+ClassAssertion(tn:NomenclaturalCodeTerm <http://ontology.phyloref.org/tcan.owl#ICTV>)
+SameIndividual(<http://ontology.phyloref.org/tcan.owl#ICTV> tn:Viral)
+
+# Individual: tn:Allolectotype (Allolectotype)
+
+AnnotationAssertion(dc:title tn:Allolectotype "Allolectotype")
+AnnotationAssertion(rdfs:comment tn:Allolectotype "A paralectotype specimen that is the opposite sex of the lectotype. The term is not regulated by the ICZN. [Zoo.]")
+AnnotationAssertion(rdfs:label tn:Allolectotype "Allolectotype")
+ClassAssertion(tn:NomenclaturalTypeTypeTerm tn:Allolectotype)
+
+# Individual: tn:Alloneotype (Alloneotype)
+
+AnnotationAssertion(dc:title tn:Alloneotype "Alloneotype")
+AnnotationAssertion(rdfs:comment tn:Alloneotype "A paraneotype specimen that is the opposite sex of the neotype. The term is not regulated by the ICZN. [Zoo.]")
+AnnotationAssertion(rdfs:label tn:Alloneotype "Alloneotype")
+ClassAssertion(tn:NomenclaturalTypeTypeTerm tn:Alloneotype)
+
+# Individual: tn:Allotype (Allotype)
+
+AnnotationAssertion(dc:title tn:Allotype "Allotype")
+AnnotationAssertion(rdfs:comment tn:Allotype "A paratype specimen designated from the type series by the original author that is the opposite sex of the holotype. The term is not regulated by the ICZN.
+      [Zoo.]")
+AnnotationAssertion(rdfs:label tn:Allotype "Allotype")
+ClassAssertion(tn:NomenclaturalTypeTypeTerm tn:Allotype)
+
+# Individual: tn:Bacteriological (Bacteriological)
+
+AnnotationAssertion(dc:title tn:Bacteriological "Bacteriological")
+AnnotationAssertion(rdfs:comment tn:Bacteriological "Rules that govern the naming of bacteria species")
+AnnotationAssertion(rdfs:label tn:Bacteriological "Bacteriological")
+ClassAssertion(tn:NomenclaturalCodeTerm tn:Bacteriological)
+
+# Individual: tn:Cotype (Cotype)
+
+AnnotationAssertion(dc:title tn:Cotype "Cotype")
+AnnotationAssertion(rdfs:comment tn:Cotype "A deprecated term no longer recognized in the ICZN; formerly used for either syntype or paratype [see ICZN Recommendation 73E]. [Zoo.]")
+AnnotationAssertion(rdfs:label tn:Cotype "Cotype")
+ClassAssertion(tn:NomenclaturalTypeTypeTerm tn:Cotype)
+
+# Individual: tn:Epitype (Epitype)
+
+AnnotationAssertion(dc:title tn:Epitype "Epitype")
+AnnotationAssertion(rdfs:comment tn:Epitype "An epitype is a specimen or illustration selected to serve as an interpretative type when any kind of holotype, lectotype, etc. is demonstrably ambiguous and cannot be
+         critically identified for purposes of the precise application of the name of a taxon (see Art. ICBN 9.7, 9.18). An epitype supplements, rather than replaces existing types.
+      [Bot./Bio.]")
+AnnotationAssertion(rdfs:label tn:Epitype "Epitype")
+ClassAssertion(tn:NomenclaturalTypeTypeTerm tn:Epitype)
+
+# Individual: tn:ExEpitype (Ex-Epitype)
+
+AnnotationAssertion(dc:title tn:ExEpitype "Ex-Epitype")
+AnnotationAssertion(rdfs:comment tn:ExEpitype "A strain or cultivation derived from epitype material. Ex-types are not regulated by the botanical or zoological code. [Bot.]")
+AnnotationAssertion(rdfs:label tn:ExEpitype "Ex-Epitype")
+ClassAssertion(tn:NomenclaturalTypeTypeTerm tn:ExEpitype)
+
+# Individual: tn:ExHolotype (Ex-Holotype)
+
+AnnotationAssertion(dc:title tn:ExHolotype "Ex-Holotype")
+AnnotationAssertion(rdfs:comment tn:ExHolotype "A strain or cultivation derived from holotype material. Ex-types are not regulated by the botanical or zoological code. [Zoo./Bot.]")
+AnnotationAssertion(rdfs:label tn:ExHolotype "Ex-Holotype")
+ClassAssertion(tn:NomenclaturalTypeTypeTerm tn:ExHolotype)
+
+# Individual: tn:ExIsotype (Ex-Isotype)
+
+AnnotationAssertion(dc:title tn:ExIsotype "Ex-Isotype")
+AnnotationAssertion(rdfs:comment tn:ExIsotype "A strain or cultivation derived from isotype material. Ex-types are not regulated by the botanical or zoological code. [Zoo./Bot.]")
+AnnotationAssertion(rdfs:label tn:ExIsotype "Ex-Isotype")
+ClassAssertion(tn:NomenclaturalTypeTypeTerm tn:ExIsotype)
+
+# Individual: tn:ExLectotype (Ex-Lectotype)
+
+AnnotationAssertion(dc:title tn:ExLectotype "Ex-Lectotype")
+AnnotationAssertion(rdfs:comment tn:ExLectotype "A strain or cultivation derived from lectotype material. Ex-types are not regulated by the botanical or zoological code. [Zoo./Bot.]")
+AnnotationAssertion(rdfs:label tn:ExLectotype "Ex-Lectotype")
+ClassAssertion(tn:NomenclaturalTypeTypeTerm tn:ExLectotype)
+
+# Individual: tn:ExNeotype (Ex-Neotype)
+
+AnnotationAssertion(dc:title tn:ExNeotype "Ex-Neotype")
+AnnotationAssertion(rdfs:comment tn:ExNeotype "A strain or cultivation derived from neotype material. Ex-types are not regulated by the botanical or zoological code. [Zoo./Bot.]")
+AnnotationAssertion(rdfs:label tn:ExNeotype "Ex-Neotype")
+ClassAssertion(tn:NomenclaturalTypeTypeTerm tn:ExNeotype)
+
+# Individual: tn:ExParatype (Ex-Paratype)
+
+AnnotationAssertion(dc:title tn:ExParatype "Ex-Paratype")
+AnnotationAssertion(rdfs:comment tn:ExParatype "A strain or cultivation derived from paratype material. Ex-types are not regulated by the botanical or zoological code. [Zoo./Bot.]")
+AnnotationAssertion(rdfs:label tn:ExParatype "Ex-Paratype")
+ClassAssertion(tn:NomenclaturalTypeTypeTerm tn:ExParatype)
+
+# Individual: tn:ExSyntype (Ex-Syntype)
+
+AnnotationAssertion(dc:title tn:ExSyntype "Ex-Syntype")
+AnnotationAssertion(rdfs:comment tn:ExSyntype "A strain or cultivation derived from neotype material. Ex-types are not regulated by the botanical or zoological code. [Zoo./Bot.]")
+AnnotationAssertion(rdfs:label tn:ExSyntype "Ex-Syntype")
+ClassAssertion(tn:NomenclaturalTypeTypeTerm tn:ExSyntype)
+
+# Individual: tn:ExType (Ex-Type)
+
+AnnotationAssertion(dc:title tn:ExType "Ex-Type")
+AnnotationAssertion(rdfs:comment tn:ExType "A strain or cultivation derived from some kind of type material. Ex-types are not regulated by the botanical or zoological code. [Zoo./Bot.]")
+AnnotationAssertion(rdfs:label tn:ExType "Ex-Type")
+ClassAssertion(tn:NomenclaturalTypeTypeTerm tn:ExType)
+
+# Individual: tn:Hapantotype (Hapantotype)
+
+AnnotationAssertion(dc:title tn:Hapantotype "Hapantotype")
+AnnotationAssertion(rdfs:comment tn:Hapantotype "One or more preparations of directly related individuals representing distinct stages in the life cycle, which together form the type in an extant species of protistan [ICZN
+         Article 72.5.4]. A hapantotype, while a series of individuals, is a holotype that must not be restricted by lectotype selection. If an hapantotype is found to contain individuals of more than
+         one species, however, components may be excluded until it contains individuals of only one species [ICZN Article 73.3.2]. [Zoo.]")
+AnnotationAssertion(rdfs:label tn:Hapantotype "Hapantotype")
+ClassAssertion(tn:NomenclaturalTypeTypeTerm tn:Hapantotype)
+
+# Individual: tn:Holotype (Holotype)
+
+AnnotationAssertion(dc:title tn:Holotype "Holotype")
+AnnotationAssertion(rdfs:comment tn:Holotype "The one specimen or other element used or designated by the original author at the time of publication of the original description as the nomenclatural type of a species or
+         infraspecific taxon. A holotype may be 'explicit' if it is clearly stated in the originating publication or 'implicit' if it is the single specimen proved to have been in the hands of the
+         originating author when the description was published. [Zoo./Bot./Bio.]")
+AnnotationAssertion(rdfs:label tn:Holotype "Holotype")
+ClassAssertion(tn:NomenclaturalTypeTypeTerm tn:Holotype)
+
+# Individual: tn:ICBN (ICN)
+
+AnnotationAssertion(dc:title tn:ICBN "ICBN")
+AnnotationAssertion(Annotation(rdfs:isDefinedBy :tcan.owltcan.owl) dc:title tn:ICBN "ICN")
+AnnotationAssertion(Annotation(rdfs:isDefinedBy :tcan.owltcan.owl) rdfs:comment tn:ICBN "International Code of Nomenclature for algae, fungi, and plants (f.k.a. International Code of Botanical Nomenclature)")
+AnnotationAssertion(rdfs:label tn:ICBN "ICN")
+ClassAssertion(tn:NomenclaturalCodeTerm tn:ICBN)
+
+# Individual: tn:ICNCP (ICNCP)
+
+AnnotationAssertion(dc:title tn:ICNCP "ICNCP")
+AnnotationAssertion(rdfs:comment tn:ICNCP "International Code of Cultivated Plants")
+AnnotationAssertion(rdfs:label tn:ICNCP "ICNCP")
+ClassAssertion(tn:NomenclaturalCodeTerm tn:ICNCP)
+
+# Individual: tn:ICZN (ICZN)
+
+AnnotationAssertion(dc:title tn:ICZN "ICZN")
+AnnotationAssertion(rdfs:comment tn:ICZN "International Code of Zoological Nomenclature")
+AnnotationAssertion(rdfs:label tn:ICZN "ICZN")
+ClassAssertion(tn:NomenclaturalCodeTerm tn:ICZN)
+
+# Individual: tn:Iconotype (Iconotype)
+
+AnnotationAssertion(dc:title tn:Iconotype "Iconotype")
+AnnotationAssertion(rdfs:comment tn:Iconotype "A drawing or photograph (also called 'phototype') of a type specimen. Note: the term \"iconotype\" is not used in the ICBN, but implicit in, e. g., ICBN Art. 7 and 38.
+         [Zoo./Bot.]")
+AnnotationAssertion(rdfs:label tn:Iconotype "Iconotype")
+ClassAssertion(tn:NomenclaturalTypeTypeTerm tn:Iconotype)
+
+# Individual: tn:Isolectotype (Isolectotype)
+
+AnnotationAssertion(dc:title tn:Isolectotype "Isolectotype")
+AnnotationAssertion(rdfs:comment tn:Isolectotype "A duplicate of a lectotype, compare lectotype. [Bot.]")
+AnnotationAssertion(rdfs:label tn:Isolectotype "Isolectotype")
+ClassAssertion(tn:NomenclaturalTypeTypeTerm tn:Isolectotype)
+
+# Individual: tn:Isoneotype (Isoneotype)
+
+AnnotationAssertion(dc:title tn:Isoneotype "Isoneotype")
+AnnotationAssertion(rdfs:comment tn:Isoneotype "A duplicate of a neotype, compare neotype. [Bot.]")
+AnnotationAssertion(rdfs:label tn:Isoneotype "Isoneotype")
+ClassAssertion(tn:NomenclaturalTypeTypeTerm tn:Isoneotype)
+
+# Individual: tn:Isosyntype (Isosyntype)
+
+AnnotationAssertion(dc:title tn:Isosyntype "Isosyntype")
+AnnotationAssertion(rdfs:comment tn:Isosyntype "A duplicate of a syntype, compare isotype = duplicate of holotype. [Bot.]")
+AnnotationAssertion(rdfs:label tn:Isosyntype "Isosyntype")
+ClassAssertion(tn:NomenclaturalTypeTypeTerm tn:Isosyntype)
+
+# Individual: tn:Isotype (Isotype)
+
+AnnotationAssertion(dc:title tn:Isotype "Isotype")
+AnnotationAssertion(rdfs:comment tn:Isotype "An isotype is any duplicate of the holotype (i. e. part of a single gathering made by a collector at one time, from which the holotype was derived); it is always a specimen
+         (ICBN Art. 7). [Bot.]")
+AnnotationAssertion(rdfs:label tn:Isotype "Isotype")
+ClassAssertion(tn:NomenclaturalTypeTypeTerm tn:Isotype)
+
+# Individual: tn:Lectotype (Lectotype)
+
+AnnotationAssertion(dc:title tn:Lectotype "Lectotype")
+AnnotationAssertion(rdfs:comment tn:Lectotype "A specimen or other element designated subsequent to the publication of the original description from the original material (syntypes or paratypes) to serve as nomenclatural
+         type. Lectotype designation can occur only where no holotype was designated at the time of publication or if it is missing (ICBN Art. 7, ICZN Art. 74). [Zoo./Bot.] -- Note: the BioCode
+         defines lectotype as selection from holotype material in cases where the holotype material contains more than one taxon [Bio.].")
+AnnotationAssertion(rdfs:label tn:Lectotype "Lectotype")
+ClassAssertion(tn:NomenclaturalTypeTypeTerm tn:Lectotype)
+
+# Individual: tn:Neotype (Neotype)
+
+AnnotationAssertion(dc:title tn:Neotype "Neotype")
+AnnotationAssertion(rdfs:comment tn:Neotype "A specimen designated as nomenclatural type subsequent to the publication of the original description in cases where the original holotype, lectotype, all paratypes and
+         syntypes are lost or destroyed, or suppressed by the (botanical or zoological) commission on nomenclature. In zoology also called \"Standard specimen\" or \"Representative specimen\".
+         [Zoo./Bot./Bio.]")
+AnnotationAssertion(rdfs:label tn:Neotype "Neotype")
+ClassAssertion(tn:NomenclaturalTypeTypeTerm tn:Neotype)
+
+# Individual: tn:NotAType (NotAType)
+
+AnnotationAssertion(dc:title tn:NotAType "NotAType")
+AnnotationAssertion(rdfs:comment tn:NotAType "For specimens erroneously labelled as types an explicit negative statement may be desirable. [General]")
+AnnotationAssertion(rdfs:label tn:NotAType "NotAType")
+ClassAssertion(tn:NomenclaturalTypeTypeTerm tn:NotAType)
+
+# Individual: tn:Paralectotype (Paralectotype)
+
+AnnotationAssertion(dc:title tn:Paralectotype "Paralectotype")
+AnnotationAssertion(rdfs:comment tn:Paralectotype "All of the specimens in the syntype series of a species or infraspecific taxon other than the lectotype itself. Also called \"lectoparatype\". [Zoo.]")
+AnnotationAssertion(rdfs:label tn:Paralectotype "Paralectotype")
+ClassAssertion(tn:NomenclaturalTypeTypeTerm tn:Paralectotype)
+
+# Individual: tn:Paraneotype (Paraneotype)
+
+AnnotationAssertion(dc:title tn:Paraneotype "Paraneotype")
+AnnotationAssertion(rdfs:comment tn:Paraneotype "All of the specimens in the syntype series of a species or infraspecific taxon other than the neotype itself. Also called \"neoparatype\". [Zoo.]")
+AnnotationAssertion(rdfs:label tn:Paraneotype "Paraneotype")
+ClassAssertion(tn:NomenclaturalTypeTypeTerm tn:Paraneotype)
+
+# Individual: tn:Paratype (Paratype)
+
+AnnotationAssertion(dc:title tn:Paratype "Paratype")
+AnnotationAssertion(rdfs:comment tn:Paratype "All of the specimens in the type series of a species or infraspecific taxon other than the holotype (and, in botany, isotypes). Paratypes must have been at the disposition of
+         the author at the time when the original description was created and must have been designated and indicated in the publication. Judgment must be exercised on paratype status, for only rarely
+         are specimens explicitly cited as paratypes, but usually as \"specimens examined,\" \"other material seen\", etc. [Zoo./Bot.]")
+AnnotationAssertion(rdfs:label tn:Paratype "Paratype")
+ClassAssertion(tn:NomenclaturalTypeTypeTerm tn:Paratype)
+
+# Individual: tn:Plastoholotype (Plastoholotype)
+
+AnnotationAssertion(dc:title tn:Plastoholotype "Plastoholotype")
+AnnotationAssertion(rdfs:comment tn:Plastoholotype "A copy or cast of holotype material (compare Plastotype).")
+AnnotationAssertion(rdfs:label tn:Plastoholotype "Plastoholotype")
+ClassAssertion(tn:NomenclaturalTypeTypeTerm tn:Plastoholotype)
+
+# Individual: tn:Plastoisotype (Plastoisotype)
+
+AnnotationAssertion(dc:title tn:Plastoisotype "Plastoisotype")
+AnnotationAssertion(rdfs:comment tn:Plastoisotype "A copy or cast of isotype material (compare Plastotype).")
+AnnotationAssertion(rdfs:label tn:Plastoisotype "Plastoisotype")
+ClassAssertion(tn:NomenclaturalTypeTypeTerm tn:Plastoisotype)
+
+# Individual: tn:Plastolectotype (Plastolectotype)
+
+AnnotationAssertion(dc:title tn:Plastolectotype "Plastolectotype")
+AnnotationAssertion(rdfs:comment tn:Plastolectotype "A copy or cast of lectotype material (compare Plastotype).")
+AnnotationAssertion(rdfs:label tn:Plastolectotype "Plastolectotype")
+ClassAssertion(tn:NomenclaturalTypeTypeTerm tn:Plastolectotype)
+
+# Individual: tn:Plastoneotype (Plastoneotype)
+
+AnnotationAssertion(dc:title tn:Plastoneotype "Plastoneotype")
+AnnotationAssertion(rdfs:comment tn:Plastoneotype "A copy or cast of neotype material (compare Plastotype).")
+AnnotationAssertion(rdfs:label tn:Plastoneotype "Plastoneotype")
+ClassAssertion(tn:NomenclaturalTypeTypeTerm tn:Plastoneotype)
+
+# Individual: tn:Plastoparatype (Plastoparatype)
+
+AnnotationAssertion(dc:title tn:Plastoparatype "Plastoparatype")
+AnnotationAssertion(rdfs:comment tn:Plastoparatype "A copy or cast of paratype material (compare Plastotype).")
+AnnotationAssertion(rdfs:label tn:Plastoparatype "Plastoparatype")
+ClassAssertion(tn:NomenclaturalTypeTypeTerm tn:Plastoparatype)
+
+# Individual: tn:Plastosyntype (Plastosyntype)
+
+AnnotationAssertion(dc:title tn:Plastosyntype "Plastosyntype")
+AnnotationAssertion(rdfs:comment tn:Plastosyntype "A copy or cast of syntype material (compare Plastotype).")
+AnnotationAssertion(rdfs:label tn:Plastosyntype "Plastosyntype")
+ClassAssertion(tn:NomenclaturalTypeTypeTerm tn:Plastosyntype)
+
+# Individual: tn:Plastotype (Plastotype)
+
+AnnotationAssertion(dc:title tn:Plastotype "Plastotype")
+AnnotationAssertion(rdfs:comment tn:Plastotype "A copy or cast of type material, esp. relevant for fossil types. Not regulated by the botanical or zoological code (?). [Zoo./Bot.]")
+AnnotationAssertion(rdfs:label tn:Plastotype "Plastotype")
+ClassAssertion(tn:NomenclaturalTypeTypeTerm tn:Plastotype)
+
+# Individual: tn:SecondaryType (Secondary Type)
+
+AnnotationAssertion(dc:title tn:SecondaryType "Secondary Type")
+AnnotationAssertion(rdfs:comment tn:SecondaryType "A referred, described, measured or figured specimen in the original publication (including a neo/lectotypification publication) that is not a primary type. [Zoo.]
+      ")
+AnnotationAssertion(rdfs:label tn:SecondaryType "Secondary Type")
+ClassAssertion(tn:NomenclaturalTypeTypeTerm tn:SecondaryType)
+
+# Individual: tn:SupplementaryType (Supplementary Type)
+
+AnnotationAssertion(dc:title tn:SupplementaryType "Supplementary Type")
+AnnotationAssertion(rdfs:comment tn:SupplementaryType "A referred, described, measured or figured specimen in a revision of a previously described taxon. [Zoo.]")
+AnnotationAssertion(rdfs:label tn:SupplementaryType "Supplementary Type")
+ClassAssertion(tn:NomenclaturalTypeTypeTerm tn:SupplementaryType)
+
+# Individual: tn:Syntype (Syntype)
+
+AnnotationAssertion(dc:title tn:Syntype "Syntype")
+AnnotationAssertion(rdfs:comment tn:Syntype "One of the series of specimens used to describe a species or infraspecific taxon when neither a single holotype nor a lectotype has been designated. The syntypes collectively
+         constitute the name-bearing type. [Zoo./Bot.]")
+AnnotationAssertion(rdfs:label tn:Syntype "Syntype")
+ClassAssertion(tn:NomenclaturalTypeTypeTerm tn:Syntype)
+
+# Individual: tn:Topotype (Topotype)
+
+AnnotationAssertion(dc:title tn:Topotype "Topotype")
+AnnotationAssertion(rdfs:comment tn:Topotype "One or more specimens collected at the same location as the type series (type locality), regardless of whether they are part of the type series. Topotypes are not regulated by
+         the botanical or zoological code. Also called \"locotype\". [Zoo./Bot.]")
+AnnotationAssertion(rdfs:label tn:Topotype "Topotype")
+ClassAssertion(tn:NomenclaturalTypeTypeTerm tn:Topotype)
+
+# Individual: tn:Type (Type)
+
+AnnotationAssertion(dc:title tn:Type "Type")
+AnnotationAssertion(rdfs:comment tn:Type "a) A specimen designated or indicated any kind of type of a species or infraspecific taxon. If possible more specific type terms (holotype, syntype, etc.) should be applied. b)
+         the type name of a name of higher rank for taxa above the species rank. [General]")
+AnnotationAssertion(rdfs:label tn:Type "Type")
+ClassAssertion(tn:NomenclaturalTypeTypeTerm tn:Type)
+
+# Individual: tn:Viral (Viral)
+
+AnnotationAssertion(dc:title tn:Viral "Viral")
+AnnotationAssertion(rdfs:comment tn:Viral "International Committee on Taxonomy of Viruses")
+AnnotationAssertion(rdfs:label tn:Viral "Viral")
+ClassAssertion(tn:NomenclaturalCodeTerm tn:Viral)
+
+
+)
