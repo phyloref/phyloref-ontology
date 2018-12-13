@@ -1,4 +1,4 @@
-Prefix(:=<http://ontology.phyloref.org/tcan.owl>)
+Prefix(:=<http://ontology.phyloref.org/>)
 Prefix(dc:=<http://purl.org/dc/elements/1.1/>)
 Prefix(tc:=<http://rs.tdwg.org/ontology/voc/TaxonConcept#>)
 Prefix(tn:=<http://rs.tdwg.org/ontology/voc/TaxonName#>)
@@ -10,6 +10,7 @@ Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
 Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
 Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 Prefix(skos:=<http://www.w3.org/2004/02/skos/core#>)
+Prefix(tcan:=<http://ontology.phyloref.org/tcan.owl#>)
 Prefix(dwciri:=<http://rs.tdwg.org/dwc/iri/>)
 Prefix(dcterms:=<http://purl.org/dc/terms/>)
 Prefix(tdwgcmn:=<http://rs.tdwg.org/ontology/voc/Common#>)
@@ -246,8 +247,8 @@ Declaration(DataProperty(tn:specificEpithet))
 Declaration(DataProperty(tn:typificationString))
 Declaration(DataProperty(tn:uninomial))
 Declaration(DataProperty(tn:year))
-Declaration(NamedIndividual(<http://ontology.phyloref.org/tcan.owl#ICNP>))
-Declaration(NamedIndividual(<http://ontology.phyloref.org/tcan.owl#ICTV>))
+Declaration(NamedIndividual(tcan:ICNP))
+Declaration(NamedIndividual(tcan:ICTV))
 Declaration(NamedIndividual(tn:Allolectotype))
 Declaration(NamedIndividual(tn:Alloneotype))
 Declaration(NamedIndividual(tn:Allotype))
@@ -601,7 +602,7 @@ SubClassOf(openbiodiv:ScientificName openbiodiv:TaxonomicName)
 AnnotationAssertion(rdfs:comment openbiodiv:TaxonomicConcept "A taxonomic concept in the sense of Berendsohn"@en)
 AnnotationAssertion(rdfs:isDefinedBy openbiodiv:TaxonomicConcept openbiodiv:openbiodiv-ontology)
 EquivalentClasses(openbiodiv:TaxonomicConcept dwc:Taxon)
-SubClassOf(Annotation(rdfs:isDefinedBy :tcan.owltcan.owl) openbiodiv:TaxonomicConcept tc:TaxonConcept)
+SubClassOf(Annotation(rdfs:isDefinedBy :tcan.owl) openbiodiv:TaxonomicConcept tc:TaxonConcept)
 
 # Class: openbiodiv:TaxonomicConceptLabel (Taxon Concept Label)
 
@@ -758,7 +759,7 @@ SubClassOf(obo:NOMEN_0000034 obo:NOMEN_0000033)
 AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000036 obo:NOMEN)
 AnnotationAssertion(rdfs:label obo:NOMEN_0000036 "scientific name"@en)
 SubClassOf(obo:NOMEN_0000036 obo:NOMEN_0000030)
-SubClassOf(Annotation(rdfs:isDefinedBy :tcan.owltcan.owl) obo:NOMEN_0000036 tn:TaxonName)
+SubClassOf(Annotation(rdfs:isDefinedBy :tcan.owl) obo:NOMEN_0000036 tn:TaxonName)
 
 # Class: obo:NOMEN_0000037 (vernacular name)
 
@@ -795,7 +796,7 @@ SubClassOf(obo:NOMEN_0000057 obo:NOMEN_0000109)
 
 AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000062 obo:NOMEN)
 AnnotationAssertion(rdfs:label obo:NOMEN_0000062 "ICNP nomenclatural rank"@en)
-SubClassOf(Annotation(rdfs:isDefinedBy :tcan.owltcan.owl) obo:NOMEN_0000062 ObjectIntersectionOf(obo:NOMEN_0000027 ObjectHasValue(tn:nomenclaturalCode <http://ontology.phyloref.org/tcan.owl#ICNP>)))
+SubClassOf(Annotation(rdfs:isDefinedBy :tcan.owl) obo:NOMEN_0000062 ObjectIntersectionOf(obo:NOMEN_0000027 ObjectHasValue(tn:nomenclaturalCode tcan:ICNP)))
 
 # Class: obo:NOMEN_0000063 (ICNB above family-group)
 
@@ -988,34 +989,34 @@ SubClassOf(obo:NOMEN_0000104 obo:NOMEN_0000085)
 AnnotationAssertion(rdfs:comment obo:NOMEN_0000107 "The biological name that is applicable to animals.")
 AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000107 obo:NOMEN)
 AnnotationAssertion(rdfs:label obo:NOMEN_0000107 "ICZN name"@en)
-SubClassOf(Annotation(rdfs:isDefinedBy :tcan.owltcan.owl) obo:NOMEN_0000107 ObjectIntersectionOf(obo:NOMEN_0000036 ObjectHasValue(tn:nomenclaturalCode tn:ICZN)))
+SubClassOf(Annotation(rdfs:isDefinedBy :tcan.owl) obo:NOMEN_0000107 ObjectIntersectionOf(obo:NOMEN_0000036 ObjectHasValue(tn:nomenclaturalCode tn:ICZN)))
 
 # Class: obo:NOMEN_0000109 (ICN name)
 
 AnnotationAssertion(rdfs:comment obo:NOMEN_0000109 "The biological name that is applicable to algae, fungi, or plants.")
 AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000109 obo:NOMEN)
 AnnotationAssertion(rdfs:label obo:NOMEN_0000109 "ICN name"@en)
-SubClassOf(Annotation(rdfs:isDefinedBy :tcan.owltcan.owl) obo:NOMEN_0000109 ObjectIntersectionOf(obo:NOMEN_0000036 ObjectHasValue(tn:nomenclaturalCode tn:ICBN)))
+SubClassOf(Annotation(rdfs:isDefinedBy :tcan.owl) obo:NOMEN_0000109 ObjectIntersectionOf(obo:NOMEN_0000036 ObjectHasValue(tn:nomenclaturalCode tn:ICBN)))
 
 # Class: obo:NOMEN_0000110 (ICNP name)
 
 AnnotationAssertion(rdfs:comment obo:NOMEN_0000110 "The biological name that is applicable to bacteria.")
 AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000110 obo:NOMEN)
 AnnotationAssertion(rdfs:label obo:NOMEN_0000110 "ICNP name"@en)
-SubClassOf(Annotation(rdfs:isDefinedBy :tcan.owltcan.owl) obo:NOMEN_0000110 ObjectIntersectionOf(obo:NOMEN_0000036 ObjectHasValue(tn:nomenclaturalCode <http://ontology.phyloref.org/tcan.owl#ICNP>)))
+SubClassOf(Annotation(rdfs:isDefinedBy :tcan.owl) obo:NOMEN_0000110 ObjectIntersectionOf(obo:NOMEN_0000036 ObjectHasValue(tn:nomenclaturalCode tcan:ICNP)))
 
 # Class: obo:NOMEN_0000111 (ICTV name)
 
 AnnotationAssertion(rdfs:comment obo:NOMEN_0000111 "The biological name that is applicable to viruses.")
 AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000111 obo:NOMEN)
 AnnotationAssertion(rdfs:label obo:NOMEN_0000111 "ICTV name"@en)
-SubClassOf(Annotation(rdfs:isDefinedBy :tcan.owltcan.owl) obo:NOMEN_0000111 ObjectIntersectionOf(obo:NOMEN_0000036 ObjectHasValue(tn:nomenclaturalCode <http://ontology.phyloref.org/tcan.owl#ICTV>)))
+SubClassOf(Annotation(rdfs:isDefinedBy :tcan.owl) obo:NOMEN_0000111 ObjectIntersectionOf(obo:NOMEN_0000036 ObjectHasValue(tn:nomenclaturalCode tcan:ICTV)))
 
 # Class: obo:NOMEN_0000113 (ICTV nomenclatural rank)
 
 AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000113 obo:NOMEN)
 AnnotationAssertion(rdfs:label obo:NOMEN_0000113 "ICTV nomenclatural rank"@en)
-SubClassOf(Annotation(rdfs:isDefinedBy :tcan.owltcan.owl) obo:NOMEN_0000113 ObjectIntersectionOf(obo:NOMEN_0000027 ObjectHasValue(tn:nomenclaturalCode <http://ontology.phyloref.org/tcan.owl#ICTV>)))
+SubClassOf(Annotation(rdfs:isDefinedBy :tcan.owl) obo:NOMEN_0000113 ObjectIntersectionOf(obo:NOMEN_0000027 ObjectHasValue(tn:nomenclaturalCode tcan:ICTV)))
 
 # Class: obo:NOMEN_0000114 (ICTV order)
 
@@ -1188,7 +1189,7 @@ SubClassOf(obo:NOMEN_0000226 obo:NOMEN_0000223)
 
 AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000293 obo:NOMEN)
 AnnotationAssertion(rdfs:label obo:NOMEN_0000293 "ICZN nomenclatural rank"@en)
-SubClassOf(Annotation(rdfs:isDefinedBy :tcan.owltcan.owl) obo:NOMEN_0000293 ObjectIntersectionOf(obo:NOMEN_0000027 ObjectHasValue(tn:nomenclaturalCode tn:ICZN)))
+SubClassOf(Annotation(rdfs:isDefinedBy :tcan.owl) obo:NOMEN_0000293 ObjectIntersectionOf(obo:NOMEN_0000027 ObjectHasValue(tn:nomenclaturalCode tn:ICZN)))
 
 # Class: obo:NOMEN_0000295 (ICZN family-group)
 
@@ -1462,7 +1463,7 @@ SubClassOf(obo:NOMEN_0000338 obo:NOMEN_0000317)
 
 AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000339 obo:NOMEN)
 AnnotationAssertion(rdfs:label obo:NOMEN_0000339 "ICN nomenclatural rank"@en)
-SubClassOf(Annotation(rdfs:isDefinedBy :tcan.owltcan.owl) obo:NOMEN_0000339 ObjectIntersectionOf(obo:NOMEN_0000027 ObjectHasValue(tn:nomenclaturalCode tn:ICBN)))
+SubClassOf(Annotation(rdfs:isDefinedBy :tcan.owl) obo:NOMEN_0000339 ObjectIntersectionOf(obo:NOMEN_0000027 ObjectHasValue(tn:nomenclaturalCode tn:ICBN)))
 
 # Class: obo:NOMEN_0000341 (ICN subdivision of family)
 
@@ -1742,7 +1743,7 @@ AnnotationAssertion(rdfs:label dwc:Taxon "Taxon"@en)
 
 # Class: tc:TaxonConcept (tc:TaxonConcept)
 
-SubClassOf(Annotation(rdfs:isDefinedBy :tcan.owltcan.owl) tc:TaxonConcept obo:CDAO_0000138)
+SubClassOf(Annotation(rdfs:isDefinedBy :tcan.owl) tc:TaxonConcept obo:CDAO_0000138)
 
 # Class: tn:NomenclaturalCodeTerm (Nomenclatural Code Term)
 
@@ -1780,23 +1781,23 @@ AnnotationAssertion(rdfs:label tn:TaxonName "Taxon Name")
 #   Named Individuals
 ############################
 
-# Individual: <http://ontology.phyloref.org/tcan.owl#ICNP> (ICNP)
+# Individual: tcan:ICNP (ICNP)
 
-AnnotationAssertion(dc:title <http://ontology.phyloref.org/tcan.owl#ICNP> "ICNP")
-AnnotationAssertion(rdfs:comment <http://ontology.phyloref.org/tcan.owl#ICNP> "International Code of Nomenclature of Prokaryotes")
-AnnotationAssertion(rdfs:isDefinedBy <http://ontology.phyloref.org/tcan.owl#ICNP> :tcan.owltcan.owl)
-AnnotationAssertion(rdfs:label <http://ontology.phyloref.org/tcan.owl#ICNP> "ICNP")
-ClassAssertion(tn:NomenclaturalCodeTerm <http://ontology.phyloref.org/tcan.owl#ICNP>)
-SameIndividual(<http://ontology.phyloref.org/tcan.owl#ICNP> tn:Bacteriological)
+AnnotationAssertion(dc:title tcan:ICNP "ICNP")
+AnnotationAssertion(rdfs:comment tcan:ICNP "International Code of Nomenclature of Prokaryotes")
+AnnotationAssertion(rdfs:isDefinedBy tcan:ICNP :tcan.owl)
+AnnotationAssertion(rdfs:label tcan:ICNP "ICNP")
+ClassAssertion(tn:NomenclaturalCodeTerm tcan:ICNP)
+SameIndividual(tcan:ICNP tn:Bacteriological)
 
-# Individual: <http://ontology.phyloref.org/tcan.owl#ICTV> (ICTV)
+# Individual: tcan:ICTV (ICTV)
 
-AnnotationAssertion(dc:title <http://ontology.phyloref.org/tcan.owl#ICTV> "ICTV")
-AnnotationAssertion(rdfs:comment <http://ontology.phyloref.org/tcan.owl#ICTV> "International Committee on Taxonomy of Viruses")
-AnnotationAssertion(rdfs:isDefinedBy <http://ontology.phyloref.org/tcan.owl#ICTV> :tcan.owltcan.owl)
-AnnotationAssertion(rdfs:label <http://ontology.phyloref.org/tcan.owl#ICTV> "ICTV")
-ClassAssertion(tn:NomenclaturalCodeTerm <http://ontology.phyloref.org/tcan.owl#ICTV>)
-SameIndividual(<http://ontology.phyloref.org/tcan.owl#ICTV> tn:Viral)
+AnnotationAssertion(dc:title tcan:ICTV "ICTV")
+AnnotationAssertion(rdfs:comment tcan:ICTV "International Committee on Taxonomy of Viruses")
+AnnotationAssertion(rdfs:isDefinedBy tcan:ICTV :tcan.owl)
+AnnotationAssertion(rdfs:label tcan:ICTV "ICTV")
+ClassAssertion(tn:NomenclaturalCodeTerm tcan:ICTV)
+SameIndividual(tcan:ICTV tn:Viral)
 
 # Individual: tn:Allolectotype (Allolectotype)
 
@@ -1920,8 +1921,8 @@ ClassAssertion(tn:NomenclaturalTypeTypeTerm tn:Holotype)
 # Individual: tn:ICBN (ICN)
 
 AnnotationAssertion(dc:title tn:ICBN "ICBN")
-AnnotationAssertion(Annotation(rdfs:isDefinedBy :tcan.owltcan.owl) dc:title tn:ICBN "ICN")
-AnnotationAssertion(Annotation(rdfs:isDefinedBy :tcan.owltcan.owl) rdfs:comment tn:ICBN "International Code of Nomenclature for algae, fungi, and plants (f.k.a. International Code of Botanical Nomenclature)")
+AnnotationAssertion(Annotation(rdfs:isDefinedBy :tcan.owl) dc:title tn:ICBN "ICN")
+AnnotationAssertion(Annotation(rdfs:isDefinedBy :tcan.owl) rdfs:comment tn:ICBN "International Code of Nomenclature for algae, fungi, and plants (f.k.a. International Code of Botanical Nomenclature)")
 AnnotationAssertion(rdfs:label tn:ICBN "ICN")
 ClassAssertion(tn:NomenclaturalCodeTerm tn:ICBN)
 
