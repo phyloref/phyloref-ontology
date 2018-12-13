@@ -236,6 +236,11 @@ Declaration(ObjectProperty(tn:typeName))
 Declaration(ObjectProperty(tn:typeOfType))
 Declaration(ObjectProperty(tn:typeSpecimen))
 Declaration(ObjectProperty(tn:typifiedBy))
+Declaration(ObjectProperty(tc:accordingTo))
+Declaration(ObjectProperty(tc:hasName))
+Declaration(DataProperty(dwc:accordingTo))
+Declaration(DataProperty(dwc:nameAccordingTo))
+Declaration(DataProperty(dwc:scientificName))
 Declaration(DataProperty(tn:authorship))
 Declaration(DataProperty(tn:cultivarNameGroup))
 Declaration(DataProperty(tn:genusPart))
@@ -333,6 +338,7 @@ AnnotationAssertion(rdfs:comment openbiodiv:nameAccordingTo "The reference to th
     only be used with IRI's"@en)
 AnnotationAssertion(rdfs:isDefinedBy openbiodiv:nameAccordingTo openbiodiv:openbiodiv-ontology)
 SubObjectPropertyOf(openbiodiv:nameAccordingTo dwciri:nameAccordingTo)
+SubObjectPropertyOf(openbiodiv:nameAccordingTo tc:accordingTo)
 
 # Object Property: openbiodiv:replacementName (has replacement name)
 
@@ -351,6 +357,7 @@ AnnotationAssertion(rdfs:isDefinedBy openbiodiv:scientificName openbiodiv:openbi
 AnnotationAssertion(rdfs:label openbiodiv:scientificName "has scientific name"@en)
 SubObjectPropertyOf(openbiodiv:scientificName openbiodiv:taxonomicName)
 SubObjectPropertyOf(openbiodiv:scientificName dwciri:scientificName)
+SubObjectPropertyOf(openbiodiv:scientificName tc:hasName)
 ObjectPropertyDomain(openbiodiv:scientificName openbiodiv:TaxonomicConcept)
 ObjectPropertyRange(openbiodiv:scientificName openbiodiv:ScientificName)
 
@@ -460,10 +467,49 @@ AnnotationAssertion(rdfs:label tn:typifiedBy "Typified By")
 ObjectPropertyDomain(tn:typifiedBy tn:TaxonName)
 ObjectPropertyRange(tn:typifiedBy tn:NomenclaturalType)
 
+# Object Property: tc:accordingTo (according to)
+
+AnnotationAssertion(rdfs:comment tc:accordingTo "Information about the authorship of this concept which uses the Name in their
+          sense (i.e. secundum, sensu). Could be an institution or collection or team of individuals.
+          Equivalent to TCS /DataSet/TaxonConcepts/TaxonConcept/AccordingTo/AccordingToDetailed ")
+AnnotationAssertion(rdfs:isDefinedBy tc:accordingTo <http://rs.tdwg.org/ontology/voc/TaxonConcept>)
+AnnotationAssertion(rdfs:label tc:accordingTo "according to")
+ObjectPropertyDomain(tc:accordingTo tc:TaxonConcept)
+
+# Object Property: tc:hasName (Has Name)
+
+AnnotationAssertion(rdfs:comment tc:hasName "The TaxonName for this concept. Equivalent to TCS
+          /DataSet/TaxonConcepts/TaxonConcept/Name ")
+AnnotationAssertion(rdfs:isDefinedBy tc:hasName <http://rs.tdwg.org/ontology/voc/TaxonConcept>)
+AnnotationAssertion(rdfs:label tc:hasName "Has Name")
+ObjectPropertyDomain(tc:hasName tc:TaxonConcept)
+ObjectPropertyRange(tc:hasName tn:TaxonName)
+
 
 ############################
 #   Data Properties
 ############################
+
+# Data Property: dwc:accordingTo (According To)
+
+AnnotationAssertion(rdfs:comment dwc:accordingTo "Abstract term to attribute information to a source."@en)
+AnnotationAssertion(rdfs:isDefinedBy dwc:accordingTo <http://rs.tdwg.org/dwc/terms/>)
+AnnotationAssertion(rdfs:label dwc:accordingTo "According To"@en)
+
+# Data Property: dwc:nameAccordingTo (Name According To)
+
+AnnotationAssertion(dc:description dwc:nameAccordingTo "Example: \"McCranie, J. R., D. B. Wake, and L. D. Wilson. 1996. The taxonomic status of Bolitoglossa schmidti, with comments on the biology of the Mesoamerican salamander Bolitoglossa dofleini (Caudata: Plethodontidae). Carib. J. Sci. 32:395-398.\", \"Werner Greuter 2008\", \"Lilljeborg 1861, Upsala Univ. Arsskrift, Math. Naturvet., pp. 4, 5\""@en)
+AnnotationAssertion(rdfs:comment dwc:nameAccordingTo "The reference to the source in which the specific taxon concept circumscription is defined or implied - traditionally signified by the Latin \"sensu\" or \"sec.\" (from secundum, meaning \"according to\"). For taxa that result from identifications, a reference to the keys, monographs, experts and other sources should be given."@en)
+AnnotationAssertion(rdfs:isDefinedBy dwc:nameAccordingTo <http://rs.tdwg.org/dwc/terms/>)
+AnnotationAssertion(rdfs:label dwc:nameAccordingTo "Name According To"@en)
+SubDataPropertyOf(dwc:nameAccordingTo dwc:accordingTo)
+
+# Data Property: dwc:scientificName (Scientific Name)
+
+AnnotationAssertion(dc:description dwc:scientificName "Examples: \"Coleoptera\" (order), \"Vespertilionidae\" (family), \"Manis\" (genus), \"Ctenomys sociabilis\" (genus + specificEpithet), \"Ambystoma tigrinum diaboli\" (genus + specificEpithet + infraspecificEpithet), \"Roptrocerus typographi (Györfi, 1952)\" (genus + specificEpithet + scientificNameAuthorship), \"Quercus agrifolia var. oxyadenia (Torr.) J.T. Howell\" (genus + specificEpithet + taxonRank + infraspecificEpithet + scientificNameAuthorship)"@en)
+AnnotationAssertion(rdfs:comment dwc:scientificName "The full scientific name, with authorship and date information if known. When forming part of an Identification, this should be the name in lowest level taxonomic rank that can be determined. This term should not contain identification qualifications, which should instead be supplied in the IdentificationQualifier term."@en)
+AnnotationAssertion(rdfs:isDefinedBy dwc:scientificName <http://rs.tdwg.org/dwc/terms/>)
+AnnotationAssertion(rdfs:label dwc:scientificName "Scientific Name"@en)
 
 # Data Property: tn:authorship (Authorship)
 
@@ -568,6 +614,7 @@ AnnotationAssertion(rdfs:comment tn:uninomial " Family, genus, infrafamilial, su
          suprafamilial names. Note that this property should be used for Genus names. The genus field should only be used for names below rank of genus. ")
 AnnotationAssertion(rdfs:isDefinedBy tn:uninomial <http://rs.tdwg.org/ontology/voc/TaxonName>)
 AnnotationAssertion(rdfs:label tn:uninomial "Uninomial")
+SubDataPropertyOf(tn:uninomial dwc:scientificName)
 DataPropertyDomain(tn:uninomial tn:TaxonName)
 DataPropertyRange(tn:uninomial xsd:string)
 
