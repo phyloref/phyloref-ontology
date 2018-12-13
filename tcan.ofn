@@ -228,6 +228,8 @@ Declaration(ObjectProperty(openbiodiv:taxonomicConceptLabel))
 Declaration(ObjectProperty(openbiodiv:taxonomicName))
 Declaration(ObjectProperty(dwciri:nameAccordingTo))
 Declaration(ObjectProperty(dwciri:scientificName))
+Declaration(ObjectProperty(tc:accordingTo))
+Declaration(ObjectProperty(tc:hasName))
 Declaration(ObjectProperty(tn:basionymFor))
 Declaration(ObjectProperty(tn:hasBasionym))
 Declaration(ObjectProperty(tn:nomenclaturalCode))
@@ -236,8 +238,6 @@ Declaration(ObjectProperty(tn:typeName))
 Declaration(ObjectProperty(tn:typeOfType))
 Declaration(ObjectProperty(tn:typeSpecimen))
 Declaration(ObjectProperty(tn:typifiedBy))
-Declaration(ObjectProperty(tc:accordingTo))
-Declaration(ObjectProperty(tc:hasName))
 Declaration(DataProperty(dwc:accordingTo))
 Declaration(DataProperty(dwc:nameAccordingTo))
 Declaration(DataProperty(dwc:scientificName))
@@ -356,7 +356,6 @@ TransitiveObjectProperty(openbiodiv:replacementName)
 AnnotationAssertion(rdfs:isDefinedBy openbiodiv:scientificName openbiodiv:openbiodiv-ontology)
 AnnotationAssertion(rdfs:label openbiodiv:scientificName "has scientific name"@en)
 SubObjectPropertyOf(openbiodiv:scientificName openbiodiv:taxonomicName)
-SubObjectPropertyOf(openbiodiv:scientificName dwciri:scientificName)
 SubObjectPropertyOf(openbiodiv:scientificName tc:hasName)
 ObjectPropertyDomain(openbiodiv:scientificName openbiodiv:TaxonomicConcept)
 ObjectPropertyRange(openbiodiv:scientificName openbiodiv:ScientificName)
@@ -383,12 +382,31 @@ AnnotationAssertion(rdfs:isDefinedBy dwciri:nameAccordingTo <http://rs.tdwg.org/
 AnnotationAssertion(rdfs:label dwciri:nameAccordingTo "name according to"@en)
 AnnotationAssertion(rdfs:seeAlso dwciri:nameAccordingTo dwc:nameAccordingTo)
 
-# Object Property: dwciri:scientificName (has scientific name)
+# Object Property: dwciri:scientificName (scientific name)
 
 AnnotationAssertion(rdfs:comment dwciri:scientificName "the IRI version of dwc:scientificName"@en)
 AnnotationAssertion(rdfs:isDefinedBy dwciri:scientificName <http://rs.tdwg.org/dwc/iri/>)
-AnnotationAssertion(rdfs:label dwciri:scientificName "has scientific name"@en)
+AnnotationAssertion(rdfs:label dwciri:scientificName "scientific name"@en)
 AnnotationAssertion(rdfs:seeAlso dwciri:scientificName dwc:scientificName)
+
+# Object Property: tc:accordingTo (according to)
+
+AnnotationAssertion(rdfs:comment tc:accordingTo "Information about the authorship of this concept which uses the Name in their
+          sense (i.e. secundum, sensu). Could be an institution or collection or team of individuals.
+          Equivalent to TCS /DataSet/TaxonConcepts/TaxonConcept/AccordingTo/AccordingToDetailed ")
+AnnotationAssertion(rdfs:isDefinedBy tc:accordingTo <http://rs.tdwg.org/ontology/voc/TaxonConcept>)
+AnnotationAssertion(rdfs:label tc:accordingTo "according to")
+ObjectPropertyDomain(tc:accordingTo tc:TaxonConcept)
+
+# Object Property: tc:hasName (Has Name)
+
+AnnotationAssertion(rdfs:comment tc:hasName "The TaxonName for this concept. Equivalent to TCS
+          /DataSet/TaxonConcepts/TaxonConcept/Name ")
+AnnotationAssertion(rdfs:isDefinedBy tc:hasName <http://rs.tdwg.org/ontology/voc/TaxonConcept>)
+AnnotationAssertion(rdfs:label tc:hasName "Has Name")
+SubObjectPropertyOf(tc:hasName dwciri:scientificName)
+ObjectPropertyDomain(tc:hasName tc:TaxonConcept)
+ObjectPropertyRange(tc:hasName tn:TaxonName)
 
 # Object Property: tn:basionymFor (Basionym For)
 
@@ -466,24 +484,6 @@ AnnotationAssertion(rdfs:isDefinedBy tn:typifiedBy <http://rs.tdwg.org/ontology/
 AnnotationAssertion(rdfs:label tn:typifiedBy "Typified By")
 ObjectPropertyDomain(tn:typifiedBy tn:TaxonName)
 ObjectPropertyRange(tn:typifiedBy tn:NomenclaturalType)
-
-# Object Property: tc:accordingTo (according to)
-
-AnnotationAssertion(rdfs:comment tc:accordingTo "Information about the authorship of this concept which uses the Name in their
-          sense (i.e. secundum, sensu). Could be an institution or collection or team of individuals.
-          Equivalent to TCS /DataSet/TaxonConcepts/TaxonConcept/AccordingTo/AccordingToDetailed ")
-AnnotationAssertion(rdfs:isDefinedBy tc:accordingTo <http://rs.tdwg.org/ontology/voc/TaxonConcept>)
-AnnotationAssertion(rdfs:label tc:accordingTo "according to")
-ObjectPropertyDomain(tc:accordingTo tc:TaxonConcept)
-
-# Object Property: tc:hasName (Has Name)
-
-AnnotationAssertion(rdfs:comment tc:hasName "The TaxonName for this concept. Equivalent to TCS
-          /DataSet/TaxonConcepts/TaxonConcept/Name ")
-AnnotationAssertion(rdfs:isDefinedBy tc:hasName <http://rs.tdwg.org/ontology/voc/TaxonConcept>)
-AnnotationAssertion(rdfs:label tc:hasName "Has Name")
-ObjectPropertyDomain(tc:hasName tc:TaxonConcept)
-ObjectPropertyRange(tc:hasName tn:TaxonName)
 
 
 ############################
