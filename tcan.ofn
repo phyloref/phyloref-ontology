@@ -844,112 +844,112 @@ AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000062 obo:NOMEN)
 AnnotationAssertion(rdfs:label obo:NOMEN_0000062 "ICNP nomenclatural rank"@en)
 SubClassOf(Annotation(rdfs:isDefinedBy :tcan.owl) obo:NOMEN_0000062 ObjectIntersectionOf(obo:NOMEN_0000027 ObjectHasValue(tn:nomenclaturalCode tcan:ICNP)))
 
-# Class: obo:NOMEN_0000063 (ICNB above family-group)
+# Class: obo:NOMEN_0000063 (ICNP above family-group)
 
 AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000063 obo:NOMEN)
-AnnotationAssertion(rdfs:label obo:NOMEN_0000063 "ICNB above family-group"@en)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000063 "ICNP above family-group"@en)
 SubClassOf(obo:NOMEN_0000063 obo:NOMEN_0000062)
 
-# Class: obo:NOMEN_0000064 (ICNB family-group)
+# Class: obo:NOMEN_0000064 (ICNP family-group)
 
 AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000064 obo:NOMEN)
-AnnotationAssertion(rdfs:label obo:NOMEN_0000064 "ICNB family-group"@en)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000064 "ICNP family-group"@en)
 SubClassOf(obo:NOMEN_0000064 obo:NOMEN_0000062)
 
-# Class: obo:NOMEN_0000065 (ICNB genus-group)
+# Class: obo:NOMEN_0000065 (ICNP genus-group)
 
 AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000065 obo:NOMEN)
-AnnotationAssertion(rdfs:label obo:NOMEN_0000065 "ICNB genus-group"@en)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000065 "ICNP genus-group"@en)
 SubClassOf(obo:NOMEN_0000065 obo:NOMEN_0000062)
 
-# Class: obo:NOMEN_0000066 (ICNB species-group)
+# Class: obo:NOMEN_0000066 (ICNP species-group)
 
 AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000066 obo:NOMEN)
-AnnotationAssertion(rdfs:label obo:NOMEN_0000066 "ICNB species-group"@en)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000066 "ICNP species-group"@en)
 SubClassOf(obo:NOMEN_0000066 obo:NOMEN_0000062)
 
-# Class: obo:NOMEN_0000067 (ICNB species)
+# Class: obo:NOMEN_0000067 (ICNP species)
 
 AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000067 obo:NOMEN)
-AnnotationAssertion(rdfs:label obo:NOMEN_0000067 "ICNB species"@en)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000067 "ICNP species"@en)
 SubClassOf(obo:NOMEN_0000067 obo:NOMEN_0000066)
 
-# Class: obo:NOMEN_0000068 (ICNB subspecies)
+# Class: obo:NOMEN_0000068 (ICNP subspecies)
 
 AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000068 obo:NOMEN)
-AnnotationAssertion(rdfs:label obo:NOMEN_0000068 "ICNB subspecies"@en)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000068 "ICNP subspecies"@en)
 SubClassOf(obo:NOMEN_0000068 obo:NOMEN_0000066)
 
-# Class: obo:NOMEN_0000069 (ICNB genus)
+# Class: obo:NOMEN_0000069 (ICNP genus)
 
 AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000069 obo:NOMEN)
-AnnotationAssertion(rdfs:label obo:NOMEN_0000069 "ICNB genus"@en)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000069 "ICNP genus"@en)
 SubClassOf(obo:NOMEN_0000069 obo:NOMEN_0000065)
 
-# Class: obo:NOMEN_0000070 (ICNB subgenus)
+# Class: obo:NOMEN_0000070 (ICNP subgenus)
 
 AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000070 obo:NOMEN)
-AnnotationAssertion(rdfs:label obo:NOMEN_0000070 "ICNB subgenus"@en)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000070 "ICNP subgenus"@en)
 SubClassOf(obo:NOMEN_0000070 obo:NOMEN_0000065)
 
-# Class: obo:NOMEN_0000071 (ICNB family)
+# Class: obo:NOMEN_0000071 (ICNP family)
 
 AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000071 obo:NOMEN)
-AnnotationAssertion(rdfs:label obo:NOMEN_0000071 "ICNB family"@en)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000071 "ICNP family"@en)
 SubClassOf(obo:NOMEN_0000071 obo:NOMEN_0000064)
 
-# Class: obo:NOMEN_0000072 (ICNB subfamily)
+# Class: obo:NOMEN_0000072 (ICNP subfamily)
 
 AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000072 obo:NOMEN)
-AnnotationAssertion(rdfs:label obo:NOMEN_0000072 "ICNB subfamily"@en)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000072 "ICNP subfamily"@en)
 SubClassOf(obo:NOMEN_0000072 obo:NOMEN_0000064)
 
-# Class: obo:NOMEN_0000073 (ICNB tribe)
+# Class: obo:NOMEN_0000073 (ICNP tribe)
 
 AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000073 obo:NOMEN)
-AnnotationAssertion(rdfs:label obo:NOMEN_0000073 "ICNB tribe"@en)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000073 "ICNP tribe"@en)
 SubClassOf(obo:NOMEN_0000073 obo:NOMEN_0000064)
 
-# Class: obo:NOMEN_0000074 (ICNB subtribe)
+# Class: obo:NOMEN_0000074 (ICNP subtribe)
 
 AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000074 obo:NOMEN)
-AnnotationAssertion(rdfs:label obo:NOMEN_0000074 "ICNB subtribe"@en)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000074 "ICNP subtribe"@en)
 SubClassOf(obo:NOMEN_0000074 obo:NOMEN_0000064)
 
-# Class: obo:NOMEN_0000075 (ICNB order)
+# Class: obo:NOMEN_0000075 (ICNP order)
 
 AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000075 obo:NOMEN)
-AnnotationAssertion(rdfs:label obo:NOMEN_0000075 "ICNB order"@en)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000075 "ICNP order"@en)
 SubClassOf(obo:NOMEN_0000075 obo:NOMEN_0000063)
 
-# Class: obo:NOMEN_0000076 (ICNB suborder)
+# Class: obo:NOMEN_0000076 (ICNP suborder)
 
 AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000076 obo:NOMEN)
-AnnotationAssertion(rdfs:label obo:NOMEN_0000076 "ICNB suborder"@en)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000076 "ICNP suborder"@en)
 SubClassOf(obo:NOMEN_0000076 obo:NOMEN_0000063)
 
-# Class: obo:NOMEN_0000077 (ICNB class)
+# Class: obo:NOMEN_0000077 (ICNP class)
 
 AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000077 obo:NOMEN)
-AnnotationAssertion(rdfs:label obo:NOMEN_0000077 "ICNB class"@en)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000077 "ICNP class"@en)
 SubClassOf(obo:NOMEN_0000077 obo:NOMEN_0000063)
 
-# Class: obo:NOMEN_0000078 (ICNB subclass)
+# Class: obo:NOMEN_0000078 (ICNP subclass)
 
 AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000078 obo:NOMEN)
-AnnotationAssertion(rdfs:label obo:NOMEN_0000078 "ICNB subclass"@en)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000078 "ICNP subclass"@en)
 SubClassOf(obo:NOMEN_0000078 obo:NOMEN_0000063)
 
-# Class: obo:NOMEN_0000079 (ICNB kingdom)
+# Class: obo:NOMEN_0000079 (ICNP kingdom)
 
 AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000079 obo:NOMEN)
-AnnotationAssertion(rdfs:label obo:NOMEN_0000079 "ICNB kingdom"@en)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000079 "ICNP kingdom"@en)
 SubClassOf(obo:NOMEN_0000079 obo:NOMEN_0000063)
 
-# Class: obo:NOMEN_0000080 (ICNB phylum)
+# Class: obo:NOMEN_0000080 (ICNP phylum)
 
 AnnotationAssertion(rdfs:isDefinedBy obo:NOMEN_0000080 obo:NOMEN)
-AnnotationAssertion(rdfs:label obo:NOMEN_0000080 "ICNB phylum"@en)
+AnnotationAssertion(rdfs:label obo:NOMEN_0000080 "ICNP phylum"@en)
 SubClassOf(obo:NOMEN_0000080 obo:NOMEN_0000063)
 
 # Class: obo:NOMEN_0000081 (ICNP effectively published name)
