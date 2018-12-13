@@ -431,10 +431,9 @@ ObjectPropertyRange(tn:hasBasionym tn:TaxonName)
 # Object Property: tn:nomenclaturalCode (Nomenclatural Code)
 
 AnnotationAssertion(tdwgcmn:tcsEquivalence tn:nomenclaturalCode "ScientificName@nomenclaturalCode")
-AnnotationAssertion(rdfs:comment tn:nomenclaturalCode " The nomenclatural code that governs this name. By definition all taxon names are governed by one of the codes of nomenclature. These include ICBN, ICZN, ICNCP and others.")
+AnnotationAssertion(rdfs:comment tn:nomenclaturalCode "The nomenclatural code that governs a taxon name or rank. By definition all taxon names are governed by one of the codes of nomenclature. These include ICBN, ICZN, ICNCP and others.")
 AnnotationAssertion(rdfs:isDefinedBy tn:nomenclaturalCode <http://rs.tdwg.org/ontology/voc/TaxonName>)
 AnnotationAssertion(rdfs:label tn:nomenclaturalCode "Nomenclatural Code")
-ObjectPropertyDomain(tn:nomenclaturalCode tn:TaxonName)
 ObjectPropertyRange(tn:nomenclaturalCode tn:NomenclaturalCodeTerm)
 
 # Object Property: tn:rank (Rank)
