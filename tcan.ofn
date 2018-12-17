@@ -404,7 +404,6 @@ AnnotationAssertion(rdfs:comment tc:hasName "The TaxonName for this concept. Equ
           /DataSet/TaxonConcepts/TaxonConcept/Name ")
 AnnotationAssertion(rdfs:isDefinedBy tc:hasName <http://rs.tdwg.org/ontology/voc/TaxonConcept>)
 AnnotationAssertion(rdfs:label tc:hasName "Has Name")
-SubObjectPropertyOf(tc:hasName dwciri:scientificName)
 ObjectPropertyDomain(tc:hasName tc:TaxonConcept)
 ObjectPropertyRange(tc:hasName tn:TaxonName)
 
@@ -503,12 +502,12 @@ AnnotationAssertion(rdfs:isDefinedBy dwc:nameAccordingTo <http://rs.tdwg.org/dwc
 AnnotationAssertion(rdfs:label dwc:nameAccordingTo "Name According To"@en)
 SubDataPropertyOf(dwc:nameAccordingTo dwc:accordingTo)
 
-# Data Property: dwc:scientificName (Scientific Name)
+# Data Property: dwc:scientificName (Has Scientific Name)
 
 AnnotationAssertion(dc:description dwc:scientificName "Examples: \"Coleoptera\" (order), \"Vespertilionidae\" (family), \"Manis\" (genus), \"Ctenomys sociabilis\" (genus + specificEpithet), \"Ambystoma tigrinum diaboli\" (genus + specificEpithet + infraspecificEpithet), \"Roptrocerus typographi (Györfi, 1952)\" (genus + specificEpithet + scientificNameAuthorship), \"Quercus agrifolia var. oxyadenia (Torr.) J.T. Howell\" (genus + specificEpithet + taxonRank + infraspecificEpithet + scientificNameAuthorship)"@en)
 AnnotationAssertion(rdfs:comment dwc:scientificName "The full scientific name, with authorship and date information if known. When forming part of an Identification, this should be the name in lowest level taxonomic rank that can be determined. This term should not contain identification qualifications, which should instead be supplied in the IdentificationQualifier term."@en)
 AnnotationAssertion(rdfs:isDefinedBy dwc:scientificName <http://rs.tdwg.org/dwc/terms/>)
-AnnotationAssertion(rdfs:label dwc:scientificName "Scientific Name"@en)
+AnnotationAssertion(rdfs:label dwc:scientificName "Has Scientific Name"@en)
 
 # Data Property: tn:authorship (Authorship)
 
