@@ -23,35 +23,72 @@ Annotation(rdfs:seeAlso <https://github.com/phyloref/phyloref-ontology>)
 Annotation(rdfs:seeAlso <https://phyloref.org/>)
 
 Declaration(Class(phyloref:Phyloreference))
-Declaration(Class(phyloref:SpecifiedGroup))
+Declaration(Class(:ExpectedNode))
+Declaration(Class(:PhylogeneticEvidence))
+Declaration(Class(:PhylogenyEvidence))
+Declaration(Class(:PhyloreferenceUsingMaximumClade))
+Declaration(Class(:PhyloreferenceUsingMinimumClade))
+Declaration(Class(:PhyloreferenceWithReferenceTree))
+Declaration(Class(:ReferencePhylogenyEvidence))
+Declaration(Class(obo:ECO_0000000))
+Declaration(Class(obo:OBI_0302910))
 Declaration(Class(owl:Thing))
 Declaration(ObjectProperty(phyloref:excludes_lineage_to))
-Declaration(ObjectProperty(phyloref:has_Progenitor))
 Declaration(ObjectProperty(phyloref:has_Sibling))
-Declaration(ObjectProperty(phyloref:has_specifier))
-Declaration(ObjectProperty(phyloref:includes_group))
+Declaration(ObjectProperty(:excludes_TU))
+Declaration(ObjectProperty(:excludes_TU2))
+Declaration(ObjectProperty(:includes_TU))
+Declaration(ObjectProperty(:matches_TU))
 Declaration(ObjectProperty(obo:BFO_0000050))
 Declaration(ObjectProperty(obo:BFO_0000051))
 Declaration(ObjectProperty(obo:CDAO_0000149))
 Declaration(ObjectProperty(obo:CDAO_0000174))
+Declaration(ObjectProperty(obo:OBI_0000293))
+Declaration(ObjectProperty(obo:OBI_0000295))
+Declaration(ObjectProperty(obo:OBI_0000299))
+Declaration(ObjectProperty(obo:OBI_0000312))
+Declaration(ObjectProperty(obo:RO_0000057))
+Declaration(ObjectProperty(obo:RO_0002472))
+Declaration(ObjectProperty(obo:RO_0002558))
+Declaration(ObjectProperty(obo:RO_0002614))
+Declaration(ObjectProperty(obo:RO_0002616))
+Declaration(AnnotationProperty(:newick_expression))
 Declaration(AnnotationProperty(dcterms:rights))
+############################
+#   Annotation Properties
+############################
+
+# Annotation Property: :newick_expression (:newick_expression)
+
+AnnotationAssertion(obo:IAO_0000115 :newick_expression "The expression of a phylogenetic tree or network topology (and possibly the limited set of metadata supported by the format) in the Newick format.")
+AnnotationAssertion(rdfs:seeAlso :newick_expression <https://en.wikipedia.org/wiki/Newick_format>)
+
 
 ############################
 #   Object Properties
 ############################
 
-# Object Property: phyloref:has_Sibling (phyloref:has_Sibling)
+# Object Property: :excludes_TU (:excludes_TU)
 
-SubObjectPropertyOf(phyloref:has_Sibling phyloref:excludes_lineage_to)
-SymmetricObjectProperty(phyloref:has_Sibling)
+SubObjectPropertyOf(:excludes_TU obo:CDAO_0000161)
+ObjectPropertyRange(:excludes_TU obo:CDAO_0000138)
 
-# Object Property: phyloref:has_specifier (has specifier)
+# Object Property: :excludes_TU2 (:excludes_TU2)
 
-AnnotationAssertion(rdfs:label phyloref:has_specifier "has specifier")
+SubObjectPropertyOf(:excludes_TU2 obo:CDAO_0000161)
 
-# Object Property: phyloref:includes_group (includes group)
+# Object Property: :excludes_lineage_to (:excludes_lineage_to)
 
-AnnotationAssertion(rdfs:label phyloref:includes_group "includes group")
+SubObjectPropertyOf(:excludes_lineage_to obo:CDAO_0000161)
+
+# Object Property: :has_Sibling (:has_Sibling)
+
+SubObjectPropertyOf(:has_Sibling :excludes_lineage_to)
+SymmetricObjectProperty(:has_Sibling)
+
+# Object Property: :matches_TU (:matches_TU)
+
+ObjectPropertyRange(:matches_TU obo:CDAO_0000138)
 
 # Object Property: obo:BFO_0000050 (part of)
 
@@ -63,17 +100,145 @@ InverseObjectProperties(obo:BFO_0000050 obo:BFO_0000051)
 AnnotationAssertion(rdfs:label obo:BFO_0000051 "has part")
 TransitiveObjectProperty(obo:BFO_0000051)
 
+# Object Property: obo:CDAO_0000187 (represents_TU)
+
+SubObjectPropertyOf(obo:CDAO_0000187 :includes_TU)
+SubObjectPropertyOf(obo:CDAO_0000187 :matches_TU)
+
+# Object Property: obo:CDAO_0000203 (belongs_to_Tree_as_Root)
+
+SubObjectPropertyOf(obo:CDAO_0000203 obo:CDAO_0000200)
+
+# Object Property: obo:OBI_0000293 (has_specified_input)
+
+AnnotationAssertion(obo:IAO_0000115 obo:OBI_0000293 "A relation between a planned process and a continuant participating in that process that is not created during the process. The presence of the continuant during the process is explicitly specified in the plan specification which the process realizes the concretization of.")
+AnnotationAssertion(rdfs:label obo:OBI_0000293 "has_specified_input")
+SubObjectPropertyOf(obo:OBI_0000293 obo:RO_0000057)
+InverseObjectProperties(obo:OBI_0000293 obo:OBI_0000295)
+
+# Object Property: obo:OBI_0000295 (is_specified_input_of)
+
+AnnotationAssertion(obo:IAO_0000115 obo:OBI_0000295 "A relation between a planned process and a continuant participating in that process that is not created during the process. The presence of the continuant during the process is explicitly specified in the plan specification which the process realizes the concretization of.")
+AnnotationAssertion(rdfs:label obo:OBI_0000295 "is_specified_input_of")
+SubObjectPropertyOf(obo:OBI_0000295 obo:RO_0000057)
+
+# Object Property: obo:OBI_0000299 (has_specified_output)
+
+AnnotationAssertion(obo:IAO_0000115 obo:OBI_0000299 "A relation between a planned process and a continuant participating in that process. The presence of the continuant at the end of the process is explicitly specified in the objective specification which the process realizes the concretization of.")
+AnnotationAssertion(rdfs:label obo:OBI_0000299 "has_specified_output")
+SubObjectPropertyOf(obo:OBI_0000299 obo:RO_0000057)
+InverseObjectProperties(obo:OBI_0000299 obo:OBI_0000312)
+
+# Object Property: obo:OBI_0000312 (is_specified_output_of)
+
+AnnotationAssertion(obo:IAO_0000115 obo:OBI_0000312 "A relation between a planned process and a continuant participating in that process. The presence of the continuant at the end of the process is explicitly specified in the objective specification which the process realizes the concretization of.")
+AnnotationAssertion(rdfs:label obo:OBI_0000312 "is_specified_output_of")
+SubObjectPropertyOf(obo:OBI_0000312 obo:RO_0000057)
+
+# Object Property: obo:RO_0000057 (has participant)
+
+AnnotationAssertion(obo:IAO_0000115 obo:RO_0000057 "A relation between a process and a continuant, in which the continuant is somehow involved in the process.")
+AnnotationAssertion(rdfs:label obo:RO_0000057 "has participant")
+
+# Object Property: obo:RO_0002472 (is evidence for)
+
+AnnotationAssertion(obo:IAO_0000115 obo:RO_0002472 "A relationship between a piece of evidence a and some entity b, where b is  an information content entity, material entity or process, and 
+the a supports either the existence of b, or the truth value of b.")
+AnnotationAssertion(rdfs:label obo:RO_0002472 "is evidence for")
+SubObjectPropertyOf(obo:RO_0002472 obo:RO_0002616)
+InverseObjectProperties(obo:RO_0002472 obo:RO_0002558)
+
+# Object Property: obo:RO_0002558 (has evidence)
+
+AnnotationAssertion(obo:IAO_0000115 obo:RO_0002558 "inverse of is evidence for")
+AnnotationAssertion(obo:IAO_0000119 obo:RO_0002558 <http://www.ncbi.nlm.nih.gov/pubmed/25052702>)
+AnnotationAssertion(rdfs:comment obo:RO_0002558 "x has evidence y iff , x is  an information content entity, material entity or process, and y supports either the existence of x, or the truth value of x.")
+AnnotationAssertion(rdfs:label obo:RO_0002558 "has evidence")
+SubObjectPropertyOf(obo:RO_0002558 obo:RO_0002616)
+
+# Object Property: obo:RO_0002614 (is evidence with support from)
+
+AnnotationAssertion(obo:IAO_0000112 obo:RO_0002614 "An instance of a sequence similarity evidence (ECO:0000044) that uses a homologous sequence UniProtKB:P12345 as support.")
+AnnotationAssertion(obo:IAO_0000115 obo:RO_0002614 "A relationship between a piece of evidence and an entity that plays a role in supporting that evidence.")
+AnnotationAssertion(rdfs:comment obo:RO_0002614 "In the Gene Ontology association model, this corresponds to the With/From field")
+AnnotationAssertion(rdfs:label obo:RO_0002614 "is evidence with support from")
+SubObjectPropertyOf(obo:RO_0002614 obo:RO_0002616)
+
+# Object Property: obo:RO_0002616 (related via evidence or inference to)
+
+AnnotationAssertion(rdfs:label obo:RO_0002616 "related via evidence or inference to")
+
 
 
 ############################
 #   Classes
 ############################
 
-# Class: phyloref:SpecifiedGroup (phyloref:SpecifiedGroup)
+# Class: :ExpectedNode (:ExpectedNode)
 
-EquivalentClasses(phyloref:SpecifiedGroup ObjectSomeValuesFrom(phyloref:has_specifier owl:Thing))
+AnnotationAssertion(obo:IAO_0000115 :ExpectedNode "The Node to which a Phyloreference is expected to resolve, i.e., which is expected to be an instance of it.")
+EquivalentClasses(:ExpectedNode ObjectIntersectionOf(obo:CDAO_0000140 ObjectSomeValuesFrom(obo:OBI_0000312 ObjectIntersectionOf(obo:OBI_0302910 ObjectSomeValuesFrom(obo:RO_0000057 :Phyloreference)))))
+
+# Class: :PhylogeneticEvidence (phylogenetic evidence)
+
+AnnotationAssertion(obo:IAO_0000115 :PhylogeneticEvidence "An evidence type that is based on a phylogenetic reconstruction.")
+AnnotationAssertion(rdfs:label :PhylogeneticEvidence "phylogenetic evidence")
+SubClassOf(:PhylogeneticEvidence obo:ECO_0000000)
+
+# Class: :PhylogenyEvidence (phylogeny evidence)
+
+AnnotationAssertion(obo:IAO_0000115 :PhylogenyEvidence "A phylogenetic evidence that consists of a phylogeny, such as a phylogenetic tree or network.")
+AnnotationAssertion(rdfs:label :PhylogenyEvidence "phylogeny evidence")
+SubClassOf(:PhylogenyEvidence :PhylogeneticEvidence)
+
+# Class: :Phyloreference (:Phyloreference)
+
+SubClassOf(:Phyloreference ObjectIntersectionOf(obo:CDAO_0000140 ObjectSomeValuesFrom(obo:CDAO_0000190 obo:CDAO_0000048)))
+
+# Class: :PhyloreferenceUsingMaximumClade (Phyloreference using maximum clade)
+
+AnnotationAssertion(obo:IAO_0000115 :PhyloreferenceUsingMaximumClade "Phyloreference that uses a maximum clade definition, such as a last common ancestor definition or node-based definition.")
+AnnotationAssertion(rdfs:label :PhyloreferenceUsingMaximumClade "Phyloreference using maximum clade")
+SubClassOf(:PhyloreferenceUsingMaximumClade :Phyloreference)
+
+# Class: :PhyloreferenceUsingMinimumClade (Phyloreference using minimum clade)
+
+AnnotationAssertion(obo:IAO_0000115 :PhyloreferenceUsingMinimumClade "Phyloreferences that uses a minimum clade definition, such as a branch-based clade definition with excluded specifiers.")
+AnnotationAssertion(rdfs:label :PhyloreferenceUsingMinimumClade "Phyloreference using minimum clade")
+SubClassOf(:PhyloreferenceUsingMinimumClade :Phyloreference)
+
+# Class: :PhyloreferenceWithReferenceTree (:PhyloreferenceWithReferenceTree)
+
+AnnotationAssertion(obo:IAO_0000115 :PhyloreferenceWithReferenceTree "A phyloreference that has a reference tree provided as evidence.")
+EquivalentClasses(:PhyloreferenceWithReferenceTree ObjectIntersectionOf(:Phyloreference ObjectSomeValuesFrom(obo:RO_0002558 :ReferencePhylogenyEvidence)))
+
+# Class: :ReferencePhylogenyEvidence (reference phylogeny evidence)
+
+AnnotationAssertion(obo:IAO_0000115 :ReferencePhylogenyEvidence "A phylogeny evidence that is based on a reference phylogeny. If multiple phylogenies act as evidence for the same entity, then a reference phylogeny evidence will outweigh non-reference phylogenies in case of conflict.")
+AnnotationAssertion(rdfs:label :ReferencePhylogenyEvidence "reference phylogeny evidence")
+SubClassOf(:ReferencePhylogenyEvidence :PhylogenyEvidence)
+
+# Class: obo:ECO_0000000 (evidence)
+
+AnnotationAssertion(obo:IAO_0000115 obo:ECO_0000000 "A type of information that is used to support an assertion.")
+AnnotationAssertion(rdfs:label obo:ECO_0000000 "evidence")
+
+# Class: obo:OBI_0302910 (prediction)
+
+AnnotationAssertion(obo:IAO_0000115 obo:OBI_0302910 "A process by which an event or an entity is described before it actually happens or is being discovered and identified.")
+AnnotationAssertion(rdfs:label obo:OBI_0302910 "prediction")
 
 
-SubObjectPropertyOf(ObjectPropertyChain(phyloref:has_Sibling obo:CDAO_0000174) phyloref:excludes_lineage_to)
-SubObjectPropertyOf(ObjectPropertyChain(obo:CDAO_0000149 phyloref:has_Sibling) obo:CDAO_0000149)
+SubObjectPropertyOf(ObjectPropertyChain(:excludes_lineage_to obo:CDAO_0000187) :excludes_TU)
+SubObjectPropertyOf(ObjectPropertyChain(:excludes_lineage_to obo:CDAO_0000187) :excludes_TU2)
+SubObjectPropertyOf(ObjectPropertyChain(:excludes_lineage_to obo:CDAO_0000187 :matches_TU) :excludes_TU)
+SubObjectPropertyOf(ObjectPropertyChain(:has_Sibling obo:CDAO_0000174) :excludes_lineage_to)
+SubObjectPropertyOf(ObjectPropertyChain(:has_Sibling obo:CDAO_0000179) obo:CDAO_0000179)
+SubObjectPropertyOf(ObjectPropertyChain(obo:CDAO_0000149 :has_Sibling) obo:CDAO_0000149)
+SubObjectPropertyOf(ObjectPropertyChain(obo:CDAO_0000174 obo:CDAO_0000187) :includes_TU)
+SubObjectPropertyOf(ObjectPropertyChain(obo:CDAO_0000174 obo:CDAO_0000187 :matches_TU) :includes_TU)
+SubObjectPropertyOf(ObjectPropertyChain(obo:CDAO_0000179 obo:CDAO_0000200) obo:CDAO_0000200)
+SubObjectPropertyOf(ObjectPropertyChain(obo:CDAO_0000187 :matches_TU) :includes_TU)
+AnnotationAssertion(obo:IAO_0000115 :TUMatch "A match between two or more cdao:TU instances."@en)
+AnnotationAssertion(rdfs:label :TUMatch "TU Match"@en)
 )
