@@ -18,6 +18,7 @@ Prefix(openbiodiv:=<http://openbiodiv.net/>)
 
 
 Ontology(<http://ontology.phyloref.org/tcan.owl>
+<http://ontology.phyloref.org/2018-12-14/tcan.owl>
 Annotation(dc:creator "Hilmar Lapp")
 Annotation(dc:rights "Axioms under the namespace of this ontology are released under the Creative Commons Zero 1.0 public domain waiver. Terms and axioms imported from other sources are under the licenses of the vocabularies they are defined in (see rdfs:isDefinedBy annotations).")
 Annotation(dc:title "Ontology for Taxon Concepts And Names")
