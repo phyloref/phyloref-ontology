@@ -11,7 +11,7 @@ Prefix(owl2xml:=<http://www.w3.org/2006/12/owl2-xml#>)
 
 
 Ontology(<http://ontology.phyloref.org/phyloref.owl>
-<http://ontology.phyloref.org/2018-12-04/phyloref.owl>
+<http://ontology.phyloref.org/2018-12-14/phyloref.owl>
 Import(<http://purl.obolibrary.org/obo/cdao.owl>)
 Annotation(dc:creator "Hilmar Lapp")
 Annotation(dc:description "The Phyloreferencing Ontology is an application ontology for defining, computing with, and resolving phylogenetic clade definitions in the form of logic expressions."@en)
