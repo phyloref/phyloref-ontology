@@ -35,11 +35,11 @@ deploy: $(addprefix $(DEPLOY_PATH)/,$(ONTS)) $(addprefix $(DEPLOY_PATH)/,$(ONTS:
 deploy-versions: $(ONTS:.ofn=.owl) $(VERSIONED_TARGETS)
 
 check: check-tcan check-phyloref
-check-strict: check check-strict-tcan check-strict-phyloref
+check-strict: check-strict-tcan check-strict-phyloref
 check-tcan: tcan.IsInDL
-check-strict-tcan: tcan.IsInEL
+check-strict-tcan: check-tcan tcan.IsInEL
 check-phyloref: phyloref.IsInFull
-check-strict-phyloref: phyloref.IsInDL
+check-strict-phyloref: check-phyloref phyloref.IsInDL
 
 clean-checks:
 	$(RM) $(REPORTS)
