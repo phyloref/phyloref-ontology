@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Edited Redirect" name="http://ontology.phyloref.org/2018-12-14/phyloref.owl" uri="phyloref.ofn"/>
+    <uri id="User Edited Redirect" name="http://ontology.phyloref.org/phyloref.owl" uri="phyloref.ofn"/>
+    <uri id="User Edited Redirect" name="http://ontology.phyloref.org/tcan.owl" uri="tcan.ofn"/>
+    <uri id="User Edited Redirect" name="http://ontology.phyloref.org/2018-12-14/tcan.owl" uri="tcan.ofn"/>
+    <uri id="User Edited Redirect" name="http://purl.obolibrary.org/obo/iao/ontology-metadata.owl" uri="lib/ontology-metadata.owl"/>
+</catalog>
