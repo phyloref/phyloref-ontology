@@ -196,13 +196,13 @@ SubClassOf(:Phyloreference ObjectIntersectionOf(obo:CDAO_0000140 ObjectSomeValue
 
 # Class: :PhyloreferenceUsingMaximumClade (Phyloreference using maximum clade)
 
-AnnotationAssertion(obo:IAO_0000115 :PhyloreferenceUsingMaximumClade "Phyloreference that uses a maximum clade definition, such as a last common ancestor definition or node-based definition.")
+AnnotationAssertion(obo:IAO_0000115 :PhyloreferenceUsingMaximumClade "Phyloreference that uses a maximum clade definition, such as a branch-based clade definition with excluded specifiers.")
 AnnotationAssertion(rdfs:label :PhyloreferenceUsingMaximumClade "Phyloreference using maximum clade")
 SubClassOf(:PhyloreferenceUsingMaximumClade :Phyloreference)
 
 # Class: :PhyloreferenceUsingMinimumClade (Phyloreference using minimum clade)
 
-AnnotationAssertion(obo:IAO_0000115 :PhyloreferenceUsingMinimumClade "Phyloreferences that uses a minimum clade definition, such as a branch-based clade definition with excluded specifiers.")
+AnnotationAssertion(obo:IAO_0000115 :PhyloreferenceUsingMinimumClade "Phyloreferences that uses a minimum clade definition, such as a last common ancestor definition or node-based definition.")
 AnnotationAssertion(rdfs:label :PhyloreferenceUsingMinimumClade "Phyloreference using minimum clade")
 SubClassOf(:PhyloreferenceUsingMinimumClade :Phyloreference)
 
