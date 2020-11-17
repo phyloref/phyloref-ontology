@@ -204,7 +204,7 @@ EquivalentClasses(:PhyloreferenceUsingMaximumClade ObjectIntersectionOf(:Phylore
 
 AnnotationAssertion(obo:IAO_0000115 :PhyloreferenceUsingMinimumClade "Phyloreferences that uses a minimum clade definition, such as a last common ancestor definition or node-based definition.")
 AnnotationAssertion(rdfs:label :PhyloreferenceUsingMinimumClade "Phyloreference using minimum clade")
-EquivalentClasses(:PhyloreferenceUsingMinimumClade ObjectIntersectionOf(:Phyloreference ObjectComplementOf(ObjectSomeValuesFrom(:excludes_TU obo:CDAO_0000138)) ObjectSomeValuesFrom(:includes_TU obo:CDAO_0000138)))
+EquivalentClasses(:PhyloreferenceUsingMinimumClade ObjectIntersectionOf(:Phyloreference ObjectSomeValuesFrom(obo:CDAO_0000149 ObjectIntersectionOf(ObjectSomeValuesFrom(:excludes_TU obo:CDAO_0000138) ObjectSomeValuesFrom(:includes_TU obo:CDAO_0000138)))))
 
 # Class: :PhyloreferenceWithReferenceTree (:PhyloreferenceWithReferenceTree)
 
