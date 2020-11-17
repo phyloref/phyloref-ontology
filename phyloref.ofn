@@ -33,9 +33,9 @@ Declaration(Class(obo:ECO_0000000))
 Declaration(Class(obo:OBI_0302910))
 Declaration(Class(owl:Thing))
 Declaration(ObjectProperty(:excludes_TU))
-Declaration(ObjectProperty(:excludes_TU2))
 Declaration(ObjectProperty(:excludes_lineage_to))
 Declaration(ObjectProperty(:has_Sibling))
+Declaration(ObjectProperty(:has_outside_TU))
 Declaration(ObjectProperty(:includes_TU))
 Declaration(ObjectProperty(:matches_TU))
 Declaration(ObjectProperty(obo:BFO_0000050))
@@ -69,12 +69,8 @@ AnnotationAssertion(rdfs:seeAlso :newick_expression <https://en.wikipedia.org/wi
 
 # Object Property: :excludes_TU (:excludes_TU)
 
-SubObjectPropertyOf(:excludes_TU obo:CDAO_0000161)
+SubObjectPropertyOf(:excludes_TU :has_outside_TU)
 ObjectPropertyRange(:excludes_TU obo:CDAO_0000138)
-
-# Object Property: :excludes_TU2 (:excludes_TU2)
-
-SubObjectPropertyOf(:excludes_TU2 obo:CDAO_0000161)
 
 # Object Property: :excludes_lineage_to (:excludes_lineage_to)
 
@@ -84,6 +80,10 @@ SubObjectPropertyOf(:excludes_lineage_to obo:CDAO_0000161)
 
 SubObjectPropertyOf(:has_Sibling :excludes_lineage_to)
 SymmetricObjectProperty(:has_Sibling)
+
+# Object Property: :has_outside_TU (:has_outside_TU)
+
+SubObjectPropertyOf(:has_outside_TU obo:CDAO_0000161)
 
 # Object Property: :matches_TU (:matches_TU)
 
@@ -229,10 +229,10 @@ AnnotationAssertion(rdfs:label obo:OBI_0302910 "prediction")
 
 
 SubObjectPropertyOf(ObjectPropertyChain(:excludes_lineage_to obo:CDAO_0000187) :excludes_TU)
-SubObjectPropertyOf(ObjectPropertyChain(:excludes_lineage_to obo:CDAO_0000187) :excludes_TU2)
 SubObjectPropertyOf(ObjectPropertyChain(:excludes_lineage_to obo:CDAO_0000187 :matches_TU) :excludes_TU)
 SubObjectPropertyOf(ObjectPropertyChain(:has_Sibling obo:CDAO_0000174) :excludes_lineage_to)
 SubObjectPropertyOf(ObjectPropertyChain(:has_Sibling obo:CDAO_0000179) obo:CDAO_0000179)
+SubObjectPropertyOf(ObjectPropertyChain(obo:CDAO_0000144 :excludes_TU) :has_outside_TU)
 SubObjectPropertyOf(ObjectPropertyChain(obo:CDAO_0000149 :has_Sibling) obo:CDAO_0000149)
 SubObjectPropertyOf(ObjectPropertyChain(obo:CDAO_0000174 obo:CDAO_0000187) :includes_TU)
 SubObjectPropertyOf(ObjectPropertyChain(obo:CDAO_0000174 obo:CDAO_0000187 :matches_TU) :includes_TU)
