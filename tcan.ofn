@@ -339,7 +339,6 @@ AnnotationAssertion(rdfs:comment openbiodiv:nameAccordingTo "The reference to th
     only be used with IRI's"@en)
 AnnotationAssertion(rdfs:isDefinedBy openbiodiv:nameAccordingTo openbiodiv:openbiodiv-ontology)
 SubObjectPropertyOf(openbiodiv:nameAccordingTo dwciri:nameAccordingTo)
-SubObjectPropertyOf(openbiodiv:nameAccordingTo tc:accordingTo)
 
 # Object Property: openbiodiv:replacementName (has replacement name)
 
@@ -357,7 +356,7 @@ TransitiveObjectProperty(openbiodiv:replacementName)
 AnnotationAssertion(rdfs:isDefinedBy openbiodiv:scientificName openbiodiv:openbiodiv-ontology)
 AnnotationAssertion(rdfs:label openbiodiv:scientificName "has scientific name"@en)
 SubObjectPropertyOf(openbiodiv:scientificName openbiodiv:taxonomicName)
-SubObjectPropertyOf(openbiodiv:scientificName tc:hasName)
+SubObjectPropertyOf(openbiodiv:scientificName dwciri:scientificName)
 ObjectPropertyDomain(openbiodiv:scientificName openbiodiv:TaxonomicConcept)
 ObjectPropertyRange(openbiodiv:scientificName openbiodiv:ScientificName)
 
@@ -373,6 +372,7 @@ ObjectPropertyRange(openbiodiv:taxonomicConceptLabel openbiodiv:TaxonomicConcept
 
 AnnotationAssertion(rdfs:isDefinedBy openbiodiv:taxonomicName openbiodiv:openbiodiv-ontology)
 AnnotationAssertion(rdfs:label openbiodiv:taxonomicName "has taxonomic name"@en)
+SubObjectPropertyOf(openbiodiv:taxonomicName tc:hasName)
 ObjectPropertyDomain(openbiodiv:taxonomicName openbiodiv:TaxonomicConcept)
 ObjectPropertyRange(openbiodiv:taxonomicName openbiodiv:TaxonomicName)
 
@@ -382,6 +382,7 @@ AnnotationAssertion(rdfs:comment dwciri:nameAccordingTo "the IRI version of dwc:
 AnnotationAssertion(rdfs:isDefinedBy dwciri:nameAccordingTo <http://rs.tdwg.org/dwc/iri/>)
 AnnotationAssertion(rdfs:label dwciri:nameAccordingTo "name according to"@en)
 AnnotationAssertion(rdfs:seeAlso dwciri:nameAccordingTo dwc:nameAccordingTo)
+SubObjectPropertyOf(dwciri:nameAccordingTo tc:accordingTo)
 
 # Object Property: dwciri:scientificName (scientific name)
 
@@ -389,6 +390,7 @@ AnnotationAssertion(rdfs:comment dwciri:scientificName "the IRI version of dwc:s
 AnnotationAssertion(rdfs:isDefinedBy dwciri:scientificName <http://rs.tdwg.org/dwc/iri/>)
 AnnotationAssertion(rdfs:label dwciri:scientificName "scientific name"@en)
 AnnotationAssertion(rdfs:seeAlso dwciri:scientificName dwc:scientificName)
+SubObjectPropertyOf(dwciri:scientificName openbiodiv:taxonomicName)
 
 # Object Property: tc:accordingTo (according to)
 
@@ -648,7 +650,7 @@ SubClassOf(openbiodiv:ScientificName openbiodiv:TaxonomicName)
 AnnotationAssertion(rdfs:comment openbiodiv:TaxonomicConcept "A taxonomic concept in the sense of Berendsohn"@en)
 AnnotationAssertion(rdfs:isDefinedBy openbiodiv:TaxonomicConcept openbiodiv:openbiodiv-ontology)
 EquivalentClasses(openbiodiv:TaxonomicConcept dwc:Taxon)
-SubClassOf(Annotation(rdfs:isDefinedBy :tcan.owl) openbiodiv:TaxonomicConcept tc:TaxonConcept)
+EquivalentClasses(Annotation(rdfs:isDefinedBy :tcan.owl) openbiodiv:TaxonomicConcept tc:TaxonConcept)
 
 # Class: openbiodiv:TaxonomicConceptLabel (Taxon Concept Label)
 
@@ -664,7 +666,8 @@ AnnotationAssertion(rdfs:label openbiodiv:TaxonomicConceptLabel "Taxon Concept L
 AnnotationAssertion(rdfs:isDefinedBy openbiodiv:TaxonomicName openbiodiv:openbiodiv-ontology)
 AnnotationAssertion(skos:altLabel openbiodiv:TaxonomicName "Biological Name"@en)
 AnnotationAssertion(skos:prefLabel openbiodiv:TaxonomicName "Taxonomic Name"@en)
-EquivalentClasses(openbiodiv:TaxonomicName obo:NOMEN_0000030)
+EquivalentClasses(openbiodiv:TaxonomicName tn:TaxonName)
+SubClassOf(openbiodiv:TaxonomicName obo:NOMEN_0000030)
 
 # Class: openbiodiv:VernacularName (Vernacular Name)
 
