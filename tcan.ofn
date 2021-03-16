@@ -24,6 +24,8 @@ Annotation(dc:rights "Axioms under the namespace of this ontology are released u
 Annotation(dc:title "Ontology for Taxon Concepts And Names")
 Annotation(dcterms:source openbiodiv:ontology)
 Annotation(dcterms:source obo:NOMEN)
+Annotation(dcterms:source <http://rs.tdwg.org/dwc/iri/>)
+Annotation(dcterms:source <http://rs.tdwg.org/dwc/terms/>)
 Annotation(dcterms:source <http://rs.tdwg.org/ontology/voc/TaxonConcept>)
 Annotation(dcterms:source <http://rs.tdwg.org/ontology/voc/TaxonName>)
 Annotation(rdfs:comment "The Ontology for Taxon Concepts And Names (TCAN) is an application ontology for expressing, matching, and resolving taxon concepts and their names as encountered in the wild, such as in publications, taxon mentions, clade definitions, etc. One of the key use cases for which it is being developed is for expressing and matching specifiers (in essence taxon concepts) used in clade definitions.
