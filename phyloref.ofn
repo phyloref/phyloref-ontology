@@ -216,6 +216,7 @@ EquivalentClasses(:PhyloreferenceWithReferenceTree ObjectIntersectionOf(:Phylore
 AnnotationAssertion(obo:IAO_0000115 :ReferencePhylogenyEvidence "A phylogeny evidence that is based on a reference phylogeny. If multiple phylogenies act as evidence for the same entity, then a reference phylogeny evidence will outweigh non-reference phylogenies in case of conflict.")
 AnnotationAssertion(rdfs:label :ReferencePhylogenyEvidence "reference phylogeny evidence")
 SubClassOf(:ReferencePhylogenyEvidence :PhylogenyEvidence)
+SubClassOf(:ReferencePhylogenyEvidence obo:CDAO_0000110)
 
 # Class: obo:ECO_0000000 (evidence)
 
