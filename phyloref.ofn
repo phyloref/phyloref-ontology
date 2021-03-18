@@ -25,13 +25,16 @@ Declaration(Class(:ExpectedNode))
 Declaration(Class(:PhylogeneticEvidence))
 Declaration(Class(:PhylogenyEvidence))
 Declaration(Class(:Phyloreference))
+Declaration(Class(:PhyloreferenceUsingApomorphy))
 Declaration(Class(:PhyloreferenceUsingMaximumClade))
 Declaration(Class(:PhyloreferenceUsingMinimumClade))
 Declaration(Class(:PhyloreferenceWithReferenceTree))
 Declaration(Class(:ReferencePhylogenyEvidence))
 Declaration(Class(obo:ECO_0000000))
 Declaration(Class(obo:OBI_0302910))
+Declaration(Class(<http://semanticscience.org/resource/SIO_010056>))
 Declaration(Class(owl:Thing))
+Declaration(ObjectProperty(:apomorphy))
 Declaration(ObjectProperty(:excludes_TU))
 Declaration(ObjectProperty(:excludes_lineage_to))
 Declaration(ObjectProperty(:has_Sibling))
@@ -66,6 +69,14 @@ AnnotationAssertion(rdfs:seeAlso :newick_expression <https://en.wikipedia.org/wi
 ############################
 #   Object Properties
 ############################
+
+# Object Property: :apomorphy (uses apomorphy)
+
+AnnotationAssertion(obo:IAO_0000115 :apomorphy "Relates a phyloreference to an apormorphy it uses for defining a clade.")
+AnnotationAssertion(dc:description :apomorphy "An apomorphy here is generally understood as an instance of SIO:phenotype (http://semanticscience.org/resource/SIO_010056), though this is not currently asserted."@en)
+AnnotationAssertion(rdfs:comment :apomorphy "This property is related to, but not strictly a subproperty of RO:has_phenotype (http://purl.obolibrary.org/obo/RO_0002200) because the RO property is defined as holding _between a biological entity and a phenotype_. A phyloreference is an information content entity."@en)
+AnnotationAssertion(rdfs:label :apomorphy "uses apomorphy"@en)
+AnnotationAssertion(rdfs:seeAlso :apomorphy obo:RO_0002200)
 
 # Object Property: :excludes_TU (:excludes_TU)
 
@@ -194,6 +205,12 @@ SubClassOf(:PhylogenyEvidence :PhylogeneticEvidence)
 
 SubClassOf(:Phyloreference ObjectIntersectionOf(obo:CDAO_0000140 ObjectSomeValuesFrom(obo:CDAO_0000190 obo:CDAO_0000048)))
 
+# Class: :PhyloreferenceUsingApomorphy (Phyloreference using apomorphy)
+
+AnnotationAssertion(obo:IAO_0000115 :PhyloreferenceUsingApomorphy "Phyloreference that uses an apomorphy-based clade definition. An apomorphy-based clade definition designates the clade arising from the first node exhibiting a trait synapomorphic with a specified descendent (a.k.a. internal specifier).")
+AnnotationAssertion(rdfs:label :PhyloreferenceUsingApomorphy "Phyloreference using apomorphy")
+SubClassOf(:PhyloreferenceUsingApomorphy ObjectIntersectionOf(:Phyloreference ObjectSomeValuesFrom(:apomorphy <http://semanticscience.org/resource/SIO_010056>)))
+
 # Class: :PhyloreferenceUsingMaximumClade (Phyloreference using maximum clade)
 
 AnnotationAssertion(obo:IAO_0000115 :PhyloreferenceUsingMaximumClade "Phyloreference that uses a maximum clade definition, such as a branch-based clade definition with excluded specifiers.")
@@ -227,6 +244,12 @@ AnnotationAssertion(rdfs:label obo:ECO_0000000 "evidence")
 
 AnnotationAssertion(obo:IAO_0000115 obo:OBI_0302910 "A process by which an event or an entity is described before it actually happens or is being discovered and identified.")
 AnnotationAssertion(rdfs:label obo:OBI_0302910 "prediction")
+
+# Class: <http://semanticscience.org/resource/SIO_010056> (phenotype)
+
+AnnotationAssertion(dc:description <http://semanticscience.org/resource/SIO_010056> "A phenotype is an observable characteristic of an individual.")
+AnnotationAssertion(rdfs:isDefinedBy <http://semanticscience.org/resource/SIO_010056> <http://semanticscience.org/ontology/sio.owl>)
+AnnotationAssertion(rdfs:label <http://semanticscience.org/resource/SIO_010056> "phenotype")
 
 
 SubObjectPropertyOf(ObjectPropertyChain(:excludes_lineage_to obo:CDAO_0000187) :excludes_TU)
