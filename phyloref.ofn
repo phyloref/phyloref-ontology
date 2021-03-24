@@ -95,6 +95,11 @@ SymmetricObjectProperty(:has_Sibling)
 # Object Property: :has_outside_TU (:has_outside_TU)
 
 SubObjectPropertyOf(:has_outside_TU obo:CDAO_0000161)
+ObjectPropertyRange(:has_outside_TU obo:CDAO_0000138)
+
+# Object Property: :includes_TU (:includes_TU)
+
+ObjectPropertyRange(:includes_TU obo:CDAO_0000138)
 
 # Object Property: :matches_TU (:matches_TU)
 
