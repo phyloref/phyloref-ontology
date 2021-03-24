@@ -83,10 +83,6 @@ AnnotationAssertion(rdfs:seeAlso :apomorphy obo:RO_0002200)
 SubObjectPropertyOf(:excludes_TU :has_outside_TU)
 ObjectPropertyRange(:excludes_TU obo:CDAO_0000138)
 
-# Object Property: :excludes_lineage_to (:excludes_lineage_to)
-
-SubObjectPropertyOf(:excludes_lineage_to obo:CDAO_0000161)
-
 # Object Property: :has_Sibling (:has_Sibling)
 
 SubObjectPropertyOf(:has_Sibling :excludes_lineage_to)
@@ -94,7 +90,6 @@ SymmetricObjectProperty(:has_Sibling)
 
 # Object Property: :has_outside_TU (:has_outside_TU)
 
-SubObjectPropertyOf(:has_outside_TU obo:CDAO_0000161)
 ObjectPropertyRange(:has_outside_TU obo:CDAO_0000138)
 
 # Object Property: :includes_TU (:includes_TU)
