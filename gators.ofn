@@ -12,8 +12,8 @@ Prefix(phyloref:=<http://ontology.phyloref.org/phyloref.owl#>)
 
 
 Ontology(<http://phyloref.org/clade-ontology/gators.owl>
-Import(<http://ontology.phyloref.org/2018-12-14/tcan.owl>)
-Import(<http://ontology.phyloref.org/2020-11-09/phyloref.owl>)
+Import(<http://ontology.phyloref.org/2021-03-15/phyloref.owl>)
+Import(<http://ontology.phyloref.org/2021-03-15/tcan.owl>)
 
 Declaration(Class(:CLADO_00000003))
 Declaration(Class(:CLADO_00000004))
