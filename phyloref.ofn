@@ -262,6 +262,4 @@ SubObjectPropertyOf(ObjectPropertyChain(obo:CDAO_0000174 obo:CDAO_0000187) :incl
 SubObjectPropertyOf(ObjectPropertyChain(obo:CDAO_0000174 obo:CDAO_0000187 :matches_TU) :includes_TU)
 SubObjectPropertyOf(ObjectPropertyChain(obo:CDAO_0000179 obo:CDAO_0000200) obo:CDAO_0000200)
 SubObjectPropertyOf(ObjectPropertyChain(obo:CDAO_0000187 :matches_TU) :includes_TU)
-AnnotationAssertion(obo:IAO_0000115 :TUMatch "A match between two or more cdao:TU instances."@en)
-AnnotationAssertion(rdfs:label :TUMatch "TU Match"@en)
 )
